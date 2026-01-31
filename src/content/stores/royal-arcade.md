@@ -1,6 +1,6 @@
 ---
 name: "Royal Arcade"
-slug: "royal"
+slug: "royal-arcade"
 address: "Royal Arcade, Cardiff"
 phone: "+44 29 0000 0000"
 map_url: "https://maps.google.com/?q=Royal%20Arcade%20Cardiff"
