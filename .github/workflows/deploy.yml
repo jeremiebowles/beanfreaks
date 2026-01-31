@@ -15,11 +15,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: withastro/action@v3
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Build and upload
+        uses: withastro/action@v5
         with:
           node-version: 20
           package-manager: npm
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
