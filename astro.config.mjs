@@ -3,6 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.beanfreaks.com',
-  integrations: [tailwind(), sitemap()],
+  site: "https://jeremiebowles.github.io",
+  base: "/beanfreaks",
 });
+
