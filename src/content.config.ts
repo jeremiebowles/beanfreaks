@@ -4,7 +4,6 @@ const stores = defineCollection({
   type: "content",
   schema: z.object({
     name: z.string(),
-    slug: z.string(),
     address: z.string(),
     phone: z.string(),
     map_url: z.string().url(),
