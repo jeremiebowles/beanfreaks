@@ -6,4 +6,3 @@ export default defineConfig({
   site: "https://jeremiebowles.github.io",
   base: "/beanfreaks",
 });
-
