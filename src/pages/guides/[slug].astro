@@ -1,20 +1,21 @@
 ---
-import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const guides = await getCollection("guides");
-  return guides.map((g) => ({ params: { slug: g.slug }, props: { guide: g } }));
+  return guides.map((g) => ({
+    params: { slug: g.slug },
+  }));
 }
 
-const { guide } = Astro.props;
----
-<Base title={`${guide.data.title} — Guides — Beanfreaks`} description={guide.data.summary}>
-  <a class="text-sm text-slate-600 hover:underline" href="/guides/">← All guides</a>
-  <h1 class="mt-2 text-3xl font-semibold tracking-tight">{guide.data.title}</h1>
-  <p class="mt-2 text-sm text-slate-600">{guide.data.date.toLocaleDateString("en-GB")}</p>
+const { slug } = Astro.params;
+const guide = (await getCollection("guides")).find((g) => g.slug === slug);
+if (!guide) throw new Error(`Guide not found: ${slug}`);
 
-  <article class="prose prose-slate mt-6 max-w-none">
-    <guide.Content />
-  </article>
-</Base>
+const { Content } = await guide.render();
+---
+
+<article>
+  <Content />
+</article>
+
