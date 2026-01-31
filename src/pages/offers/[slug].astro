@@ -1,0 +1,23 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const offers = await getCollection("offers");
+  return offers.map((o) => ({ params: { slug: o.slug }, props: { offer: o } }));
+}
+
+const { offer } = Astro.props;
+---
+<Base title={`${offer.data.title} — Offers — Beanfreaks`} description={offer.data.summary}>
+  <a class="text-sm text-slate-600 hover:underline" href="/offers/">← All offers</a>
+  <h1 class="mt-2 text-3xl font-semibold tracking-tight">{offer.data.title}</h1>
+  <p class="mt-2 text-sm text-slate-600">
+    {offer.data.date.toLocaleDateString("en-GB")}
+    {offer.data.expires ? ` · Expires ${offer.data.expires.toLocaleDateString("en-GB")}` : ""}
+  </p>
+
+  <article class="prose prose-slate mt-6 max-w-none">
+    <offer.Content />
+  </article>
+</Base>

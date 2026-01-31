@@ -1,0 +1,69 @@
+---
+import Base from "../layouts/Base.astro";
+import StoreCard from "../components/StoreCard.astro";
+import { getCollection } from "astro:content";
+
+const stores = (await getCollection("stores")).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const offers = (await getCollection("offers")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const featuredOffer = offers.find(o => o.data.featured) ?? offers[0];
+---
+<Base
+  title="Beanfreaks — health food shops in Cardiff"
+  description="Three Cardiff shops for wholefoods, supplements, and practical advice."
+>
+  <section class="grid gap-8 md:grid-cols-12 md:items-start">
+    <div class="md:col-span-7">
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">
+        Health food shops in Cardiff — practical advice, not mystic fog.
+      </h1>
+      <p class="mt-4 max-w-prose text-lg text-slate-700">
+        Find your nearest store, see what’s on, and ask a question. Simple.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90" href="/stores/">
+          Find a store
+        </a>
+        <a class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-50" href="/offers/">
+          What’s on
+        </a>
+        <a class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-50" href="/contact/">
+          Ask us
+        </a>
+      </div>
+    </div>
+
+    <aside class="md:col-span-5">
+      {featuredOffer && (
+        <div class="rounded-2xl border border-slate-200 p-5 shadow-sm">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Featured</p>
+          <h2 class="mt-2 text-xl font-semibold tracking-tight">
+            <a class="hover:underline" href={`/offers/${featuredOffer.slug}/`}>{featuredOffer.data.title}</a>
+          </h2>
+          <p class="mt-2 text-sm text-slate-700">{featuredOffer.data.summary}</p>
+          <p class="mt-4 text-sm">
+            <a class="font-semibold hover:underline" href={`/offers/${featuredOffer.slug}/`}>Read more →</a>
+          </p>
+        </div>
+      )}
+    </aside>
+  </section>
+
+  <section class="mt-12">
+    <h2 class="text-2xl font-semibold tracking-tight">Stores</h2>
+    <p class="mt-2 max-w-prose text-slate-700">Opening hours, phone numbers, and the fastest way to get there.</p>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      {stores.map((store) => <StoreCard store={store} />)}
+    </div>
+  </section>
+
+  <section class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+    <h2 class="text-2xl font-semibold tracking-tight">Guides</h2>
+    <p class="mt-2 max-w-prose text-slate-700">
+      Short, sane articles — written like a human, not like a supplement bottle.
+    </p>
+    <p class="mt-4">
+      <a class="font-semibold hover:underline" href="/guides/">Browse guides →</a>
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,22 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const offers = (await getCollection("offers")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<Base title="Offers — Beanfreaks" description="Current offers and what's on in store.">
+  <h1 class="text-3xl font-semibold tracking-tight">Offers</h1>
+  <p class="mt-3 max-w-prose text-slate-700">Small promos, seasonal picks, and in-store highlights.</p>
+
+  <div class="mt-8 grid gap-4">
+    {offers.map((o) => (
+      <a class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50" href={`/offers/${o.slug}/`}>
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <h2 class="text-lg font-semibold tracking-tight">{o.data.title}</h2>
+          <p class="text-sm text-slate-600">{o.data.date.toLocaleDateString("en-GB")}</p>
+        </div>
+        <p class="mt-2 text-sm text-slate-700">{o.data.summary}</p>
+      </a>
+    ))}
+  </div>
+</Base>

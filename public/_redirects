@@ -1,0 +1,4 @@
+# Example: keep old URLs alive after redesign
+/royal/   /stores/royal/   301
+/wellfield/ /stores/wellfield/ 301
+/whitchurch/ /stores/whitchurch/ 301

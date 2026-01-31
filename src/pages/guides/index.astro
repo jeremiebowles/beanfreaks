@@ -1,0 +1,22 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const guides = (await getCollection("guides")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<Base title="Guides — Beanfreaks" description="Practical guides on supplements, wholefoods and everyday health.">
+  <h1 class="text-3xl font-semibold tracking-tight">Guides</h1>
+  <p class="mt-3 max-w-prose text-slate-700">Short, practical reading — no fluff, no guilt, no 42-step morning routine.</p>
+
+  <div class="mt-8 grid gap-4">
+    {guides.map((g) => (
+      <a class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50" href={`/guides/${g.slug}/`}>
+        <div class="flex flex-wrap items-baseline justify-between gap-3">
+          <h2 class="text-lg font-semibold tracking-tight">{g.data.title}</h2>
+          <p class="text-sm text-slate-600">{g.data.date.toLocaleDateString("en-GB")}</p>
+        </div>
+        <p class="mt-2 text-sm text-slate-700">{g.data.summary}</p>
+      </a>
+    ))}
+  </div>
+</Base>

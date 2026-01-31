@@ -1,0 +1,17 @@
+---
+import Base from "../../layouts/Base.astro";
+import StoreCard from "../../components/StoreCard.astro";
+import { getCollection } from "astro:content";
+
+const stores = (await getCollection("stores")).sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+<Base title="Stores — Beanfreaks" description="Find opening times, contact details and directions for our Cardiff stores.">
+  <h1 class="text-3xl font-semibold tracking-tight">Stores</h1>
+  <p class="mt-3 max-w-prose text-slate-700">
+    Three locations. Same vibe: friendly, practical, and stocked with the good stuff.
+  </p>
+
+  <div class="mt-8 grid gap-4 md:grid-cols-3">
+    {stores.map((store) => <StoreCard store={store} />)}
+  </div>
+</Base>
