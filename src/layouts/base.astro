@@ -14,7 +14,8 @@ const url = canonical ?? Astro.url;
     <meta name="description" content={description} />
     <link rel="canonical" href={url.toString()} />
     {noindex ? <meta name="robots" content="noindex,nofollow" /> : null}
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS built during GitHub Actions deploy -->
+    <link rel="stylesheet" href={withBase("assets/tw.css")} />
   </head>
   <body class="min-h-dvh bg-white text-slate-900">
     <a class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-white focus:px-3 focus:py-2 focus:shadow" href="#content">

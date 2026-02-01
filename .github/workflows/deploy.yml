@@ -27,6 +27,8 @@ jobs:
 
       - run: npm install
       - run: npm run build
+      - run: mkdir -p dist/assets
+      - run: npx tailwindcss -i ./src/styles/global.css -o ./dist/assets/tw.css --minify
       - run: touch dist/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
