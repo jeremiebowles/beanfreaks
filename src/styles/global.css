@@ -3,44 +3,224 @@
 @tailwind utilities;
 
 @layer base {
-  :root{
-    /* warm, botanical palette (inspired by beanfreaks.com’s clean, organic vibe) */
-    --bf-cream: 248 245 238; /* background */
-    --bf-ink:   15  23  42;  /* main text */
-    --bf-leaf:  76  120  69; /* primary accent */
-    --bf-moss:  39  62  43;  /* deep accent */
-    --bf-oat:   235 227 210; /* borders */
-    --bf-clay:  195 106  74; /* secondary accent */
+  :root {
+    --bf-radius: 18px;
   }
 
-  html { scroll-behavior: smooth; }
-  body { @apply bg-cream text-ink antialiased font-sans; }
-  a { @apply underline decoration-slate-300 underline-offset-4 hover:decoration-leaf; }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bf-cream text-bf-ink font-sans antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-bf-leaf/25;
+  }
 }
 
 @layer components {
-  .bf-container { @apply mx-auto max-w-6xl px-6; }
+  .bf-shell {
+    min-height: 100vh;
+    background:
+      radial-gradient(900px 600px at 15% 10%, rgba(47, 106, 79, 0.12), transparent 55%),
+      radial-gradient(700px 500px at 85% 20%, rgba(202, 162, 83, 0.12), transparent 55%),
+      radial-gradient(800px 600px at 50% 95%, rgba(127, 59, 70, 0.08), transparent 60%);
+  }
 
-  .bf-kicker { @apply text-xs font-semibold tracking-[0.22em] uppercase text-slate-600; }
+  .bf-container {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
 
-  .bf-h1 { @apply font-serif text-4xl sm:text-5xl tracking-tight; }
-  .bf-h2 { @apply font-serif text-2xl sm:text-3xl tracking-tight; }
+  .bf-header {
+    @apply sticky top-0 z-50 border-b border-bf-ink/10 bg-bf-cream/80 backdrop-blur;
+  }
 
-  .bf-card { @apply rounded-2xl border border-slate-200 bg-white shadow-soft; }
-  .bf-card-pad { @apply p-6 sm:p-8; }
+  .bf-logo {
+    @apply inline-flex items-center gap-2 no-underline;
+  }
 
-  .bf-btn { @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold no-underline transition; }
-  .bf-btn-primary { @apply bf-btn bg-leaf text-white hover:opacity-90; }
-  .bf-btn-ghost { @apply bf-btn bg-white text-ink border border-slate-200 hover:bg-slate-50; }
+  .bf-logo__mark {
+    @apply inline-block h-9 w-9 rounded-2xl;
+    background:
+      radial-gradient(12px 12px at 30% 30%, rgba(246, 242, 231, 0.9), transparent 60%),
+      linear-gradient(135deg, rgba(47, 106, 79, 0.95), rgba(62, 126, 92, 0.95));
+    box-shadow: 0 12px 30px rgba(29, 28, 24, 0.10);
+  }
 
-  .bf-chip { @apply inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700; }
+  .bf-logo__text {
+    @apply text-base font-semibold tracking-tight text-bf-ink;
+  }
 
-  .bf-grid { @apply grid gap-6 md:grid-cols-12; }
+  .bf-navlink {
+    @apply rounded-full px-3 py-2 text-sm font-medium text-bf-ink/80 hover:text-bf-ink hover:bg-white/55 transition no-underline;
+  }
 
-  /* “nice by default” content blocks without the typography plugin */
-  .bf-prose h1 { @apply bf-h2; }
-  .bf-prose h2 { @apply text-xl font-semibold mt-8; }
-  .bf-prose p { @apply mt-4 leading-relaxed text-slate-800; }
-  .bf-prose ul { @apply mt-4 list-disc pl-6 text-slate-800; }
-  .bf-prose li { @apply mt-2; }
+  .bf-navlink--mobile {
+    @apply w-full text-left;
+  }
+
+  .bf-popover {
+    @apply rounded-2xl border border-bf-ink/10 bg-white/80 backdrop-blur shadow-lg;
+  }
+
+  .bf-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold no-underline transition;
+  }
+
+  .bf-btn-primary {
+    @apply bg-bf-leaf text-bf-cream hover:bg-bf-moss;
+    box-shadow: 0 14px 40px rgba(47, 106, 79, 0.22);
+  }
+
+  .bf-btn-ghost {
+    @apply border border-bf-ink/15 bg-white/55 text-bf-ink hover:bg-white/75;
+  }
+
+  .bf-link {
+    @apply text-bf-leaf underline decoration-bf-leaf/30 underline-offset-4 hover:decoration-bf-leaf/60;
+  }
+
+  .bf-card {
+    @apply rounded-2xl border border-bf-ink/10 bg-white/65 backdrop-blur;
+    box-shadow: 0 18px 60px rgba(29, 28, 24, 0.08);
+  }
+
+  .bf-cardtitle {
+    @apply font-serif text-lg text-bf-ink;
+  }
+
+  .bf-badge {
+    @apply inline-flex items-center rounded-full border border-bf-ink/10 bg-bf-cream px-3 py-1 text-xs font-semibold text-bf-ink/80;
+  }
+
+  .bf-skip {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[999] focus:rounded-full focus:bg-bf-ink focus:text-bf-cream focus:px-4 focus:py-2;
+  }
+
+  .bf-main {
+    @apply pb-14;
+  }
+
+  .bf-footer {
+    @apply mt-16 border-t border-bf-ink/10 bg-bf-cream/60 backdrop-blur;
+  }
+
+  .bf-foot-title {
+    @apply text-sm font-semibold text-bf-ink;
+  }
+
+  .bf-section {
+    @apply py-12 md:py-16;
+  }
+
+  .bf-sectionhead {
+    @apply mb-6 md:mb-8;
+  }
+
+  .bf-h1 {
+    @apply text-4xl leading-[1.05] md:text-6xl;
+  }
+
+  .bf-h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  .bf-h3 {
+    @apply text-xl;
+  }
+
+  .bf-lede {
+    @apply text-base md:text-lg text-bf-ink/80;
+  }
+
+  .bf-sub {
+    @apply text-sm md:text-base text-bf-ink/75 mt-2 max-w-2xl;
+  }
+
+  .bf-pill {
+    @apply inline-flex items-center rounded-full border border-bf-ink/10 bg-white/55 px-3 py-1 text-xs font-semibold text-bf-ink/80;
+  }
+
+  .bf-hero {
+    @apply border-b border-bf-ink/10;
+  }
+
+  .bf-kickergrid {
+    @apply grid gap-3 sm:grid-cols-3;
+  }
+
+  .bf-kicker {
+    @apply rounded-2xl border border-bf-ink/10 bg-white/55 p-4;
+  }
+
+  .bf-kicker__title {
+    @apply text-xs font-semibold text-bf-ink/80;
+  }
+
+  .bf-kicker__body {
+    @apply text-sm text-bf-ink/75 mt-1;
+  }
+
+  .bf-thumb {
+    @apply h-16 w-16 rounded-2xl flex-none;
+    background:
+      radial-gradient(16px 16px at 35% 35%, rgba(246, 242, 231, 0.9), transparent 60%),
+      linear-gradient(135deg, rgba(202, 162, 83, 0.55), rgba(47, 106, 79, 0.45));
+    border: 1px solid rgba(29, 28, 24, 0.10);
+  }
+
+  .bf-heroart {
+    @apply relative;
+  }
+
+  .bf-heroart__card {
+    @apply bf-card overflow-hidden;
+  }
+
+  .bf-heroart__top {
+    @apply flex items-center gap-2 px-5 py-4 border-b border-bf-ink/10 bg-white/40;
+  }
+
+  .bf-dot {
+    @apply inline-block h-2.5 w-2.5 rounded-full;
+    background: rgba(29, 28, 24, 0.25);
+  }
+
+  .bf-heroart__body {
+    @apply p-6 md:p-8;
+    background:
+      radial-gradient(420px 280px at 30% 25%, rgba(47, 106, 79, 0.16), transparent 60%),
+      radial-gradient(420px 280px at 70% 35%, rgba(202, 162, 83, 0.16), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.10));
+  }
+
+  .bf-heroart__badge {
+    @apply inline-flex items-center rounded-full bg-bf-ink/90 text-bf-cream px-3 py-1 text-xs font-semibold;
+  }
+
+  .bf-heroart__lines {
+    @apply mt-6 space-y-3;
+  }
+
+  .bf-heroart__lines > div {
+    @apply h-3 rounded-full bg-bf-ink/10;
+  }
+
+  .bf-heroart__lines > div:nth-child(2) { width: 90%; }
+  .bf-heroart__lines > div:nth-child(3) { width: 80%; }
+  .bf-heroart__lines > div:nth-child(4) { width: 60%; }
+
+  .bf-heroart__leaf {
+    @apply mt-8 h-28 rounded-2xl border border-bf-ink/10;
+    background:
+      radial-gradient(60px 60px at 35% 40%, rgba(246, 242, 231, 0.9), transparent 60%),
+      linear-gradient(135deg, rgba(62, 126, 92, 0.85), rgba(47, 106, 79, 0.65));
+  }
 }
+

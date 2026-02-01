@@ -1,118 +1,258 @@
 ---
 import Base from "../layouts/base.astro";
-import { getCollection } from "astro:content";
 
-const stores = await getCollection("stores");
-const offers = await getCollection("offers");
-const guides = await getCollection("guides");
+const base = import.meta.env.BASE_URL;
 
-const topStores = [...stores].slice(0, 3);
-const topOffers = [...offers].slice(0, 3);
-const topGuides = [...guides].slice(0, 3);
+const maps = (q) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
-const baseUrl = import.meta.env.BASE_URL;
-const go = (p) => `${baseUrl}${String(p).replace(/^\/+/, "")}`;
+const stores = [
+  {
+    name: "Albany Road, Roath",
+    address: ["95 Albany Road", "Roath", "Cardiff", "CF24 3LP"],
+    hours: "Mon–Sat: 9:00–17:30",
+    phone: "02920 494902",
+    email: "roath@beanfreaks.com",
+    mapQuery: "Beanfreaks 95 Albany Road Cardiff CF24 3LP",
+    href: base + "roath/",
+  },
+  {
+    name: "Cowbridge Road East, Canton",
+    address: ["124 Cowbridge Road East", "Canton", "Cardiff", "CF11 9DX"],
+    hours: "Mon–Sat: 9:00–17:30",
+    phone: "02920 343226",
+    email: "canton@beanfreaks.com",
+    mapQuery: "Beanfreaks 124 Cowbridge Road East Cardiff CF11 9DX",
+    href: base + "canton/",
+  },
+  {
+    name: "Royal Arcade, Morgan Quarter",
+    address: ["8 Royal Arcade", "Morgan Quarter", "Cardiff", "CF10 1AE"],
+    hours: "Mon–Sat: 10:00–17:00",
+    phone: "02920 251671",
+    email: "cardiff@beanfreaks.com",
+    mapQuery: "Beanfreaks 8 Royal Arcade Cardiff CF10 1AE",
+    href: base + "royal/",
+  },
+];
+
+const features = [
+  {
+    title: "Organic",
+    body: "Quality food and drink that doesn’t cost the earth.",
+  },
+  {
+    title: "Snacks",
+    body: "Healthy treats that are better for you and better for your environment.",
+  },
+  {
+    title: "Local",
+    body: "Your local healthfood shop that’s been serving Cardiff for the last forty years.",
+  },
+  {
+    title: "Health",
+    body: "A large selection of traditional herbal and complementary medicines.",
+  },
+  {
+    title: "Vegan",
+    body: "Cardiff’s largest selection of vegan and alternative lifestyle food and drink.",
+  },
+  {
+    title: "Advice",
+    body: "Qualified expert advice from in-store nutritionists and herbalists.",
+  },
+];
+
+const favourites = [
+  { name: "Organic Aloe Vera", brand: "Pukka", blurb: "Cooling, soothing, and kind on digestion." },
+  { name: "Turmeric Root Tea", brand: "Heath & Heather", blurb: "A mild Ayurvedic brew for daily ritual." },
+  { name: "Chickpeas", brand: "Just Natural", blurb: "Budget-friendly staples for hummus, falafel, and more." },
+  { name: "Cherry Night", brand: "Viridian", blurb: "A pleasant-tasting nutritional nightcap." },
+];
+
+const posts = [
+  { title: "Organic September", date: "Sep 1, 2022", href: base + "posts/organic-september/" },
+  { title: "Superfood Trail Mix", date: "Aug 26, 2022", href: base + "posts/superfood-trail-mix/" },
+  { title: "Organic Fruit & Vegetables", date: "Jul 1, 2022", href: base + "posts/organic-fruit-and-vegetables/" },
+  { title: "National Peanut Butter Day", date: "Jun 22, 2022", href: base + "posts/national-peanut-butter-day/" },
+];
 ---
 
-<Base title="Beanfreaks — Health. Wellness. Organic.">
-  <section class="bf-card bf-card-pad">
-    <div class="bf-grid">
-      <div class="md:col-span-7">
-        <div class="bf-kicker">Your local health food store in Cardiff</div>
-        <h1 class="bf-h1 mt-3">Health. Wellness. Organic.</h1>
-        <p class="mt-4 text-slate-800 leading-relaxed">
-          Find your nearest branch and discover organic, eco-friendly and local produce —
-          a one-stop shop for healthier living.
-        </p>
+<Base
+  title="Beanfreaks | Health. Wellness. Organic."
+  description="Your local Cardiff health food store — Organic, snacks, vegan, advice, and more."
+>
+  <!-- HERO -->
+  <section class="bf-hero">
+    <div class="bf-container py-14 md:py-20">
+      <div class="grid gap-10 md:grid-cols-2 md:items-center">
+        <div class="space-y-6">
+          <p class="bf-pill">Cardiff • Health food • Since 1978</p>
+          <h1 class="bf-h1">Your local health food store in Cardiff.</h1>
+          <p class="bf-lede">
+            Health. Wellness. Organic. Discover something new — organic, eco-friendly and local produce,
+            plus expert advice when you want it.
+          </p>
 
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a class="bf-btn-primary" href={go("/stores/")}>Find a store</a>
-          <a class="bf-btn-ghost" href={go("/offers/")}>Deals & events</a>
+          <div class="flex flex-wrap gap-3">
+            <a class="bf-btn bf-btn-primary" href={base + "#stores"}>Find your nearest branch</a>
+            <a class="bf-btn bf-btn-ghost" href={base + "#favourites"}>Browse favourites</a>
+          </div>
+
+          <div class="bf-kickergrid">
+            <div class="bf-kicker">
+              <p class="bf-kicker__title">Store-first</p>
+              <p class="bf-kicker__body">Three branches, properly stocked.</p>
+            </div>
+            <div class="bf-kicker">
+              <p class="bf-kicker__title">Warm + clean</p>
+              <p class="bf-kicker__body">No neon, no nonsense.</p>
+            </div>
+            <div class="bf-kicker">
+              <p class="bf-kicker__title">Helpful humans</p>
+              <p class="bf-kicker__body">Advice you can actually use.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="bf-chip">Organic</span>
-          <span class="bf-chip">Snacks</span>
-          <span class="bf-chip">Local</span>
-          <span class="bf-chip">Health</span>
-          <span class="bf-chip">Vegan</span>
-          <span class="bf-chip">Advice</span>
-        </div>
-      </div>
-
-      <div class="md:col-span-5">
-        <div class="rounded-2xl border border-slate-200 bg-oat/40 p-6">
-          <div class="bf-kicker">Quick links</div>
-          <ul class="mt-3 space-y-2 text-slate-800">
-            <li><a href={go("/guides/")}>Guides</a></li>
-            <li><a href={go("/offers/")}>Offers</a></li>
-            <li><a href={go("/contact/")}>Contact</a></li>
-          </ul>
-          <div class="mt-5 text-xs text-slate-600">
-            Est. 1978 • Family-run • Cardiff
+        <div class="bf-heroart" aria-hidden="true">
+          <div class="bf-heroart__card">
+            <div class="bf-heroart__top">
+              <span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span>
+            </div>
+            <div class="bf-heroart__body">
+              <div class="bf-heroart__badge">Organic • Vegan • Local</div>
+              <div class="bf-heroart__lines">
+                <div></div><div></div><div></div><div></div>
+              </div>
+              <div class="bf-heroart__leaf"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="mt-10">
-    <div class="flex items-end justify-between gap-6">
-      <h2 class="bf-h2">Find your nearest branch</h2>
-      <a class="text-sm" href={go("/stores/")}>View all</a>
-    </div>
+  <!-- WELCOME / FEATURES -->
+  <section class="bf-section">
+    <div class="bf-container">
+      <div class="bf-sectionhead">
+        <h2 class="bf-h2">Welcome to Beanfreaks</h2>
+        <p class="bf-sub">
+          Health. Wellness. Organic. Your local Cardiff healthfood store.
+        </p>
+      </div>
 
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-      {topStores.map((s) => (
-        <a class="bf-card bf-card-pad no-underline hover:-translate-y-0.5 transition" href={go(`/stores/${s.slug}/`)}>
-          <div class="bf-kicker">Store</div>
-          <div class="mt-2 text-xl font-semibold">{s.data?.title ?? s.slug}</div>
-          <p class="mt-3 text-slate-700 text-sm leading-relaxed">
-            {s.data?.summary ?? "Opening hours, contact details, and where to find us."}
-          </p>
-          <div class="mt-4 text-sm font-semibold text-leaf">Open details →</div>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="mt-10">
-    <div class="flex items-end justify-between gap-6">
-      <h2 class="bf-h2">Deals & events</h2>
-      <a class="text-sm" href={go("/offers/")}>View all</a>
-    </div>
-
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-      {topOffers.map((o) => (
-        <a class="bf-card bf-card-pad no-underline hover:-translate-y-0.5 transition" href={go(`/offers/${o.slug}/`)}>
-          <div class="bf-kicker">Offer</div>
-          <div class="mt-2 text-lg font-semibold">{o.data?.title ?? o.slug}</div>
-          <p class="mt-3 text-slate-700 text-sm leading-relaxed">
-            {o.data?.summary ?? "Offers and promotions coming up in your local health food store."}
-          </p>
-          <div class="mt-4 text-sm font-semibold text-leaf">Read more →</div>
-        </a>
-      ))}
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {features.map((f) => (
+          <div class="bf-card p-5">
+            <p class="bf-cardtitle">{f.title}</p>
+            <p class="text-sm text-bf-ink/80 mt-2">{f.body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="mt-10">
-    <div class="flex items-end justify-between gap-6">
-      <h2 class="bf-h2">Guides</h2>
-      <a class="text-sm" href={go("/guides/")}>View all</a>
-    </div>
+  <!-- STORES -->
+  <section class="bf-section" id="stores">
+    <div class="bf-container">
+      <div class="bf-sectionhead">
+        <h2 class="bf-h2">Find your nearest store</h2>
+        <p class="bf-sub">Opening hours, directions, and the fastest way to get the good stuff.</p>
+      </div>
 
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-      {topGuides.map((g) => (
-        <a class="bf-card bf-card-pad no-underline hover:-translate-y-0.5 transition" href={go(`/guides/${g.slug}/`)}>
-          <div class="bf-kicker">Guide</div>
-          <div class="mt-2 text-lg font-semibold">{g.data?.title ?? g.slug}</div>
-          <p class="mt-3 text-slate-700 text-sm leading-relaxed">
-            {g.data?.summary ?? "Simple, practical advice — no jargon, no lectures."}
+      <div class="grid gap-4 lg:grid-cols-3">
+        {stores.map((s) => (
+          <article class="bf-card p-5 flex flex-col">
+            <div class="space-y-2">
+              <h3 class="bf-h3">{s.name}</h3>
+              <p class="text-sm text-bf-ink/80">
+                {s.address.join(", ")}
+              </p>
+              <p class="text-sm">
+                <span class="bf-badge">{s.hours}</span>
+              </p>
+            </div>
+
+            <div class="mt-4 text-sm text-bf-ink/80 space-y-1">
+              <p><span class="font-semibold">Phone:</span> {s.phone}</p>
+              <p>
+                <span class="font-semibold">Email:</span>{" "}
+                <a class="bf-link" href={"mailto:" + s.email}>{s.email}</a>
+              </p>
+            </div>
+
+            <div class="mt-5 flex gap-2 mt-auto">
+              <a class="bf-btn bf-btn-primary" href={s.href}>Store page</a>
+              <a class="bf-btn bf-btn-ghost" href={maps(s.mapQuery)} target="_blank" rel="noreferrer">
+                Directions
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAVOURITES -->
+  <section class="bf-section" id="favourites">
+    <div class="bf-container">
+      <div class="bf-sectionhead">
+        <h2 class="bf-h2">What we like</h2>
+        <p class="bf-sub">A few favourites we’d happily nudge you towards.</p>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        {favourites.map((p) => (
+          <div class="bf-card p-5 flex gap-4">
+            <div class="bf-thumb" aria-hidden="true"></div>
+            <div class="min-w-0">
+              <p class="bf-cardtitle">{p.name}</p>
+              <p class="text-xs text-bf-ink/60 mt-1">{p.brand}</p>
+              <p class="text-sm text-bf-ink/80 mt-2">{p.blurb}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DEALS / EVENTS -->
+  <section class="bf-section" id="deals">
+    <div class="bf-container">
+      <div class="bf-sectionhead">
+        <h2 class="bf-h2">Deals and events</h2>
+        <p class="bf-sub">Offers and promotions coming up in your local store.</p>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        {posts.map((p) => (
+          <article class="bf-card p-5">
+            <div class="flex items-center justify-between gap-3">
+              <p class="bf-cardtitle">{p.title}</p>
+              <span class="bf-badge">{p.date}</span>
+            </div>
+            <p class="text-sm text-bf-ink/80 mt-2">
+              Short, sweet, and actually useful — click through for the full post.
+            </p>
+            <div class="mt-4">
+              <a class="bf-btn bf-btn-ghost" href={p.href}>Read more</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-10 bf-card p-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="bf-cardtitle">Need help choosing something?</p>
+          <p class="text-sm text-bf-ink/80 mt-1">
+            General enquiries: <a class="bf-link" href="mailto:kevin@beanfreaks.com">kevin@beanfreaks.com</a>
           </p>
-          <div class="mt-4 text-sm font-semibold text-leaf">Open →</div>
-        </a>
-      ))}
+        </div>
+        <a class="bf-btn bf-btn-primary" href={base + "contact/"}>Contact details</a>
+      </div>
     </div>
   </section>
 </Base>
+
