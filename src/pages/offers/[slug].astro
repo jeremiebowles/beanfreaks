@@ -1,5 +1,7 @@
 ---
+import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "../../lib/withBase";
 
 export async function getStaticPaths() {
   const offers = await getCollection("offers");
@@ -8,10 +10,22 @@ export async function getStaticPaths() {
 
 const offers = await getCollection("offers");
 const offer = offers.find((o) => o.slug === Astro.params.slug);
-if (!offer) throw new Error(`Offer not found: ${Astro.params.slug}`);
+if (!offer) {
+  throw new Error(`Offer not found: ${Astro.params.slug}`);
+}
 
 const { Content } = await offer.render();
 ---
 
-<Content />
+<Base title={`${offer.data.title} — Offers — Beanfreaks`} description={offer.data.summary}>
+  <a class="text-sm text-slate-600 hover:underline" href={withBase("offers/")}>← All offers</a>
+  <h1 class="mt-2 text-3xl font-semibold tracking-tight">{offer.data.title}</h1>
+  <p class="mt-2 text-sm text-slate-600">
+    {offer.data.date.toLocaleDateString("en-GB")}
+    {offer.data.expires ? ` · Expires ${offer.data.expires.toLocaleDateString("en-GB")}` : ""}
+  </p>
 
+  <article class="prose prose-slate mt-6 max-w-none">
+    <Content />
+  </article>
+</Base>

@@ -1,21 +1,28 @@
 ---
+import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "../../lib/withBase";
 
 export async function getStaticPaths() {
   const guides = await getCollection("guides");
-  return guides.map((g) => ({
-    params: { slug: g.slug },
-  }));
+  return guides.map((g) => ({ params: { slug: g.slug } }));
 }
 
-const { slug } = Astro.params;
-const guide = (await getCollection("guides")).find((g) => g.slug === slug);
-if (!guide) throw new Error(`Guide not found: ${slug}`);
+const guides = await getCollection("guides");
+const guide = guides.find((g) => g.slug === Astro.params.slug);
+if (!guide) {
+  throw new Error(`Guide not found: ${Astro.params.slug}`);
+}
 
 const { Content } = await guide.render();
 ---
 
-<article>
-  <Content />
-</article>
+<Base title={`${guide.data.title} — Guides — Beanfreaks`} description={guide.data.summary}>
+  <a class="text-sm text-slate-600 hover:underline" href={withBase("guides/")}>← All guides</a>
+  <h1 class="mt-2 text-3xl font-semibold tracking-tight">{guide.data.title}</h1>
+  <p class="mt-2 text-sm text-slate-600">{guide.data.date.toLocaleDateString("en-GB")}</p>
 
+  <article class="prose prose-slate mt-6 max-w-none">
+    <Content />
+  </article>
+</Base>

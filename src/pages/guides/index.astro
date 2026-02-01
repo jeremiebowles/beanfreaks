@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "../../lib/withBase";
 
 const guides = (await getCollection("guides")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
@@ -10,7 +11,7 @@ const guides = (await getCollection("guides")).sort((a, b) => b.data.date.getTim
 
   <div class="mt-8 grid gap-4">
     {guides.map((g) => (
-      <a class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50" href={`/guides/${g.slug}/`}>
+      <a class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50" href={withBase(`guides/${g.slug}/`)}>
         <div class="flex flex-wrap items-baseline justify-between gap-3">
           <h2 class="text-lg font-semibold tracking-tight">{g.data.title}</h2>
           <p class="text-sm text-slate-600">{g.data.date.toLocaleDateString("en-GB")}</p>

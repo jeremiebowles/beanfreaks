@@ -1,9 +1,10 @@
 ---
 import Badge from "./Badge.astro";
+import { withBase } from "../lib/withBase";
 
 const { store } = Astro.props;
 ---
-<a href={`${import.meta.env.BASE_URL}stores/${store.slug}/`} class="group block rounded-2xl border border-slate-200 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow">
+<a href={withBase(`stores/${store.slug}/`)} class="group block rounded-2xl border border-slate-200 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow">
   <div class="flex items-start justify-between gap-3">
     <div>
       <h3 class="text-lg font-semibold tracking-tight">{store.data.name}</h3>

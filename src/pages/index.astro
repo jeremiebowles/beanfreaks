@@ -2,8 +2,8 @@
 import Base from "../layouts/Base.astro";
 import StoreCard from "../components/StoreCard.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "../lib/withBase";
 
-const base = import.meta.env.BASE_URL;
 const stores = (await getCollection("stores")).sort((a, b) => a.data.name.localeCompare(b.data.name));
 const offers = (await getCollection("offers")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 const featuredOffer = offers.find(o => o.data.featured) ?? offers[0];
@@ -21,13 +21,13 @@ const featuredOffer = offers.find(o => o.data.featured) ?? offers[0];
         Find your nearest store, see what’s on, and ask a question. Simple.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a class="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90" href={`${base}stores/`}>
+        <a class="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:opacity-90" href={withBase("stores/")}>
           Find a store
         </a>
-        <a class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-50" href={`${base}offers/`}>
+        <a class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-50" href={withBase("offers/")}>
           What’s on
         </a>
-        <a class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-50" href={`${base}contact/`}>
+        <a class="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold hover:bg-slate-50" href={withBase("contact/")}>
           Ask us
         </a>
       </div>
@@ -38,11 +38,11 @@ const featuredOffer = offers.find(o => o.data.featured) ?? offers[0];
         <div class="rounded-2xl border border-slate-200 p-5 shadow-sm">
           <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Featured</p>
           <h2 class="mt-2 text-xl font-semibold tracking-tight">
-            <a class="hover:underline" href={`/offers/${featuredOffer.slug}/`}>{featuredOffer.data.title}</a>
+            <a class="hover:underline" href={withBase(`offers/${featuredOffer.slug}/`)}>{featuredOffer.data.title}</a>
           </h2>
           <p class="mt-2 text-sm text-slate-700">{featuredOffer.data.summary}</p>
           <p class="mt-4 text-sm">
-            <a class="font-semibold hover:underline" href={`/offers/${featuredOffer.slug}/`}>Read more →</a>
+            <a class="font-semibold hover:underline" href={withBase(`offers/${featuredOffer.slug}/`)}>Read more →</a>
           </p>
         </div>
       )}
@@ -64,7 +64,7 @@ const featuredOffer = offers.find(o => o.data.featured) ?? offers[0];
       Short, sane articles — written like a human, not like a supplement bottle.
     </p>
     <p class="mt-4">
-      <a class="font-semibold hover:underline" href="/guides/">Browse guides →</a>
+      <a class="font-semibold hover:underline" href={withBase("guides/")}>Browse guides →</a>
     </p>
   </section>
 </Base>

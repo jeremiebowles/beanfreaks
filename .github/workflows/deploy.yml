@@ -25,10 +25,11 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      # Use npm install (not npm ci) so this works even if package-lock isn't present or is out of sync.
+      - run: npm install --no-audit --no-fund
       - run: npm run build
 
-      # Disable Jekyll so folders like _astro don't get dropped
+      # Disable Jekyll so GitHub Pages doesn't treat folders like "_astro" specially.
       - run: touch dist/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
