@@ -1,0 +1,11 @@
+---
+const base = import.meta.env.BASE_URL;
+const go = (p) => `${base}${String(p).replace(/^\/+/, "")}`;
+---
+<nav class="p-4 flex flex-wrap gap-4 border-b">
+  <a class="underline" href={go("/")}>Home</a>
+  <a class="underline" href={go("/stores/")}>Stores</a>
+  <a class="underline" href={go("/offers/")}>Offers</a>
+  <a class="underline" href={go("/guides/")}>Guides</a>
+  <a class="underline" href={go("/contact/")}>Contact</a>
+</nav>
