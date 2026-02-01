@@ -9,16 +9,26 @@ const { title = "Beanfreaks" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
 
-    <!-- Tailwind output from "prebuild" -> public/tw.css -> dist/tw.css -->
     <link rel="stylesheet" href={import.meta.env.BASE_URL + "tw.css"} />
-
-    <!-- Makes relative URLs behave under /beanfreaks/ -->
     <base href={import.meta.env.BASE_URL} />
   </head>
-  <body class="min-h-screen bg-white text-slate-900">
-    <Nav />
-    <main class="p-6">
-      <slot />
+
+  <body class="min-h-screen bg-slate-900 text-white">
+    <header class="border-b border-white/10 bg-slate-900/80 backdrop-blur">
+      <div class="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
+        <a href={import.meta.env.BASE_URL} class="text-lg font-semibold tracking-tight">
+          Beanfreaks
+        </a>
+        <div class="[&_a]:text-slate-200 [&_a]:no-underline [&_a:hover]:text-white [&_a:hover]:underline">
+          <Nav />
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-6 py-10">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-sm">
+        <slot />
+      </div>
     </main>
   </body>
 </html>
