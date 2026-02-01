@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "prebuild": "tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./public/tw.css --minify"
   },
   "dependencies": {
     "astro": "^5.0.0",

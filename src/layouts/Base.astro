@@ -1,0 +1,25 @@
+---
+import Nav from "../components/Nav.astro";
+const { title = "Beanfreaks" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
+    <!-- Deterministic CSS file (no hashed asset injection) -->
+    <link rel="stylesheet" href={import.meta.env.BASE_URL + "tw.css"} />
+
+    <!-- Helps relative URLs behave under /beanfreaks/ -->
+    <base href={import.meta.env.BASE_URL} />
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+    <Nav />
+    <main class="p-6">
+      <slot />
+    </main>
+  </body>
+</html>
