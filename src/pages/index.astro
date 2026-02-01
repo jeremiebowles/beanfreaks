@@ -4,11 +4,14 @@ import Base from "../layouts/base.astro";
 const base = import.meta.env.BASE_URL;
 
 const img = {
-  hero: base + "img/hero.svg",
-  roath: base + "img/store-roath.svg",
-  canton: base + "img/store-canton.svg",
-  royal: base + "img/store-royal.svg",
-  product: base + "img/product.svg",
+  hero: base + "img/hero.jpg",
+  roath: base + "img/store-roath.jpg",
+  canton: base + "img/store-canton.jpg",
+  royal: base + "img/store-royal.jpg",
+  aloe: base + "img/product-aloe.jpg",
+  turmeric: base + "img/product-turmeric.jpg",
+  chickpeas: base + "img/product-chickpeas.jpg",
+  vitamins: base + "img/product-vitamins.jpg",
 };
 
 const maps = (q) =>
@@ -57,10 +60,10 @@ const features = [
 ];
 
 const favourites = [
-  { name: "Organic Aloe Vera", brand: "Pukka", blurb: "Cooling, soothing, and kind on digestion." },
-  { name: "Turmeric Root Tea", brand: "Heath & Heather", blurb: "A mild Ayurvedic brew for daily ritual." },
-  { name: "Chickpeas", brand: "Just Natural", blurb: "Budget-friendly staples for hummus, falafel, and more." },
-  { name: "Cherry Night", brand: "Viridian", blurb: "A pleasant-tasting nutritional nightcap." },
+  { name: "Organic Aloe Vera", brand: "Pukka", blurb: "Cooling, soothing, and kind on digestion.", img: img.aloe, alt: "Aloe vera plant" },
+  { name: "Turmeric Root Tea", brand: "Heath & Heather", blurb: "A mild Ayurvedic brew for daily ritual.", img: img.turmeric, alt: "Turmeric and spices" },
+  { name: "Chickpeas", brand: "Just Natural", blurb: "Budget-friendly staples for hummus, falafel, and more.", img: img.chickpeas, alt: "Chickpeas in a bowl" },
+  { name: "Cherry Night", brand: "Viridian", blurb: "A pleasant-tasting nutritional nightcap.", img: img.vitamins, alt: "Supplement bottles" },
 ];
 
 const posts = [
@@ -110,7 +113,7 @@ const posts = [
         <div class="bf-card overflow-hidden">
           <img
             src={img.hero}
-            alt="Beanfreaks placeholder hero image"
+            alt="Beanfreaks hero"
             class="w-full h-72 md:h-96 object-cover"
             loading="eager"
             decoding="async"
@@ -150,7 +153,7 @@ const posts = [
           <article class="bf-card p-5 flex flex-col gap-4">
             <img
               src={s.hero}
-              alt={`${s.name} placeholder image`}
+              alt={`${s.name} store`}
               class="bf-img h-44"
               loading="lazy"
               decoding="async"
@@ -193,8 +196,8 @@ const posts = [
         {favourites.map((p) => (
           <div class="bf-card p-5 flex gap-4">
             <img
-              src={img.product}
-              alt="Placeholder product image"
+              src={p.img}
+              alt={p.alt}
               class="h-16 w-16 rounded-2xl border border-bf-ink/10 bg-white/60 object-cover"
               loading="lazy"
               decoding="async"

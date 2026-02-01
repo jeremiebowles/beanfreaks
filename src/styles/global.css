@@ -70,4 +70,6 @@
   .bf-kicker__body { @apply text-sm text-bf-ink/75 mt-1; }
 
   .bf-img { @apply w-full object-cover rounded-2xl border border-bf-ink/10 bg-white/50; }
+
+  .bf-mark { @apply inline-flex items-center justify-center rounded-2xl border border-bf-ink/10 bg-white/55 p-2 hover:bg-white/75 transition; }
 }
