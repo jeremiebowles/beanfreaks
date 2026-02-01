@@ -4,10 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./dist/tw.css --content \"./dist/**/*.html\" --minify",
     "preview": "astro preview",
-    "check": "astro check",
-    "prebuild": "tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./public/tw.css --minify"
+    "check": "astro check"
   },
   "dependencies": {
     "astro": "^5.0.0",
