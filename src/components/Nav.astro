@@ -17,23 +17,29 @@ const links = [
       <span class="bf-logo__text">Beanfreaks</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
-      {links.map((l) => (
-        <a class="bf-navlink" href={l.href}>{l.label}</a>
-      ))}
-      <a class="bf-btn bf-btn-primary ml-2" href={base + "#stores"}>Find a store</a>
-    </nav>
+    <div class="flex items-center gap-2">
+      <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
+        {links.map((l) => (
+          <a class="bf-navlink" href={l.href}>{l.label}</a>
+        ))}
+        <a class="bf-btn bf-btn-primary ml-2" href={base + "#stores"}>Find a store</a>
+      </nav>
 
-    <details class="md:hidden relative">
-      <summary class="bf-btn bf-btn-ghost cursor-pointer select-none">Menu</summary>
-      <div class="absolute right-0 mt-2 w-60 bf-popover">
-        <div class="p-2 grid gap-1">
-          {links.map((l) => (
-            <a class="bf-navlink bf-navlink--mobile" href={l.href}>{l.label}</a>
-          ))}
-          <a class="bf-btn bf-btn-primary mt-2" href={base + "#stores"}>Find a store</a>
+      <a class="bf-mark" href={base} aria-label="Home">
+        <img src={base + "img/mark.svg"} alt="" class="h-7 w-7" />
+      </a>
+
+      <details class="md:hidden relative">
+        <summary class="bf-btn bf-btn-ghost cursor-pointer select-none">Menu</summary>
+        <div class="absolute right-0 mt-2 w-60 bf-popover">
+          <div class="p-2 grid gap-1">
+            {links.map((l) => (
+              <a class="bf-navlink bf-navlink--mobile" href={l.href}>{l.label}</a>
+            ))}
+            <a class="bf-btn bf-btn-primary mt-2" href={base + "#stores"}>Find a store</a>
+          </div>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
 </header>
