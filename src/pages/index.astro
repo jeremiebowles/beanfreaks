@@ -3,6 +3,14 @@ import Base from "../layouts/base.astro";
 
 const base = import.meta.env.BASE_URL;
 
+const img = {
+  hero: base + "img/hero.svg",
+  roath: base + "img/store-roath.svg",
+  canton: base + "img/store-canton.svg",
+  royal: base + "img/store-royal.svg",
+  product: base + "img/product.svg",
+};
+
 const maps = (q) =>
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
@@ -15,6 +23,7 @@ const stores = [
     email: "roath@beanfreaks.com",
     mapQuery: "Beanfreaks 95 Albany Road Cardiff CF24 3LP",
     href: base + "roath/",
+    hero: img.roath,
   },
   {
     name: "Cowbridge Road East, Canton",
@@ -24,6 +33,7 @@ const stores = [
     email: "canton@beanfreaks.com",
     mapQuery: "Beanfreaks 124 Cowbridge Road East Cardiff CF11 9DX",
     href: base + "canton/",
+    hero: img.canton,
   },
   {
     name: "Royal Arcade, Morgan Quarter",
@@ -33,34 +43,17 @@ const stores = [
     email: "cardiff@beanfreaks.com",
     mapQuery: "Beanfreaks 8 Royal Arcade Cardiff CF10 1AE",
     href: base + "royal/",
+    hero: img.royal,
   },
 ];
 
 const features = [
-  {
-    title: "Organic",
-    body: "Quality food and drink that doesn’t cost the earth.",
-  },
-  {
-    title: "Snacks",
-    body: "Healthy treats that are better for you and better for your environment.",
-  },
-  {
-    title: "Local",
-    body: "Your local healthfood shop that’s been serving Cardiff for the last forty years.",
-  },
-  {
-    title: "Health",
-    body: "A large selection of traditional herbal and complementary medicines.",
-  },
-  {
-    title: "Vegan",
-    body: "Cardiff’s largest selection of vegan and alternative lifestyle food and drink.",
-  },
-  {
-    title: "Advice",
-    body: "Qualified expert advice from in-store nutritionists and herbalists.",
-  },
+  { title: "Organic", body: "Quality food and drink that doesn’t cost the earth." },
+  { title: "Snacks", body: "Healthy treats that are better for you and better for your environment." },
+  { title: "Local", body: "Your local healthfood shop that’s been serving Cardiff for the last forty years." },
+  { title: "Health", body: "A large selection of traditional herbal and complementary medicines." },
+  { title: "Vegan", body: "Cardiff’s largest selection of vegan and alternative lifestyle food and drink." },
+  { title: "Advice", body: "Qualified expert advice from in-store nutritionists and herbalists." },
 ];
 
 const favourites = [
@@ -71,10 +64,10 @@ const favourites = [
 ];
 
 const posts = [
-  { title: "Organic September", date: "Sep 1, 2022", href: base + "posts/organic-september/" },
-  { title: "Superfood Trail Mix", date: "Aug 26, 2022", href: base + "posts/superfood-trail-mix/" },
-  { title: "Organic Fruit & Vegetables", date: "Jul 1, 2022", href: base + "posts/organic-fruit-and-vegetables/" },
-  { title: "National Peanut Butter Day", date: "Jun 22, 2022", href: base + "posts/national-peanut-butter-day/" },
+  { title: "Organic September", date: "Sep 1, 2022", slug: "organic-september" },
+  { title: "Superfood Trail Mix", date: "Aug 26, 2022", slug: "superfood-trail-mix" },
+  { title: "Organic Fruit & Vegetables", date: "Jul 1, 2022", slug: "organic-fruit-and-vegetables" },
+  { title: "National Peanut Butter Day", date: "Jun 22, 2022", slug: "national-peanut-butter-day" },
 ];
 ---
 
@@ -82,7 +75,6 @@ const posts = [
   title="Beanfreaks | Health. Wellness. Organic."
   description="Your local Cardiff health food store — Organic, snacks, vegan, advice, and more."
 >
-  <!-- HERO -->
   <section class="bf-hero">
     <div class="bf-container py-14 md:py-20">
       <div class="grid gap-10 md:grid-cols-2 md:items-center">
@@ -115,32 +107,24 @@ const posts = [
           </div>
         </div>
 
-        <div class="bf-heroart" aria-hidden="true">
-          <div class="bf-heroart__card">
-            <div class="bf-heroart__top">
-              <span class="bf-dot"></span><span class="bf-dot"></span><span class="bf-dot"></span>
-            </div>
-            <div class="bf-heroart__body">
-              <div class="bf-heroart__badge">Organic • Vegan • Local</div>
-              <div class="bf-heroart__lines">
-                <div></div><div></div><div></div><div></div>
-              </div>
-              <div class="bf-heroart__leaf"></div>
-            </div>
-          </div>
+        <div class="bf-card overflow-hidden">
+          <img
+            src={img.hero}
+            alt="Beanfreaks placeholder hero image"
+            class="w-full h-72 md:h-96 object-cover"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WELCOME / FEATURES -->
   <section class="bf-section">
     <div class="bf-container">
       <div class="bf-sectionhead">
         <h2 class="bf-h2">Welcome to Beanfreaks</h2>
-        <p class="bf-sub">
-          Health. Wellness. Organic. Your local Cardiff healthfood store.
-        </p>
+        <p class="bf-sub">Health. Wellness. Organic. Your local Cardiff healthfood store.</p>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -154,7 +138,6 @@ const posts = [
     </div>
   </section>
 
-  <!-- STORES -->
   <section class="bf-section" id="stores">
     <div class="bf-container">
       <div class="bf-sectionhead">
@@ -164,18 +147,22 @@ const posts = [
 
       <div class="grid gap-4 lg:grid-cols-3">
         {stores.map((s) => (
-          <article class="bf-card p-5 flex flex-col">
+          <article class="bf-card p-5 flex flex-col gap-4">
+            <img
+              src={s.hero}
+              alt={`${s.name} placeholder image`}
+              class="bf-img h-44"
+              loading="lazy"
+              decoding="async"
+            />
+
             <div class="space-y-2">
               <h3 class="bf-h3">{s.name}</h3>
-              <p class="text-sm text-bf-ink/80">
-                {s.address.join(", ")}
-              </p>
-              <p class="text-sm">
-                <span class="bf-badge">{s.hours}</span>
-              </p>
+              <p class="text-sm text-bf-ink/80">{s.address.join(", ")}</p>
+              <p class="text-sm"><span class="bf-badge">{s.hours}</span></p>
             </div>
 
-            <div class="mt-4 text-sm text-bf-ink/80 space-y-1">
+            <div class="text-sm text-bf-ink/80 space-y-1">
               <p><span class="font-semibold">Phone:</span> {s.phone}</p>
               <p>
                 <span class="font-semibold">Email:</span>{" "}
@@ -183,7 +170,7 @@ const posts = [
               </p>
             </div>
 
-            <div class="mt-5 flex gap-2 mt-auto">
+            <div class="flex gap-2 mt-auto">
               <a class="bf-btn bf-btn-primary" href={s.href}>Store page</a>
               <a class="bf-btn bf-btn-ghost" href={maps(s.mapQuery)} target="_blank" rel="noreferrer">
                 Directions
@@ -195,7 +182,6 @@ const posts = [
     </div>
   </section>
 
-  <!-- FAVOURITES -->
   <section class="bf-section" id="favourites">
     <div class="bf-container">
       <div class="bf-sectionhead">
@@ -206,7 +192,13 @@ const posts = [
       <div class="grid gap-4 md:grid-cols-2">
         {favourites.map((p) => (
           <div class="bf-card p-5 flex gap-4">
-            <div class="bf-thumb" aria-hidden="true"></div>
+            <img
+              src={img.product}
+              alt="Placeholder product image"
+              class="h-16 w-16 rounded-2xl border border-bf-ink/10 bg-white/60 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div class="min-w-0">
               <p class="bf-cardtitle">{p.name}</p>
               <p class="text-xs text-bf-ink/60 mt-1">{p.brand}</p>
@@ -218,7 +210,6 @@ const posts = [
     </div>
   </section>
 
-  <!-- DEALS / EVENTS -->
   <section class="bf-section" id="deals">
     <div class="bf-container">
       <div class="bf-sectionhead">
@@ -237,7 +228,7 @@ const posts = [
               Short, sweet, and actually useful — click through for the full post.
             </p>
             <div class="mt-4">
-              <a class="bf-btn bf-btn-ghost" href={p.href}>Read more</a>
+              <a class="bf-btn bf-btn-ghost" href={base + "posts/" + p.slug + "/"}>Read more</a>
             </div>
           </article>
         ))}
@@ -255,4 +246,3 @@ const posts = [
     </div>
   </section>
 </Base>
-

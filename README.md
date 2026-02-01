@@ -1,21 +1,22 @@
-# Beanfreaks Astro Redesign (starter)
+# Beanfreaks (Astro + deterministic Tailwind)
 
-This is a starter for a fast, content-first site:
-- stores as content
-- offers
-- guides
-- contact page
-- Cloudflare Pages `_redirects` included
+Project Pages under `/beanfreaks/` with deterministic CSS output:
 
-## Local dev
-1) Install Node.js (LTS)
-2) Install deps: `npm install`
-3) Run: `npm run dev`
+- Build output: `dist/`
+- CSS output: `dist/tw.css`
+- Layout links CSS via: `import.meta.env.BASE_URL + "tw.css"`
 
 ## Build
-`npm run build` (output is `dist/`)
+```bash
+npm ci
+npm run build
+```
 
-## Deploy to Cloudflare Pages
-Framework preset: Astro
-Build command: `npm run build`
-Build output directory: `dist`
+## Local preview with the same base path
+```bash
+rm -rf dist/beanfreaks
+mkdir -p dist/beanfreaks
+rsync -a --delete --exclude 'beanfreaks/' dist/ dist/beanfreaks/
+python3 -m http.server -d dist 4321
+# open http://localhost:4321/beanfreaks/
+```

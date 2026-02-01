@@ -1,0 +1,36 @@
+---
+import Base from "../../layouts/base.astro";
+const base = import.meta.env.BASE_URL;
+
+const maps = (q) =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+---
+
+<Base title="Royal Arcade — Beanfreaks" description="Royal Arcade — opening hours, contact, directions.">
+  <section class="bf-section">
+    <div class="bf-container space-y-6">
+      <p class="bf-pill">Store</p>
+      <h1 class="bf-h1">Royal Arcade</h1>
+
+      <div class="bf-card overflow-hidden">
+        <img src={base + "img/store-royal.svg"} alt="Royal Arcade placeholder store image" class="w-full h-72 object-cover" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="bf-card p-6 space-y-2">
+        <p class="bf-cardtitle">Royal Arcade, Morgan Quarter</p>
+        <p class="text-sm text-bf-ink/80">8 Royal Arcade, Morgan Quarter, Cardiff, CF10 1AE</p>
+        <p class="text-sm"><span class="bf-badge">Mon–Sat: 10:00–17:00</span></p>
+
+        <div class="pt-2 space-y-1 text-sm text-bf-ink/80">
+          <p><span class="font-semibold">Phone:</span> 02920 251671</p>
+          <p><span class="font-semibold">Email:</span> <a class="bf-link" href="mailto:cardiff@beanfreaks.com">cardiff@beanfreaks.com</a></p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap gap-2">
+          <a class="bf-btn bf-btn-primary" href={base + "#stores"}>Back to stores</a>
+          <a class="bf-btn bf-btn-ghost" target="_blank" rel="noreferrer" href={maps("Beanfreaks 8 Royal Arcade Cardiff CF10 1AE")}>Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
