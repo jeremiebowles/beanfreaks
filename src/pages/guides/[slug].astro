@@ -1,28 +1,22 @@
 ---
 import Base from "../../layouts/base.astro";
 import { getCollection } from "astro:content";
-import { withBase } from "../../lib/withBase";
 
 export async function getStaticPaths() {
   const guides = await getCollection("guides");
-  return guides.map((g) => ({ params: { slug: g.slug } }));
+  return guides.map((guide) => ({
+    params: { slug: guide.slug },
+    props: { guide },
+  }));
 }
 
-const guides = await getCollection("guides");
-const guide = guides.find((g) => g.slug === Astro.params.slug);
-if (!guide) {
-  throw new Error(`Guide not found: ${Astro.params.slug}`);
-}
-
+const { guide } = Astro.props;
 const { Content } = await guide.render();
 ---
-
-<Base title={`${guide.data.title} — Guides — Beanfreaks`} description={guide.data.summary}>
-  <a class="text-sm text-slate-600 hover:underline" href={withBase("guides/")}>← All guides</a>
-  <h1 class="mt-2 text-3xl font-semibold tracking-tight">{guide.data.title}</h1>
-  <p class="mt-2 text-sm text-slate-600">{guide.data.date.toLocaleDateString("en-GB")}</p>
-
-  <article class="prose prose-slate mt-6 max-w-none">
+<Base title={`${guide.data?.title ?? guide.slug} — Guides — Beanfreaks`}>
+  <div class="bf-kicker">Guide</div>
+  <h1 class="bf-h1 mt-3">{guide.data?.title ?? guide.slug}</h1>
+  <article class="bf-prose mt-6">
     <Content />
   </article>
 </Base>

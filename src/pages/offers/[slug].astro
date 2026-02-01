@@ -1,31 +1,22 @@
 ---
 import Base from "../../layouts/base.astro";
 import { getCollection } from "astro:content";
-import { withBase } from "../../lib/withBase";
 
 export async function getStaticPaths() {
   const offers = await getCollection("offers");
-  return offers.map((o) => ({ params: { slug: o.slug } }));
+  return offers.map((offer) => ({
+    params: { slug: offer.slug },
+    props: { offer },
+  }));
 }
 
-const offers = await getCollection("offers");
-const offer = offers.find((o) => o.slug === Astro.params.slug);
-if (!offer) {
-  throw new Error(`Offer not found: ${Astro.params.slug}`);
-}
-
+const { offer } = Astro.props;
 const { Content } = await offer.render();
 ---
-
-<Base title={`${offer.data.title} — Offers — Beanfreaks`} description={offer.data.summary}>
-  <a class="text-sm text-slate-600 hover:underline" href={withBase("offers/")}>← All offers</a>
-  <h1 class="mt-2 text-3xl font-semibold tracking-tight">{offer.data.title}</h1>
-  <p class="mt-2 text-sm text-slate-600">
-    {offer.data.date.toLocaleDateString("en-GB")}
-    {offer.data.expires ? ` · Expires ${offer.data.expires.toLocaleDateString("en-GB")}` : ""}
-  </p>
-
-  <article class="prose prose-slate mt-6 max-w-none">
+<Base title={`${offer.data?.title ?? offer.slug} — Offers — Beanfreaks`}>
+  <div class="bf-kicker">Offer</div>
+  <h1 class="bf-h1 mt-3">{offer.data?.title ?? offer.slug}</h1>
+  <article class="bf-prose mt-6">
     <Content />
   </article>
 </Base>

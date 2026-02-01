@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root{
+    /* warm, botanical palette (inspired by beanfreaks.com’s clean, organic vibe) */
+    --bf-cream: 248 245 238; /* background */
+    --bf-ink:   15  23  42;  /* main text */
+    --bf-leaf:  76  120  69; /* primary accent */
+    --bf-moss:  39  62  43;  /* deep accent */
+    --bf-oat:   235 227 210; /* borders */
+    --bf-clay:  195 106  74; /* secondary accent */
+  }
+
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream text-ink antialiased font-sans; }
+  a { @apply underline decoration-slate-300 underline-offset-4 hover:decoration-leaf; }
+}
+
+@layer components {
+  .bf-container { @apply mx-auto max-w-6xl px-6; }
+
+  .bf-kicker { @apply text-xs font-semibold tracking-[0.22em] uppercase text-slate-600; }
+
+  .bf-h1 { @apply font-serif text-4xl sm:text-5xl tracking-tight; }
+  .bf-h2 { @apply font-serif text-2xl sm:text-3xl tracking-tight; }
+
+  .bf-card { @apply rounded-2xl border border-slate-200 bg-white shadow-soft; }
+  .bf-card-pad { @apply p-6 sm:p-8; }
+
+  .bf-btn { @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold no-underline transition; }
+  .bf-btn-primary { @apply bf-btn bg-leaf text-white hover:opacity-90; }
+  .bf-btn-ghost { @apply bf-btn bg-white text-ink border border-slate-200 hover:bg-slate-50; }
+
+  .bf-chip { @apply inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700; }
+
+  .bf-grid { @apply grid gap-6 md:grid-cols-12; }
+
+  /* “nice by default” content blocks without the typography plugin */
+  .bf-prose h1 { @apply bf-h2; }
+  .bf-prose h2 { @apply text-xl font-semibold mt-8; }
+  .bf-prose p { @apply mt-4 leading-relaxed text-slate-800; }
+  .bf-prose ul { @apply mt-4 list-disc pl-6 text-slate-800; }
+  .bf-prose li { @apply mt-2; }
+}

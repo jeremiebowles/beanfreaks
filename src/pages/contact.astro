@@ -1,36 +1,29 @@
 ---
 import Base from "../layouts/base.astro";
-import { getCollection } from "astro:content";
-
-const stores = (await getCollection("stores")).sort((a, b) => a.data.name.localeCompare(b.data.name));
 ---
-<Base title="Contact — Beanfreaks" description="Contact Beanfreaks stores in Cardiff.">
-  <h1 class="text-3xl font-semibold tracking-tight">Contact</h1>
-  <p class="mt-3 max-w-prose text-slate-700">
-    Call a store, or email us. If it’s urgent, phone beats email (and carrier pigeons have unionised).
-  </p>
+<Base title="Contact — Beanfreaks">
+  <div class="bf-kicker">We are here to help</div>
+  <h1 class="bf-h1 mt-3">Contact</h1>
 
-  <div class="mt-8 grid gap-4 md:grid-cols-3">
-    {stores.map((s) => (
-      <div class="rounded-2xl border border-slate-200 p-5">
-        <h2 class="text-lg font-semibold tracking-tight">{s.data.name}</h2>
-        <p class="mt-1 text-sm text-slate-700">{s.data.address}</p>
-        <p class="mt-3 text-sm"><span class="font-medium">Phone:</span> {s.data.phone}</p>
-        <p class="mt-1 text-sm"><span class="font-medium">Hours:</span> {s.data.hours_summary}</p>
-        <p class="mt-4 text-sm">
-          <a class="font-semibold hover:underline" href={s.data.map_url} target="_blank" rel="noreferrer">Directions →</a>
-        </p>
-      </div>
-    ))}
-  </div>
+  <div class="mt-8 grid gap-6 md:grid-cols-3">
+    <div class="bf-card bf-card-pad">
+      <div class="text-lg font-semibold">General enquiries</div>
+      <p class="mt-3 text-slate-700 text-sm">Email us and we’ll point you to the right store.</p>
+      <p class="mt-4 font-semibold">kevin@beanfreaks.com</p>
+    </div>
 
-  <div class="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
-    <h2 class="text-xl font-semibold tracking-tight">Email</h2>
-    <p class="mt-2 text-slate-700">
-      <a class="font-semibold hover:underline" href="mailto:hello@beanfreaks.com">hello@beanfreaks.com</a>
-    </p>
-    <p class="mt-2 text-sm text-slate-600">
-      (Swap this address to whatever you actually want.)
-    </p>
+    <div class="bf-card bf-card-pad">
+      <div class="text-lg font-semibold">Stores</div>
+      <p class="mt-3 text-slate-700 text-sm">Details, opening hours and directions:</p>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a href={import.meta.env.BASE_URL + "stores/"}>View all stores →</a></li>
+      </ul>
+    </div>
+
+    <div class="bf-card bf-card-pad">
+      <div class="text-lg font-semibold">Offers</div>
+      <p class="mt-3 text-slate-700 text-sm">What’s on and what’s new in-store.</p>
+      <p class="mt-4"><a href={import.meta.env.BASE_URL + "offers/"}>Browse offers →</a></p>
+    </div>
   </div>
 </Base>

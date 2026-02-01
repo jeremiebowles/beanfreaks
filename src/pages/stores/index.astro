@@ -1,17 +1,24 @@
 ---
 import Base from "../../layouts/base.astro";
-import StoreCard from "../../components/StoreCard.astro";
 import { getCollection } from "astro:content";
 
-const stores = (await getCollection("stores")).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const stores = await getCollection("stores");
+const baseUrl = import.meta.env.BASE_URL;
+const go = (p) => `${baseUrl}${String(p).replace(/^\/+/, "")}`;
 ---
-<Base title="Stores — Beanfreaks" description="Find opening times, contact details and directions for our Cardiff stores.">
-  <h1 class="text-3xl font-semibold tracking-tight">Stores</h1>
-  <p class="mt-3 max-w-prose text-slate-700">
-    Three locations. Same vibe: friendly, practical, and stocked with the good stuff.
-  </p>
+<Base title="Stores — Beanfreaks">
+  <div class="bf-kicker">Find your nearest branch</div>
+  <h1 class="bf-h1 mt-3">Stores</h1>
 
-  <div class="mt-8 grid gap-4 md:grid-cols-3">
-    {stores.map((store) => <StoreCard store={store} />)}
+  <div class="mt-8 grid gap-6 md:grid-cols-3">
+    {stores.map((s) => (
+      <a class="bf-card bf-card-pad no-underline hover:-translate-y-0.5 transition" href={go(`/stores/${s.slug}/`)}>
+        <div class="text-xl font-semibold">{s.data?.title ?? s.slug}</div>
+        <p class="mt-3 text-slate-700 text-sm leading-relaxed">
+          {s.data?.summary ?? "Opening hours, contact details, and directions."}
+        </p>
+        <div class="mt-4 text-sm font-semibold text-leaf">Open details →</div>
+      </a>
+    ))}
   </div>
 </Base>

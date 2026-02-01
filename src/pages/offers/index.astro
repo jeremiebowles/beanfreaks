@@ -1,22 +1,23 @@
 ---
 import Base from "../../layouts/base.astro";
 import { getCollection } from "astro:content";
-import { withBase } from "../../lib/withBase";
 
-const offers = (await getCollection("offers")).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const offers = await getCollection("offers");
+const baseUrl = import.meta.env.BASE_URL;
+const go = (p) => `${baseUrl}${String(p).replace(/^\/+/, "")}`;
 ---
-<Base title="Offers — Beanfreaks" description="Current offers and what's on in store.">
-  <h1 class="text-3xl font-semibold tracking-tight">Offers</h1>
-  <p class="mt-3 max-w-prose text-slate-700">Small promos, seasonal picks, and in-store highlights.</p>
+<Base title="Offers — Beanfreaks">
+  <div class="bf-kicker">Deals and events</div>
+  <h1 class="bf-h1 mt-3">Offers</h1>
 
-  <div class="mt-8 grid gap-4">
+  <div class="mt-8 grid gap-6 md:grid-cols-3">
     {offers.map((o) => (
-      <a class="block rounded-2xl border border-slate-200 p-5 hover:bg-slate-50" href={withBase(`offers/${o.slug}/`)}>
-        <div class="flex flex-wrap items-baseline justify-between gap-3">
-          <h2 class="text-lg font-semibold tracking-tight">{o.data.title}</h2>
-          <p class="text-sm text-slate-600">{o.data.date.toLocaleDateString("en-GB")}</p>
-        </div>
-        <p class="mt-2 text-sm text-slate-700">{o.data.summary}</p>
+      <a class="bf-card bf-card-pad no-underline hover:-translate-y-0.5 transition" href={go(`/offers/${o.slug}/`)}>
+        <div class="text-lg font-semibold">{o.data?.title ?? o.slug}</div>
+        <p class="mt-3 text-slate-700 text-sm leading-relaxed">
+          {o.data?.summary ?? "Offers and promotions coming up in your local store."}
+        </p>
+        <div class="mt-4 text-sm font-semibold text-leaf">Read more →</div>
       </a>
     ))}
   </div>
