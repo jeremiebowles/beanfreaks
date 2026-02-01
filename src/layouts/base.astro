@@ -1,19 +1,6 @@
 ---
-import Nav from "../components/Nav.astro";
-
-type Props = {
-  title?: string;
-  description?: string;
-};
-
-const {
-  title = "Beanfreaks",
-  description = "Health. Wellness. Organic. Your local Cardiff health food store.",
-} = Astro.props;
-
-const base = import.meta.env.BASE_URL;
+const { title = 'Beanfreaks', description = 'Your local health food store in Cardiff.' } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,60 +9,46 @@ const base = import.meta.env.BASE_URL;
     <meta name="description" content={description} />
     <title>{title}</title>
 
-    <base href={base} />
-    <link rel="stylesheet" href={base + "tw.css"} />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Non-negotiables -->
+    <base href={import.meta.env.BASE_URL} />
+    <link rel="stylesheet" href={import.meta.env.BASE_URL + 'tw.css'} />
   </head>
+  <body class="min-h-screen bg-white text-zinc-900">
+    <header class="border-b border-zinc-200">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href={import.meta.env.BASE_URL} class="flex items-center gap-3">
+          <span class="text-lg font-semibold tracking-tight">Beanfreaks</span>
+        </a>
 
-  <body>
-    <a class="bf-skip" href="#main">Skip to content</a>
+        <nav class="flex items-center gap-5 text-sm">
+          <a class="hover:underline" href={import.meta.env.BASE_URL}>Home</a>
+          <a class="hover:underline" href={import.meta.env.BASE_URL + 'roath/'}>Roath</a>
+          <a class="hover:underline" href={import.meta.env.BASE_URL + 'canton/'}>Canton</a>
+          <a class="hover:underline" href={import.meta.env.BASE_URL + 'royal/'}>Royal Arcade</a>
+          <a class="hover:underline" href={import.meta.env.BASE_URL + 'contact/'}>Contact</a>
 
-    <div class="bf-shell">
-      <Nav />
+          <!-- Top-right logo (local file; no hotlink; base-path safe) -->
+          <img
+            src={import.meta.env.BASE_URL + 'img/logo.png'}
+            alt="Beanfreaks"
+            width="182"
+            height="73"
+            class="ml-2 h-9 w-auto object-contain"
+            loading="eager"
+            decoding="async"
+          />
+        </nav>
+      </div>
+    </header>
 
-      <main id="main" class="bf-main">
-        <slot />
-      </main>
+    <main class="mx-auto max-w-6xl px-4 py-10">
+      <slot />
+    </main>
 
-      <footer class="bf-footer">
-        <div class="bf-container grid gap-8 md:grid-cols-3 py-10">
-          <div class="space-y-2">
-            <p class="bf-foot-title">Beanfreaks</p>
-            <p class="text-sm text-bf-ink/80">
-              Health. Wellness. Organic. A family-run Cardiff health food store since 1978.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <p class="bf-foot-title">Stores</p>
-            <ul class="text-sm text-bf-ink/80 space-y-1">
-              <li><a class="bf-link" href={base + "roath/"}>Roath</a></li>
-              <li><a class="bf-link" href={base + "canton/"}>Canton</a></li>
-              <li><a class="bf-link" href={base + "royal/"}>Royal Arcade</a></li>
-            </ul>
-          </div>
-
-          <div class="space-y-2">
-            <p class="bf-foot-title">Contact</p>
-            <p class="text-sm text-bf-ink/80">
-              For general enquiries:
-              <a class="bf-link" href={"mailto:kevin@beanfreaks.com"}>kevin@beanfreaks.com</a>
-            </p>
-            <a class="bf-btn bf-btn-ghost" href={base + "contact/"}>Contact details</a>
-          </div>
-        </div>
-
-        <div class="bf-container border-t border-bf-ink/10 pt-6 pb-8 text-xs text-bf-ink/60 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Beanfreaks Ltd. All rights reserved.</p>
-          <p class="opacity-80">Built static. Behaves. Rare these days.</p>
-        </div>
-      </footer>
-    </div>
+    <footer class="border-t border-zinc-200">
+      <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-600">
+        <p>© {new Date().getFullYear()} Beanfreaks Ltd.</p>
+      </div>
+    </footer>
   </body>
 </html>

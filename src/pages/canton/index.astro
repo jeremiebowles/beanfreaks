@@ -1,36 +1,12 @@
 ---
-import Base from "../../layouts/base.astro";
-const base = import.meta.env.BASE_URL;
-
-const maps = (q) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+import Base from '../../layouts/base.astro';
 ---
-
-<Base title="Canton — Beanfreaks" description="Cowbridge Road East, Canton — opening hours, contact, directions.">
-  <section class="bf-section">
-    <div class="bf-container space-y-6">
-      <p class="bf-pill">Store</p>
-      <h1 class="bf-h1">Canton</h1>
-
-      <div class="bf-card overflow-hidden">
-        <img src={base + "img/store-canton.jpg"} alt="Canton store" class="w-full h-72 object-cover" loading="lazy" decoding="async" />
-      </div>
-
-      <div class="bf-card p-6 space-y-2">
-        <p class="bf-cardtitle">Cowbridge Road East, Canton</p>
-        <p class="text-sm text-bf-ink/80">124 Cowbridge Road East, Canton, Cardiff, CF11 9DX</p>
-        <p class="text-sm"><span class="bf-badge">Mon–Sat: 9:00–17:30</span></p>
-
-        <div class="pt-2 space-y-1 text-sm text-bf-ink/80">
-          <p><span class="font-semibold">Phone:</span> 02920 343226</p>
-          <p><span class="font-semibold">Email:</span> <a class="bf-link" href="mailto:canton@beanfreaks.com">canton@beanfreaks.com</a></p>
-        </div>
-
-        <div class="pt-4 flex flex-wrap gap-2">
-          <a class="bf-btn bf-btn-primary" href={base + "#stores"}>Back to stores</a>
-          <a class="bf-btn bf-btn-ghost" target="_blank" rel="noreferrer" href={maps("Beanfreaks 124 Cowbridge Road East Cardiff CF11 9DX")}>Directions</a>
-        </div>
-      </div>
+<Base title="Canton | Beanfreaks" description="Beanfreaks Canton">
+  <div class="grid gap-8 md:grid-cols-2 md:items-start">
+    <div>
+      <h1 class="text-3xl font-semibold tracking-tight">Canton</h1>
+      <p class="mt-3 text-zinc-700">124 Cowbridge Road East.</p>
     </div>
-  </section>
+    <img class="aspect-[4/3] w-full rounded-2xl object-cover" src={import.meta.env.BASE_URL + 'img/store-canton.jpg'} alt="Beanfreaks Canton" width="1200" height="900" loading="lazy" decoding="async" />
+  </div>
 </Base>

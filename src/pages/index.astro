@@ -1,251 +1,58 @@
 ---
-import Base from "../layouts/base.astro";
-
-const base = import.meta.env.BASE_URL;
-
-const img = {
-  hero: base + "img/hero.jpg",
-  roath: base + "img/store-roath.jpg",
-  canton: base + "img/store-canton.jpg",
-  royal: base + "img/store-royal.jpg",
-  aloe: base + "img/product-aloe.jpg",
-  turmeric: base + "img/product-turmeric.jpg",
-  chickpeas: base + "img/product-chickpeas.jpg",
-  vitamins: base + "img/product-vitamins.jpg",
-};
-
-const maps = (q) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
-
-const stores = [
-  {
-    name: "Albany Road, Roath",
-    address: ["95 Albany Road", "Roath", "Cardiff", "CF24 3LP"],
-    hours: "Mon–Sat: 9:00–17:30",
-    phone: "02920 494902",
-    email: "roath@beanfreaks.com",
-    mapQuery: "Beanfreaks 95 Albany Road Cardiff CF24 3LP",
-    href: base + "roath/",
-    hero: img.roath,
-  },
-  {
-    name: "Cowbridge Road East, Canton",
-    address: ["124 Cowbridge Road East", "Canton", "Cardiff", "CF11 9DX"],
-    hours: "Mon–Sat: 9:00–17:30",
-    phone: "02920 343226",
-    email: "canton@beanfreaks.com",
-    mapQuery: "Beanfreaks 124 Cowbridge Road East Cardiff CF11 9DX",
-    href: base + "canton/",
-    hero: img.canton,
-  },
-  {
-    name: "Royal Arcade, Morgan Quarter",
-    address: ["8 Royal Arcade", "Morgan Quarter", "Cardiff", "CF10 1AE"],
-    hours: "Mon–Sat: 10:00–17:00",
-    phone: "02920 251671",
-    email: "cardiff@beanfreaks.com",
-    mapQuery: "Beanfreaks 8 Royal Arcade Cardiff CF10 1AE",
-    href: base + "royal/",
-    hero: img.royal,
-  },
-];
-
-const features = [
-  { title: "Organic", body: "Quality food and drink that doesn’t cost the earth." },
-  { title: "Snacks", body: "Healthy treats that are better for you and better for your environment." },
-  { title: "Local", body: "Your local healthfood shop that’s been serving Cardiff for the last forty years." },
-  { title: "Health", body: "A large selection of traditional herbal and complementary medicines." },
-  { title: "Vegan", body: "Cardiff’s largest selection of vegan and alternative lifestyle food and drink." },
-  { title: "Advice", body: "Qualified expert advice from in-store nutritionists and herbalists." },
-];
-
-const favourites = [
-  { name: "Organic Aloe Vera", brand: "Pukka", blurb: "Cooling, soothing, and kind on digestion.", img: img.aloe, alt: "Aloe vera plant" },
-  { name: "Turmeric Root Tea", brand: "Heath & Heather", blurb: "A mild Ayurvedic brew for daily ritual.", img: img.turmeric, alt: "Turmeric and spices" },
-  { name: "Chickpeas", brand: "Just Natural", blurb: "Budget-friendly staples for hummus, falafel, and more.", img: img.chickpeas, alt: "Chickpeas in a bowl" },
-  { name: "Cherry Night", brand: "Viridian", blurb: "A pleasant-tasting nutritional nightcap.", img: img.vitamins, alt: "Supplement bottles" },
-];
-
-const posts = [
-  { title: "Organic September", date: "Sep 1, 2022", slug: "organic-september" },
-  { title: "Superfood Trail Mix", date: "Aug 26, 2022", slug: "superfood-trail-mix" },
-  { title: "Organic Fruit & Vegetables", date: "Jul 1, 2022", slug: "organic-fruit-and-vegetables" },
-  { title: "National Peanut Butter Day", date: "Jun 22, 2022", slug: "national-peanut-butter-day" },
-];
+import Base from '../layouts/base.astro';
 ---
-
-<Base
-  title="Beanfreaks | Health. Wellness. Organic."
-  description="Your local Cardiff health food store — Organic, snacks, vegan, advice, and more."
->
-  <section class="bf-hero">
-    <div class="bf-container py-14 md:py-20">
-      <div class="grid gap-10 md:grid-cols-2 md:items-center">
-        <div class="space-y-6">
-          <p class="bf-pill">Cardiff • Health food • Since 1978</p>
-          <h1 class="bf-h1">Your local health food store in Cardiff.</h1>
-          <p class="bf-lede">
-            Health. Wellness. Organic. Discover something new — organic, eco-friendly and local produce,
-            plus expert advice when you want it.
-          </p>
-
-          <div class="flex flex-wrap gap-3">
-            <a class="bf-btn bf-btn-primary" href={base + "#stores"}>Find your nearest branch</a>
-            <a class="bf-btn bf-btn-ghost" href={base + "#favourites"}>Browse favourites</a>
-          </div>
-
-          <div class="bf-kickergrid">
-            <div class="bf-kicker">
-              <p class="bf-kicker__title">Store-first</p>
-              <p class="bf-kicker__body">Three branches, properly stocked.</p>
-            </div>
-            <div class="bf-kicker">
-              <p class="bf-kicker__title">Warm + clean</p>
-              <p class="bf-kicker__body">No neon, no nonsense.</p>
-            </div>
-            <div class="bf-kicker">
-              <p class="bf-kicker__title">Helpful humans</p>
-              <p class="bf-kicker__body">Advice you can actually use.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bf-card overflow-hidden">
-          <img
-            src={img.hero}
-            alt="Beanfreaks hero"
-            class="w-full h-72 md:h-96 object-cover"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
+<Base title="Beanfreaks" description="Your local health food store in Cardiff.">
+  <section class="grid gap-8 md:grid-cols-2 md:items-center">
+    <div class="space-y-4">
+      <h1 class="text-4xl font-semibold tracking-tight md:text-5xl">Your local health food store in Cardiff</h1>
+      <p class="text-lg text-zinc-700">Health. Wellness. Organic. Find your nearest branch.</p>
+      <div class="flex flex-wrap gap-3">
+        <a class="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white" href={import.meta.env.BASE_URL + 'roath/'}>Roath</a>
+        <a class="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white" href={import.meta.env.BASE_URL + 'canton/'}>Canton</a>
+        <a class="rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white" href={import.meta.env.BASE_URL + 'royal/'}>Royal Arcade</a>
       </div>
     </div>
+
+    <img
+      src={import.meta.env.BASE_URL + 'img/hero.jpg'}
+      alt="Beanfreaks"
+      class="aspect-[4/3] w-full rounded-2xl object-cover"
+      width="1200"
+      height="900"
+      loading="eager"
+      decoding="async"
+    />
   </section>
 
-  <section class="bf-section">
-    <div class="bf-container">
-      <div class="bf-sectionhead">
-        <h2 class="bf-h2">Welcome to Beanfreaks</h2>
-        <p class="bf-sub">Health. Wellness. Organic. Your local Cardiff healthfood store.</p>
-      </div>
+  <section class="mt-12">
+    <h2 class="text-2xl font-semibold tracking-tight">What we like</h2>
+    <p class="mt-2 text-zinc-700">A few favourites we’d happily bang on about at the till.</p>
 
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((f) => (
-          <div class="bf-card p-5">
-            <p class="bf-cardtitle">{f.title}</p>
-            <p class="text-sm text-bf-ink/80 mt-2">{f.body}</p>
-          </div>
-        ))}
-      </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="rounded-2xl border border-zinc-200 p-4">
+        <img class="mb-3 h-40 w-full rounded-xl object-cover" src={import.meta.env.BASE_URL + 'img/product-aloe.jpg'} alt="Organic Aloe Vera" width="600" height="400" loading="lazy" decoding="async" />
+        <h3 class="font-medium">Organic Aloe Vera</h3>
+        <p class="text-sm text-zinc-600">Pukka</p>
+      </article>
+      <article class="rounded-2xl border border-zinc-200 p-4">
+        <img class="mb-3 h-40 w-full rounded-xl object-cover" src={import.meta.env.BASE_URL + 'img/product-turmeric.jpg'} alt="Turmeric Root Tea" width="600" height="400" loading="lazy" decoding="async" />
+        <h3 class="font-medium">Turmeric Root Tea</h3>
+        <p class="text-sm text-zinc-600">Heath &amp; Heather</p>
+      </article>
+      <article class="rounded-2xl border border-zinc-200 p-4">
+        <img class="mb-3 h-40 w-full rounded-xl object-cover" src={import.meta.env.BASE_URL + 'img/product-chickpeas.jpg'} alt="Chickpeas" width="600" height="400" loading="lazy" decoding="async" />
+        <h3 class="font-medium">Chickpeas</h3>
+        <p class="text-sm text-zinc-600">Just Natural</p>
+      </article>
+      <article class="rounded-2xl border border-zinc-200 p-4">
+        <img class="mb-3 h-40 w-full rounded-xl object-cover" src={import.meta.env.BASE_URL + 'img/product-vitamins.jpg'} alt="Cherry Night" width="600" height="400" loading="lazy" decoding="async" />
+        <h3 class="font-medium">Cherry Night</h3>
+        <p class="text-sm text-zinc-600">Viridian</p>
+      </article>
     </div>
-  </section>
 
-  <section class="bf-section" id="stores">
-    <div class="bf-container">
-      <div class="bf-sectionhead">
-        <h2 class="bf-h2">Find your nearest store</h2>
-        <p class="bf-sub">Opening hours, directions, and the fastest way to get the good stuff.</p>
-      </div>
-
-      <div class="grid gap-4 lg:grid-cols-3">
-        {stores.map((s) => (
-          <article class="bf-card p-5 flex flex-col gap-4">
-            <img
-              src={s.hero}
-              alt={`${s.name} store`}
-              class="bf-img h-44"
-              loading="lazy"
-              decoding="async"
-            />
-
-            <div class="space-y-2">
-              <h3 class="bf-h3">{s.name}</h3>
-              <p class="text-sm text-bf-ink/80">{s.address.join(", ")}</p>
-              <p class="text-sm"><span class="bf-badge">{s.hours}</span></p>
-            </div>
-
-            <div class="text-sm text-bf-ink/80 space-y-1">
-              <p><span class="font-semibold">Phone:</span> {s.phone}</p>
-              <p>
-                <span class="font-semibold">Email:</span>{" "}
-                <a class="bf-link" href={"mailto:" + s.email}>{s.email}</a>
-              </p>
-            </div>
-
-            <div class="flex gap-2 mt-auto">
-              <a class="bf-btn bf-btn-primary" href={s.href}>Store page</a>
-              <a class="bf-btn bf-btn-ghost" href={maps(s.mapQuery)} target="_blank" rel="noreferrer">
-                Directions
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="bf-section" id="favourites">
-    <div class="bf-container">
-      <div class="bf-sectionhead">
-        <h2 class="bf-h2">What we like</h2>
-        <p class="bf-sub">A few favourites we’d happily nudge you towards.</p>
-      </div>
-
-      <div class="grid gap-4 md:grid-cols-2">
-        {favourites.map((p) => (
-          <div class="bf-card p-5 flex gap-4">
-            <img
-              src={p.img}
-              alt={p.alt}
-              class="h-16 w-16 rounded-2xl border border-bf-ink/10 bg-white/60 object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="min-w-0">
-              <p class="bf-cardtitle">{p.name}</p>
-              <p class="text-xs text-bf-ink/60 mt-1">{p.brand}</p>
-              <p class="text-sm text-bf-ink/80 mt-2">{p.blurb}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="bf-section" id="deals">
-    <div class="bf-container">
-      <div class="bf-sectionhead">
-        <h2 class="bf-h2">Deals and events</h2>
-        <p class="bf-sub">Offers and promotions coming up in your local store.</p>
-      </div>
-
-      <div class="grid gap-4 md:grid-cols-2">
-        {posts.map((p) => (
-          <article class="bf-card p-5">
-            <div class="flex items-center justify-between gap-3">
-              <p class="bf-cardtitle">{p.title}</p>
-              <span class="bf-badge">{p.date}</span>
-            </div>
-            <p class="text-sm text-bf-ink/80 mt-2">
-              Short, sweet, and actually useful — click through for the full post.
-            </p>
-            <div class="mt-4">
-              <a class="bf-btn bf-btn-ghost" href={base + "posts/" + p.slug + "/"}>Read more</a>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <div class="mt-10 bf-card p-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p class="bf-cardtitle">Need help choosing something?</p>
-          <p class="text-sm text-bf-ink/80 mt-1">
-            General enquiries: <a class="bf-link" href="mailto:kevin@beanfreaks.com">kevin@beanfreaks.com</a>
-          </p>
-        </div>
-        <a class="bf-btn bf-btn-primary" href={base + "contact/"}>Contact details</a>
-      </div>
+    <div class="mt-10">
+      <a class="text-sm font-medium underline" href={import.meta.env.BASE_URL + 'posts/'}>Read posts →</a>
     </div>
   </section>
 </Base>
