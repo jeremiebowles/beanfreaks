@@ -1,10 +1,24 @@
 ---
-const { title, desc, pill } = Astro.props;
+const { title, desc, pill, img } = Astro.props;
+// img: { src: string, alt: string }
 ---
-<div class="card-bf p-5 sm:p-6">
-  <div class="flex items-start justify-between gap-4">
-    <h3 class="text-lg font-extrabold">{title}</h3>
-    {pill && <span class={pill.class}>{pill.label}</span>}
+
+<div class="card-bf overflow-hidden">
+  {img && (
+    <img
+      src={img.src}
+      alt={img.alt}
+      class="h-28 w-full object-cover sm:h-32"
+      loading="lazy"
+      decoding="async"
+    />
+  )}
+  <div class="p-5 sm:p-6">
+    <div class="flex items-start justify-between gap-4">
+      <h3 class="text-lg font-extrabold leading-snug">{title}</h3>
+      {pill && <span class={pill.class}>{pill.label}</span>}
+    </div>
+    <p class="mt-2 text-sm text-muted">{desc}</p>
   </div>
-  <p class="mt-2 text-sm text-muted">{desc}</p>
 </div>
+

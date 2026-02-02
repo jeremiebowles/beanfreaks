@@ -43,10 +43,34 @@ const base = import.meta.env.BASE_URL;
       />
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <FeatureCard title="Organic groceries" desc="Everyday staples, properly sourced." pill={{ label: 'Organic', class: 'pill-organic' }} />
-        <FeatureCard title="Supplements" desc="The useful stuff, not the hype." pill={{ label: 'Trusted', class: 'pill-bf bg-ink/5 text-ink' }} />
-        <FeatureCard title="Vegan & veggie" desc="Great options that aren’t just ‘salad’." pill={{ label: 'Vegan', class: 'pill-vegan' }} />
-        <FeatureCard title="Gluten-free" desc="Bread, pasta, snacks — without compromise." pill={{ label: 'GF', class: 'pill-gf' }} />
+        <FeatureCard
+  title="Organic groceries"
+  desc="Everyday staples, properly sourced."
+  pill={{ label: 'Organic', class: 'pill-organic' }}
+  img={{ src: base + 'img/feature-produce.jpg', alt: 'Fresh produce' }}
+/>
+
+<FeatureCard
+  title="Supplements"
+  desc="The useful stuff, not the hype."
+  pill={{ label: 'Trusted', class: 'pill-bf bg-ink/5 text-ink' }}
+  img={{ src: base + 'img/feature-supplements.jpg', alt: 'Supplement bottle' }}
+/>
+
+<FeatureCard
+  title="Vegan & veggie"
+  desc="Great options that aren’t just ‘salad’."
+  pill={{ label: 'Vegan', class: 'pill-vegan' }}
+  img={{ src: base + 'img/feature-bulk.jpg', alt: 'Pantry jars' }}
+/>
+
+<FeatureCard
+  title="Gluten-free"
+  desc="Bread, pasta, snacks — without compromise."
+  pill={{ label: 'GF', class: 'pill-gf' }}
+  img={{ src: base + 'img/feature-glutenfree.jpg', alt: 'Sliced loaf of bread' }}
+/>
+
       </div>
     </div>
   </section>
