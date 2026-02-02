@@ -1,63 +1,30 @@
-# Beanfreaks (Astro → GitHub Pages Project Pages)
+# Beanfreaks Astro starter (deterministic Tailwind)
 
-This repack is built to be boringly reliable:
-- **Project Pages base path**: `/beanfreaks/`
-- **Deterministic Tailwind build**: outputs a single `dist/tw.css`
-- **No Astro Tailwind integration**
-- **Canonical layout**: `src/layouts/base.astro` only
+## What you get
+- Astro static site configured for GitHub Pages Project Pages (`/beanfreaks/`)
+- Deterministic CSS: always builds a single `dist/tw.css` (no hashed CSS)
+- A cosy, clean health-food-shop design system (cream/ink/leaf/turmeric)
+- Starter pages: Home, Roath, Canton, Royal, Contact, Posts
 
-## Install
-
+## Local dev
 ```bash
-npm ci
+npm install
+npm run dev
 ```
 
-## Build
+## CI / production build
+The GitHub Actions workflow uses `npm install` while you're iterating.
 
+If you want fully deterministic installs later:
+1) Run `npm install` once locally to generate `package-lock.json`.
+2) Commit it.
+3) Change the workflow from `npm install` to `npm ci`.
+
+Build steps:
 ```bash
+npm install
 npm run build
 ```
 
-This runs:
-1) `astro build`
-2) `tailwindcss` against the built `dist/**/*.html` to produce `dist/tw.css`
-3) writes `dist/.nojekyll`
-
-## Local preview with base path
-
-```bash
-npm run build
-rm -rf dist/beanfreaks
-mkdir -p dist/beanfreaks
-rsync -a --delete --exclude 'beanfreaks/' dist/ dist/beanfreaks/
-python3 -m http.server -d dist 4321
-# open http://localhost:4321/beanfreaks/
-```
-
-## Images
-
-`public/img/logo.png` is included.
-
-The other required images are included as tiny placeholders so the site builds. **Overwrite them** with your real photos:
-
-- hero.jpg
-- store-roath.jpg
-- store-canton.jpg
-- store-royal.jpg
-- product-aloe.jpg
-- product-turmeric.jpg
-- product-chickpeas.jpg
-- product-vitamins.jpg
-
-## GitHub Pages workflow
-
-See `.github/workflows/pages.yml`.
-
-In the repo settings: **Pages → Build and deployment → GitHub Actions**.
-
-
-## Notes
-
-- Tailwind is built deterministically into `dist/tw.css` after `astro build`.
-- Tailwind scans both `src/` and `dist/` to avoid generating an empty/tiny CSS file.
-- This repack does **not** try to preserve your existing `package-lock.json`; if you already have one, back it up before applying and restore it after. Otherwise run `npm install` once to generate it, commit it, then CI can use `npm ci`.
+## Replace placeholder images
+Drop real JPGs into `public/img/` keeping the same filenames.

@@ -1,5 +1,7 @@
 ---
-const { title = 'Beanfreaks', description = 'Your local health food store in Cardiff.' } = Astro.props;
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+const { title = 'Beanfreaks', description = 'Organic groceries, supplements, vegan and gluten-free essentials.' } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -7,48 +9,18 @@ const { title = 'Beanfreaks', description = 'Your local health food store in Car
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <title>{title}</title>
+    <meta name="color-scheme" content="light" />
 
-    <!-- Non-negotiables -->
     <base href={import.meta.env.BASE_URL} />
-    <link rel="stylesheet" href={import.meta.env.BASE_URL + 'tw.css'} />
+    <link rel="stylesheet" href={import.meta.env.BASE_URL + "tw.css"} />
+
+    <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-white text-zinc-900">
-    <header class="border-b border-zinc-200">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href={import.meta.env.BASE_URL} class="flex items-center gap-3">
-          <span class="text-lg font-semibold tracking-tight">Beanfreaks</span>
-        </a>
-
-        <nav class="flex items-center gap-5 text-sm">
-          <a class="hover:underline" href={import.meta.env.BASE_URL}>Home</a>
-          <a class="hover:underline" href={import.meta.env.BASE_URL + 'roath/'}>Roath</a>
-          <a class="hover:underline" href={import.meta.env.BASE_URL + 'canton/'}>Canton</a>
-          <a class="hover:underline" href={import.meta.env.BASE_URL + 'royal/'}>Royal Arcade</a>
-          <a class="hover:underline" href={import.meta.env.BASE_URL + 'contact/'}>Contact</a>
-
-          <!-- Top-right logo (local file; no hotlink; base-path safe) -->
-          <img
-            src={import.meta.env.BASE_URL + 'img/logo.png'}
-            alt="Beanfreaks"
-            width="182"
-            height="73"
-            class="ml-2 h-9 w-auto object-contain"
-            loading="eager"
-            decoding="async"
-          />
-        </nav>
-      </div>
-    </header>
-
-    <main class="mx-auto max-w-6xl px-4 py-10">
+  <body class="min-h-screen">
+    <Nav />
+    <main>
       <slot />
     </main>
-
-    <footer class="border-t border-zinc-200">
-      <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-zinc-600">
-        <p>© {new Date().getFullYear()} Beanfreaks Ltd.</p>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

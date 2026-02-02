@@ -1,23 +1,27 @@
 ---
 import Base from '../../layouts/base.astro';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../content/posts/*.md');
-  return posts.map((p) => ({
-    params: { slug: p.file.split('/').pop().replace(/\.md$/, '') },
-    props: { post: p }
-  }));
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post;
-const title = post.frontmatter?.title ?? 'Post';
-const date = post.frontmatter?.date ?? '';
+const { Content } = await post.render();
 ---
-<Base title={`${title} | Beanfreaks`} description={title}>
-  <article class="prose prose-zinc max-w-none">
-    <h1>{title}</h1>
-    {date && <p class="text-sm text-zinc-600">{date}</p>}
-    <Content />
-  </article>
+<Base title={post.data.title + ' — Beanfreaks'} description={post.data.description ?? ''}>
+  <section class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
+      <article class="mx-auto max-w-3xl">
+        <p class="text-sm font-semibold text-ink/60">{post.data.pubDate.toISOString().slice(0,10)}</p>
+        <h1 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">{post.data.title}</h1>
+        {post.data.description && <p class="mt-3 text-lg text-muted">{post.data.description}</p>}
+
+        <div class="prose prose-zinc mt-8 max-w-none">
+          <Content />
+        </div>
+      </article>
+    </div>
+  </section>
 </Base>

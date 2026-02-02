@@ -1,2 +1,2 @@
-import { writeFile } from 'node:fs/promises';
-await writeFile(new URL('../dist/.nojekyll', import.meta.url), '', 'utf8');
+import { writeFileSync } from 'node:fs';
+writeFileSync(new URL('../dist/.nojekyll', import.meta.url), '');
