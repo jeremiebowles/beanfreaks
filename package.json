@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./dist/tw.css --content \"./dist/**/*.html\" --minify && node ./scripts/touch-nojekyll.mjs",
+    "build": "astro build && tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./dist/tw.css --content \"./src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx},./dist/**/*.html\" --minify && node ./scripts/touch-nojekyll.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },

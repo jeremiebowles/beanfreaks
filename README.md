@@ -54,3 +54,10 @@ The other required images are included as tiny placeholders so the site builds. 
 See `.github/workflows/pages.yml`.
 
 In the repo settings: **Pages → Build and deployment → GitHub Actions**.
+
+
+## Notes
+
+- Tailwind is built deterministically into `dist/tw.css` after `astro build`.
+- Tailwind scans both `src/` and `dist/` to avoid generating an empty/tiny CSS file.
+- This repack does **not** try to preserve your existing `package-lock.json`; if you already have one, back it up before applying and restore it after. Otherwise run `npm install` once to generate it, commit it, then CI can use `npm ci`.
