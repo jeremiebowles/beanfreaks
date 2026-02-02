@@ -1,25 +1,28 @@
 ---
 import Base from '../../layouts/base.astro';
+const base = import.meta.env.BASE_URL;
 ---
-<Base title="Contact | Beanfreaks" description="Contact Beanfreaks">
-  <h1 class="text-3xl font-semibold tracking-tight">Contact</h1>
-  <p class="mt-3 text-zinc-700">Email the relevant store, or shout into a paper bag — email is faster.</p>
+<Base title="Contact — Beanfreaks" description="Ask us about products, orders, and supplements.">
+  <section class="bg-paper">
+    <div class="container-bf py-12 sm:py-16">
+      <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Contact</h1>
+      <p class="mt-3 max-w-2xl text-muted">
+        Quick question? Product request? Want us to check stock before you trek across town? Ping us.
+      </p>
 
-  <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    <div class="rounded-2xl border border-zinc-200 p-5">
-      <h2 class="font-medium">Canton</h2>
-      <p class="mt-2 text-sm text-zinc-700">canton@beanfreaks.com</p>
-      <p class="text-sm text-zinc-700">02920 343226</p>
+      <div class="mt-8 grid gap-6 lg:grid-cols-2">
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">Email</h2>
+          <p class="mt-2 text-sm text-muted">hello@beanfreaks.com (replace with your real address)</p>
+          <a class="mt-4 btn-primary" href="#">Send an email</a>
+        </div>
+
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">In-store</h2>
+          <p class="mt-2 text-sm text-muted">Best for supplements: bring what you’re taking and we’ll help you sanity-check it.</p>
+          <a class="mt-4 btn-ghost" href={base + 'roath/'}>Store pages</a>
+        </div>
+      </div>
     </div>
-    <div class="rounded-2xl border border-zinc-200 p-5">
-      <h2 class="font-medium">Roath</h2>
-      <p class="mt-2 text-sm text-zinc-700">roath@beanfreaks.com</p>
-      <p class="text-sm text-zinc-700">02920 494902</p>
-    </div>
-    <div class="rounded-2xl border border-zinc-200 p-5">
-      <h2 class="font-medium">Royal Arcade</h2>
-      <p class="mt-2 text-sm text-zinc-700">cardiff@beanfreaks.com</p>
-      <p class="text-sm text-zinc-700">02920 251671</p>
-    </div>
-  </div>
+  </section>
 </Base>

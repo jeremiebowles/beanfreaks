@@ -1,18 +1,25 @@
 {
-  "name": "beanfreaks",
-  "type": "module",
+  "name": "beanfreaks-astro",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "dev": "astro dev",
+    "dev:css": "tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./public/tw.css --content \"./src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx}\" --watch",
+    "dev": "concurrently -n CSS,ASTRO \"npm:dev:css\" \"astro dev\"",
     "build": "astro build && tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./dist/tw.css --content \"./src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx},./dist/**/*.html\" --minify && node ./scripts/touch-nojekyll.mjs",
-    "preview": "astro preview",
-    "check": "astro check"
+    "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^5.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^9.0.0",
+    "postcss": "^8.4.0",
     "tailwindcss": "^3.4.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "@tailwindcss/typography": "^0.5.0"
   }
 }

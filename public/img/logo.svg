@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="44" viewBox="0 0 180 44" fill="none">
+  <rect x="1" y="1" width="178" height="42" rx="12" fill="#FBF8F2" stroke="#1E2421" stroke-opacity="0.12"/>
+  <circle cx="24" cy="22" r="10" fill="#2F6B4F"/>
+  <path d="M22 26c6-2 9-6 10-12-6 2-10 5-12 10" fill="#E7A71A" fill-opacity="0.9"/>
+  <text x="44" y="28" font-family="ui-sans-serif,system-ui" font-size="18" font-weight="800" fill="#1E2421">Beanfreaks</text>
+</svg>

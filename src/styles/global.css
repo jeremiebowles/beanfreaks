@@ -2,5 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Small, predictable extras */
-:root { color-scheme: light; }
+:root{
+  --cream: 246 241 232;
+  --paper: 251 248 242;
+  --ink: 30 36 33;
+  --muted: 91 100 94;
+
+  --leaf: 47 107 79;
+  --moss: 31 61 44;
+  --clay: 179 106 60;
+  --turmeric: 231 167 26;
+  --berry: 122 46 75;
+
+  --radius-card: 16px;
+  --radius-btn: 12px;
+  --radius-pill: 999px;
+}
+
+@layer base{
+  html{ scroll-behavior: smooth; }
+  body{
+    background: rgb(var(--cream));
+    color: rgb(var(--ink));
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    text-rendering: optimizeLegibility;
+  }
+  a{ color: rgb(var(--leaf)); text-underline-offset: 3px; }
+  a:hover{ color: rgb(var(--moss)); }
+  ::selection{ background: rgb(var(--turmeric) / 0.35); }
+  :focus-visible{
+    outline: 3px solid rgb(var(--turmeric));
+    outline-offset: 3px;
+    border-radius: 10px;
+  }
+}
+
+@layer components{
+  .container-bf{ @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+
+  .card-bf{ @apply rounded-[var(--radius-card)] border border-ink/10 bg-paper shadow-sm; }
+
+  .btn-bf{ @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] px-4 py-2 text-sm font-semibold transition; }
+  .btn-primary{ @apply btn-bf bg-leaf text-cream hover:bg-moss; }
+  .btn-accent{ @apply btn-bf bg-turmeric text-ink hover:bg-clay hover:text-cream; }
+  .btn-ghost{ @apply btn-bf bg-transparent text-ink ring-1 ring-ink/15 hover:bg-ink/5; }
+
+  .pill-bf{ @apply inline-flex items-center rounded-[var(--radius-pill)] px-3 py-1 text-xs font-semibold ring-1 ring-ink/10; }
+  .pill-vegan{ @apply pill-bf bg-leaf/10 text-leaf; }
+  .pill-gf{ @apply pill-bf bg-turmeric/20 text-ink; }
+  .pill-organic{ @apply pill-bf bg-clay/15 text-clay; }
+}
