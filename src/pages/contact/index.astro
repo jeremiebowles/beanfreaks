@@ -7,20 +7,38 @@ const base = import.meta.env.BASE_URL;
     <div class="container-bf py-12 sm:py-16">
       <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Contact</h1>
       <p class="mt-3 max-w-2xl text-muted">
-        Quick question? Product request? Want us to check stock before you trek across town? Ping us.
+        We are here to help you. Click on the relevant store page to find more information on your nearest branch.
       </p>
 
       <div class="mt-8 grid gap-6 lg:grid-cols-2">
         <div class="card-bf p-6">
-          <h2 class="text-lg font-extrabold">Email</h2>
-          <p class="mt-2 text-sm text-muted">hello@beanfreaks.com (replace with your real address)</p>
-          <a class="mt-4 btn-primary" href="#">Send an email</a>
+          <h2 class="text-lg font-extrabold">General inquiries</h2>
+          <p class="mt-2 text-sm text-muted">Email: <a href="mailto:cardiff@beanfreaks.com">cardiff@beanfreaks.com</a></p>
+          <a class="mt-4 btn-primary" href="mailto:cardiff@beanfreaks.com">Send an email</a>
         </div>
 
         <div class="card-bf p-6">
           <h2 class="text-lg font-extrabold">In-store</h2>
           <p class="mt-2 text-sm text-muted">Best for supplements: bring what you’re taking and we’ll help you sanity-check it.</p>
           <a class="mt-4 btn-ghost" href={base + 'roath/'}>Store pages</a>
+        </div>
+      </div>
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-3">
+        <div class="card-bf p-6">
+          <h3 class="text-base font-extrabold">Beanfreaks Canton</h3>
+          <p class="mt-2 text-sm text-muted">Email: <a href="mailto:canton@beanfreaks.com">canton@beanfreaks.com</a></p>
+          <p class="mt-1 text-sm text-muted">Phone: 02920 343226</p>
+        </div>
+        <div class="card-bf p-6">
+          <h3 class="text-base font-extrabold">Beanfreaks Roath</h3>
+          <p class="mt-2 text-sm text-muted">Email: <a href="mailto:roath@beanfreaks.com">roath@beanfreaks.com</a></p>
+          <p class="mt-1 text-sm text-muted">Phone: 02920 494902</p>
+        </div>
+        <div class="card-bf p-6">
+          <h3 class="text-base font-extrabold">Royal Arcade</h3>
+          <p class="mt-2 text-sm text-muted">Email: <a href="mailto:cardiff@beanfreaks.com">cardiff@beanfreaks.com</a></p>
+          <p class="mt-1 text-sm text-muted">Phone: 02920 251671</p>
         </div>
       </div>
     </div>
