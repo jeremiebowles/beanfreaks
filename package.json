@@ -5,12 +5,11 @@
   "engines": {
     "node": ">=20"
   },
-"scripts": {
-  "dev:css": "tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./public/tw.css --watch",
-  "dev": "concurrently -n CSS,ASTRO \"npm:dev:css\" \"astro dev\"",
-  "build": "astro build && tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./dist/tw.css --minify && node ./scripts/touch-nojekyll.mjs",
-  "preview": "astro preview"
-
+  "scripts": {
+    "dev:css": "tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./public/tw.css --watch",
+    "dev": "concurrently -n CSS,ASTRO \"npm:dev:css\" \"astro dev\"",
+    "build": "astro build && tailwindcss -c tailwind.config.cjs -i ./src/styles/global.css -o ./dist/tw.css --minify && node ./scripts/touch-nojekyll.mjs",
+    "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^5.0.0"
