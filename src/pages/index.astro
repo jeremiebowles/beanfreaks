@@ -3,8 +3,61 @@ import Base from '../layouts/base.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import FeatureCard from '../components/FeatureCard.astro';
 const base = import.meta.env.BASE_URL;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'HealthFoodStore',
+  name: 'Beanfreaks',
+  url: 'https://www.beanfreaks.com/',
+  department: [
+    {
+      '@type': 'HealthFoodStore',
+      name: 'Beanfreaks Roath',
+      url: 'https://www.beanfreaks.com/roath/',
+      telephone: '+44 2920 494902',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '95 Albany Road',
+        addressLocality: 'Roath',
+        addressRegion: 'Cardiff',
+        postalCode: 'CF24 3LP',
+        addressCountry: 'GB'
+      }
+    },
+    {
+      '@type': 'HealthFoodStore',
+      name: 'Beanfreaks Canton',
+      url: 'https://www.beanfreaks.com/canton/',
+      telephone: '+44 2920 343226',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '124 Cowbridge Road East',
+        addressLocality: 'Canton',
+        addressRegion: 'Cardiff',
+        postalCode: 'CF11 9DX',
+        addressCountry: 'GB'
+      }
+    },
+    {
+      '@type': 'HealthFoodStore',
+      name: 'Beanfreaks Royal Arcade',
+      url: 'https://www.beanfreaks.com/royal/',
+      telephone: '+44 2920 251671',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '8 Royal Arcade',
+        addressLocality: 'Morgan Quarter',
+        addressRegion: 'Cardiff',
+        postalCode: 'CF10 1AE',
+        addressCountry: 'GB'
+      }
+    }
+  ]
+};
 ---
 <Base title="Beanfreaks" description="Organic groceries, supplements, vegan and gluten-free essentials.">
+  <head>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
   <section class="bg-cream">
     <div class="container-bf py-14 sm:py-18">
       <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -28,7 +81,10 @@ const base = import.meta.env.BASE_URL;
         </div>
 
         <div class="card-bf overflow-hidden">
-          <img src={base + 'img/hero.jpg'} alt="Fresh produce and pantry staples" class="h-[320px] w-full object-cover sm:h-[420px]" />
+          <picture>
+            <source srcset={base + 'img/hero.webp'} type="image/webp" />
+            <img src={base + 'img/hero.jpg'} alt="Fresh produce and pantry staples" class="h-[320px] w-full object-cover sm:h-[420px]" />
+          </picture>
         </div>
       </div>
     </div>
@@ -47,28 +103,28 @@ const base = import.meta.env.BASE_URL;
   title="Organic groceries"
   desc="Everyday staples, properly sourced."
   pill={{ label: 'Organic', class: 'pill-organic' }}
-  img={{ src: base + 'img/feature-produce.jpg', alt: 'Fresh produce' }}
+  img={{ src: base + 'img/feature-produce.jpg', webp: base + 'img/feature-produce.webp', alt: 'Fresh produce' }}
 />
 
 <FeatureCard
   title="Supplements"
   desc="The useful stuff, not the hype."
   pill={{ label: 'Trusted', class: 'pill-bf bg-ink/5 text-ink' }}
-  img={{ src: base + 'img/feature-supplements.jpg', alt: 'Supplement bottle' }}
+  img={{ src: base + 'img/feature-supplements.jpg', webp: base + 'img/feature-supplements.webp', alt: 'Supplement bottle' }}
 />
 
 <FeatureCard
   title="Vegan & veggie"
   desc="Great options that aren’t just ‘salad’."
   pill={{ label: 'Vegan', class: 'pill-vegan' }}
-  img={{ src: base + 'img/feature-bulk.jpg', alt: 'Pantry jars' }}
+  img={{ src: base + 'img/feature-bulk.jpg', webp: base + 'img/feature-bulk.webp', alt: 'Pantry jars' }}
 />
 
 <FeatureCard
   title="Gluten-free"
   desc="Bread, pasta, snacks — without compromise."
   pill={{ label: 'GF', class: 'pill-gf' }}
-  img={{ src: base + 'img/feature-glutenfree.jpg', alt: 'Sliced loaf of bread' }}
+  img={{ src: base + 'img/feature-glutenfree.jpg', webp: base + 'img/feature-glutenfree.webp', alt: 'Sliced loaf of bread' }}
 />
 
       </div>
@@ -85,12 +141,15 @@ const base = import.meta.env.BASE_URL;
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div class="card-bf overflow-hidden">
-          <img
-            src={base + 'img/product-aloe.jpg'}
-            alt="Aloe Vera Juice"
-            class="h-56 w-full object-cover"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset={base + 'img/product-aloe.webp'} type="image/webp" />
+            <img
+              src={base + 'img/product-aloe.jpg'}
+              alt="Aloe Vera Juice"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+            />
+          </picture>
           <div class="p-6">
             <h3 class="text-lg font-extrabold">Aloe Vera Juice</h3>
             <p class="mt-2 text-sm text-muted">Regular Price: £5.99</p>
@@ -99,12 +158,15 @@ const base = import.meta.env.BASE_URL;
         </div>
 
         <div class="card-bf overflow-hidden">
-          <img
-            src={base + 'img/product-chickpeas.jpg'}
-            alt="Chick Peas"
-            class="h-56 w-full object-cover"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset={base + 'img/product-chickpeas.webp'} type="image/webp" />
+            <img
+              src={base + 'img/product-chickpeas.jpg'}
+              alt="Chick Peas"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+            />
+          </picture>
           <div class="p-6">
             <h3 class="text-lg font-extrabold">Chick Peas</h3>
             <p class="mt-2 text-sm text-muted">Regular Price: £3.25</p>
@@ -113,12 +175,15 @@ const base = import.meta.env.BASE_URL;
         </div>
 
         <div class="card-bf overflow-hidden">
-          <img
-            src={base + 'img/product-cherry-night.jpg'}
-            alt="Cherry Night"
-            class="h-56 w-full object-cover"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset={base + 'img/product-cherry-night.webp'} type="image/webp" />
+            <img
+              src={base + 'img/product-cherry-night.jpg'}
+              alt="Cherry Night"
+              class="h-56 w-full object-cover"
+              loading="lazy"
+            />
+          </picture>
           <div class="p-6">
             <h3 class="text-lg font-extrabold">Cherry Night</h3>
             <p class="mt-2 text-sm text-muted">Regular Price: £8.45</p>
