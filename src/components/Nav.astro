@@ -5,7 +5,6 @@ const items = [
   { href: base + 'roath/', label: 'Roath' },
   { href: base + 'canton/', label: 'Canton' },
   { href: base + 'royal/', label: 'Royal Arcade' },
-  { href: base + 'posts/', label: 'Posts' },
 ];
 const path = Astro.url.pathname;
 const isActive = (href) => path === new URL(href, Astro.url).pathname;
@@ -33,7 +32,7 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
       </nav>
 
       <div class="flex items-center gap-2">
-        <a class="btn-ghost hidden sm:inline-flex ring-cream/30 text-cream hover:bg-cream/10" href={base + 'posts/'}>This week</a>
+        <a class="btn-ghost hidden sm:inline-flex ring-cream/30 text-cream hover:bg-cream/10" href={base + 'posts/'}>News</a>
         <a class="btn-accent" href={base + 'contact/'}>Contact</a>
       </div>
     </div>
