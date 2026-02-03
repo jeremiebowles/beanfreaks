@@ -17,8 +17,8 @@ const base = import.meta.env.BASE_URL;
             Organic groceries, vegan and gluten-free essentials, and a supplements shelf that isn’t a circus.
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
-            <a class="btn-primary" href={base + 'roath/'}>Find your nearest shop</a>
-            <a class="btn-ghost" href={base + 'posts/'}>This week’s picks</a>
+            <a class="btn-primary" href="#stores">Find your nearest shop</a>
+            <a class="btn-ghost" href="#picks">This week’s picks</a>
           </div>
           <div class="mt-6 flex flex-wrap gap-2">
             <span class="pill-organic">Organic</span>
@@ -75,7 +75,7 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <section class="bg-cream">
+  <section id="picks" class="bg-cream">
     <div class="container-bf py-12 sm:py-16">
       <SectionHeader
         kicker="In-store picks"
@@ -129,7 +129,7 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <section class="bg-paper">
+  <section id="stores" class="bg-paper">
     <div class="container-bf py-12 sm:py-16">
       <SectionHeader
         kicker="Your local"
