@@ -29,3 +29,7 @@ License: https://www.pexels.com/license/
 - https://www.beanfreaks.com/img/roath-shop.jpg
 - https://www.beanfreaks.com/img/canton.jpg
 - https://www.beanfreaks.com/img/beanfreaks_morgans_quarter_medium.jpg
+- https://www.beanfreaks.com/wp-content/uploads/2024/09/organic-september.png
+- https://www.beanfreaks.com/wp-content/uploads/2023/03/Trail-Mix.png
+- https://www.beanfreaks.com/wp-content/uploads/2023/03/organic-produce.png
+- https://www.beanfreaks.com/wp-content/uploads/2023/01/Peanut-Butter-Day.png
