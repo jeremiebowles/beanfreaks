@@ -40,7 +40,13 @@ const imgMap = { roath: 'store-roath.jpg', canton: 'store-canton.jpg', royal: 's
           </div>
         </div>
         <div class="card-bf overflow-hidden">
-          <img src={base + 'img/' + imgMap[store]} alt={titleMap[store] + ' shop'} class="h-[320px] w-full object-cover sm:h-[420px]" />
+          <img
+            src="https://www.beanfreaks.com/img/canton.jpg"
+            alt={titleMap[store] + ' shop'}
+            class="h-[320px] w-full object-cover sm:h-[420px]"
+            style="filter: brightness(1.03) contrast(1.08);"
+            loading="lazy"
+          />
         </div>
       </div>
 

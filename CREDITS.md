@@ -23,3 +23,9 @@ License: https://www.pexels.com/license/
 
 - public/img/feature-supplements.jpg — https://images.pexels.com/photos/15897780/pexels-photo-15897780.jpeg?auto=compress&cs=tinysrgb&w=1600
 - public/img/product-turmeric.jpg — https://images.pexels.com/photos/7988015/pexels-photo-7988015.jpeg?auto=compress&cs=tinysrgb&w=1200
+
+## Beanfreaks
+
+- https://www.beanfreaks.com/img/roath-shop.jpg
+- https://www.beanfreaks.com/img/canton.jpg
+- https://www.beanfreaks.com/img/beanfreaks_morgans_quarter_medium.jpg
