@@ -1,6 +1,7 @@
 ---
 title: "Organic September"
 description: "A month‑long focus on organic food and farming."
+image: "/img/posts/organicseptember.jpg"
 pubDate: 2025-09-26
 tags: ["organic", "events", "seasonal"]
 ---

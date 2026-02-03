@@ -1,6 +1,7 @@
 ---
 title: "National Peanut Butter Day"
 description: "Celebrating a classic pantry favourite."
+image: "/img/posts/peanut-butter.png"
 pubDate: 2025-01-18
 tags: ["events", "pantry", "snacks"]
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Superfood Trail Mix"
 description: "A simple mix for snacking, hiking, or an afternoon boost."
+image: "/img/posts/goji-berries.jpg"
 pubDate: 2025-03-21
 tags: ["superfoods", "snacks", "recipes"]
 ---

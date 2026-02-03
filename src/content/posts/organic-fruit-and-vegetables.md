@@ -1,6 +1,7 @@
 ---
 title: "Organic Fruit and Vegetables"
 description: "Why organic produce can be a smart everyday choice."
+image: "/img/posts/organic-fruit-vegetables.png"
 pubDate: 2025-03-15
 tags: ["organic", "produce", "seasonal"]
 ---
