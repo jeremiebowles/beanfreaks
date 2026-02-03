@@ -77,6 +77,57 @@ const base = import.meta.env.BASE_URL;
 
   <section class="bg-cream">
     <div class="container-bf py-12 sm:py-16">
+      <SectionHeader
+        kicker="In-store picks"
+        title="Product showcase"
+        lead="A small sample of what’s on the shelves right now."
+      />
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="card-bf overflow-hidden">
+          <img
+            src="https://www.beanfreaks.com/wp-content/uploads/2021/03/product-1.jpg"
+            alt="Aloe Vera Juice"
+            class="h-56 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3 class="text-lg font-extrabold">Aloe Vera Juice</h3>
+            <p class="mt-2 text-sm text-muted">Sale Price: £4.49</p>
+          </div>
+        </div>
+
+        <div class="card-bf overflow-hidden">
+          <img
+            src="https://www.beanfreaks.com/wp-content/uploads/2021/03/product-3.jpg"
+            alt="Chick Peas"
+            class="h-56 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3 class="text-lg font-extrabold">Chick Peas</h3>
+            <p class="mt-2 text-sm text-muted">Sale Price: £1.75</p>
+          </div>
+        </div>
+
+        <div class="card-bf overflow-hidden">
+          <img
+            src="https://www.beanfreaks.com/wp-content/uploads/2021/03/product-4.jpg"
+            alt="Cherry Night"
+            class="h-56 w-full object-cover"
+            loading="lazy"
+          />
+          <div class="p-6">
+            <h3 class="text-lg font-extrabold">Cherry Night</h3>
+            <p class="mt-2 text-sm text-muted">Sale Price: £6.95</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
       <div class="grid gap-8 lg:grid-cols-3">
         <div class="card-bf overflow-hidden">
           <img src={base + 'img/store-roath.jpg'} alt="Roath store" class="h-52 w-full object-cover" />
