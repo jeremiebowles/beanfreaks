@@ -32,6 +32,7 @@ const base = import.meta.env.BASE_URL;
 
     <div class="mt-10 border-t border-cream/15 pt-6 text-xs text-cream/70">
       © {new Date().getFullYear()} Beanfreaks. Built with Astro.
+      <span class="ml-2">Build: {new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })}</span>
     </div>
   </div>
 </footer>
