@@ -32,7 +32,7 @@ const ogImage = Astro.site ? new URL('/img/hero.jpg', Astro.site).toString() : '
   </head>
   <body class="min-h-screen flex flex-col">
     <Nav />
-    <main class="flex-1">
+    <main class="flex-1 min-h-screen">
       <slot />
     </main>
     <Footer />
