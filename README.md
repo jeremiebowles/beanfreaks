@@ -4,7 +4,7 @@
 - Astro static site configured for GitHub Pages Project Pages (`/beanfreaks/`)
 - Deterministic CSS: always builds a single `dist/tw.css` (no hashed CSS)
 - A cosy, clean health-food-shop design system (cream/ink/leaf/turmeric)
-- Starter pages: Home, Roath, Canton, Royal, Contact, Posts
+- Starter pages: Home, Roath, Canton, Royal Arcade, Contact, Posts
 
 ## Local dev
 ```bash
