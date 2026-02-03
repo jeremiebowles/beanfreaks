@@ -3,6 +3,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 const { title = 'Beanfreaks', description = 'Organic groceries, supplements, vegan and gluten-free essentials.' } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
+const ogImage = Astro.site ? new URL('/img/hero.jpg', Astro.site).toString() : '/img/hero.jpg';
 ---
 <!doctype html>
 <html lang="en">
@@ -12,6 +13,16 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString(
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light" />
     <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content="Beanfreaks" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <base href={import.meta.env.BASE_URL} />
     <link rel="icon" href={import.meta.env.BASE_URL + "favicon.svg"} type="image/svg+xml" />
