@@ -1,11 +1,11 @@
 ---
 title: "National Peanut Butter Day"
 description: "Celebrating a classic pantry favourite."
-pubDate: 2023-01-18
+pubDate: 2025-01-18
 tags: ["events", "pantry", "snacks"]
 ---
 
-![National Peanut Butter Day graphic](https://www.beanfreaks.com/wp-content/uploads/2023/01/Peanut-Butter-Day.png)
+![National Peanut Butter Day graphic](/img/posts/peanut-butter.png)
 
 Peanut butter is a simple, satisfying staple — great on toast, in smoothies, or stirred into sauces. National Peanut Butter Day is a fun reminder to restock and try something new.
 

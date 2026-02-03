@@ -1,11 +1,11 @@
 ---
 title: "Organic Fruit and Vegetables"
 description: "Why organic produce can be a smart everyday choice."
-pubDate: 2023-03-15
+pubDate: 2025-03-15
 tags: ["organic", "produce", "seasonal"]
 ---
 
-![Organic fruit and vegetables graphic](https://www.beanfreaks.com/wp-content/uploads/2023/03/organic-produce.png)
+![Organic fruit and vegetables graphic](/img/posts/organic-fruit-vegetables.png)
 
 Choosing organic fruit and vegetables supports farming methods that prioritise soil health and reduce synthetic inputs. If you’re starting out, focus on the produce you eat most often and build from there.
 
