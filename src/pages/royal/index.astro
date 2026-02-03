@@ -4,8 +4,42 @@ const base = import.meta.env.BASE_URL;
 const store = 'royal';
 const titleMap = { roath: 'Roath', canton: 'Canton', royal: 'Royal Arcade' };
 const imgMap = { roath: 'store-roath.jpg', canton: 'store-canton.jpg', royal: 'store-royal.jpg' };
+const canonical = 'https://www.beanfreaks.com/royal/';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'HealthFoodStore',
+  name: 'Beanfreaks Royal Arcade',
+  url: canonical,
+  telephone: '+44 2920 251671',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '8 Royal Arcade',
+    addressLocality: 'Morgan Quarter',
+    addressRegion: 'Cardiff',
+    postalCode: 'CF10 1AE',
+    addressCountry: 'GB'
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+      ],
+      opens: '10:00',
+      closes: '17:00'
+    }
+  ]
+};
 ---
 <Base title={titleMap[store] + ' — Beanfreaks'}>
+  <head>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
   <section class="bg-cream">
     <div class="container-bf py-12 sm:py-16">
       <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
