@@ -11,7 +11,7 @@ const items = [
 const path = Astro.url.pathname;
 const isActive = (href) => path === new URL(href, Astro.url).pathname;
 ---
-<header class="sticky top-0 z-50 border-b border-ink/10 bg-cream/90 backdrop-blur">
+<header class="sticky top-0 z-50 border-b border-moss/30 bg-moss text-cream">
   <div class="container-bf py-3">
     <div class="flex items-center justify-between gap-4">
       <a class="flex items-center gap-3" href={base} aria-label="Beanfreaks home">
@@ -23,8 +23,8 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
           <a
             href={it.href}
             class:list={[
-              'text-sm font-semibold text-ink/80 hover:text-ink',
-              isActive(it.href) && 'underline decoration-turmeric decoration-2 underline-offset-8 text-ink'
+              'text-sm font-semibold text-cream/80 hover:text-cream',
+              isActive(it.href) && 'underline decoration-turmeric decoration-2 underline-offset-8 text-cream'
             ]}
           >
             {it.label}
@@ -33,7 +33,7 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
       </nav>
 
       <div class="flex items-center gap-2">
-        <a class="btn-ghost hidden sm:inline-flex" href={base + 'posts/'}>This week</a>
+        <a class="btn-ghost hidden sm:inline-flex ring-cream/30 text-cream hover:bg-cream/10" href={base + 'posts/'}>This week</a>
         <a class="btn-accent" href={base + 'contact/'}>Ask in-store</a>
       </div>
     </div>
@@ -43,8 +43,8 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
         <a
           href={it.href}
           class:list={[
-            'pill-bf bg-ink/5 text-ink',
-            isActive(it.href) && 'bg-turmeric/25'
+            'pill-bf bg-cream/10 text-cream',
+            isActive(it.href) && 'bg-turmeric/30 text-ink'
           ]}
         >
           {it.label}
