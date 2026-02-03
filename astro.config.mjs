@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://jeremiebowles.github.io',
-  base: '/beanfreaks',
+  site: 'https://www.blackcurrants.click',
   output: 'static',
   trailingSlash: 'always',
 });
