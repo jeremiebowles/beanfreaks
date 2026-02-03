@@ -5,6 +5,7 @@
 - Deterministic CSS: always builds a single `dist/tw.css` (no hashed CSS)
 - A cosy, clean health-food-shop design system (cream/ink/leaf/turmeric)
 - Starter pages: Home, Roath, Canton, Royal Arcade, Contact, Posts
+- Image credits: see CREDITS.md
 
 ## Local dev
 ```bash
