@@ -1,12 +1,12 @@
 ---
 title: "National Peanut Butter Day"
 description: "Celebrating a classic pantry favourite."
-image: "/img/posts/peanut-butter.png"
+image: "/img/posts/peanut-butter.webp"
 pubDate: 2025-01-18
 tags: ["events", "pantry", "snacks"]
 ---
 
-![National Peanut Butter Day graphic](/img/posts/peanut-butter.png)
+![National Peanut Butter Day graphic](/img/posts/peanut-butter.webp)
 
 Peanut butter is a simple, satisfying staple — great on toast, in smoothies, or stirred into sauces. National Peanut Butter Day is a fun reminder to restock and try something new.
 

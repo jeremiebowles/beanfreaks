@@ -1,12 +1,12 @@
 ---
 title: "Superfood Trail Mix"
 description: "A simple mix for snacking, hiking, or an afternoon boost."
-image: "/img/posts/goji-berries.jpg"
+image: "/img/posts/goji-berries.webp"
 pubDate: 2025-03-21
 tags: ["superfoods", "snacks", "recipes"]
 ---
 
-![Superfood trail mix graphic](/img/posts/goji-berries.jpg)
+![Superfood trail mix graphic](/img/posts/goji-berries.webp)
 
 A trail mix is one of the easiest ways to make a nutrient‑dense snack. This version leans on a mix of nuts, seeds, and dried fruit to keep it balanced and satisfying.
 

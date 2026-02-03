@@ -1,12 +1,12 @@
 ---
 title: "Organic September"
 description: "A month‑long focus on organic food and farming."
-image: "/img/posts/organicseptember.jpg"
+image: "/img/posts/organicseptember.webp"
 pubDate: 2025-09-26
 tags: ["organic", "events", "seasonal"]
 ---
 
-![Organic September promotional graphic](/img/posts/organicseptember.jpg)
+![Organic September promotional graphic](/img/posts/organicseptember.webp)
 
 Organic September is a month‑long campaign that celebrates organic food, farming, and the people behind it. At Beanfreaks, it’s a chance to spotlight certified organic groceries, promote better soil and biodiversity, and share easy ways to make small organic swaps in everyday meals.
 
