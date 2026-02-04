@@ -36,10 +36,10 @@ const structuredData = {
   ]
 };
 ---
+<head>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+</head>
 <Base title={titleMap[store] + ' — Beanfreaks'}>
-  <head>
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
-  </head>
   <section class="bg-cream">
     <div class="container-bf py-12 sm:py-16">
       <div class="grid gap-8 lg:grid-cols-2 lg:items-center">

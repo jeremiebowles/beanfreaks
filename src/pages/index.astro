@@ -54,10 +54,10 @@ const structuredData = {
   ]
 };
 ---
+<head>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+</head>
 <Base title="Beanfreaks" description="Organic groceries, supplements, vegan and gluten-free essentials.">
-  <head>
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
-  </head>
   <section class="bg-cream">
     <div class="container-bf py-14 sm:py-18">
       <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
