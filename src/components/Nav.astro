@@ -26,10 +26,7 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
         {primaryItems.map((it, idx) => (
           <>
             {idx === 1 && (
-              <span
-                class="mx-1 hidden h-2.5 w-2.5 rotate-45 border border-cream/60 bg-cream/20 md:inline-flex"
-                aria-hidden="true"
-              ></span>
+              <span class="mx-1 hidden text-cream/70 md:inline-flex" aria-hidden="true">|</span>
             )}
             <a
               href={it.href}
@@ -40,10 +37,7 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
               {it.label}
             </a>
             {idx === primaryItems.length - 1 && (
-              <span
-                class="mx-1 hidden h-2.5 w-2.5 rotate-45 border border-cream/60 bg-cream/20 md:inline-flex"
-                aria-hidden="true"
-              ></span>
+              <span class="mx-1 hidden text-cream/70 md:inline-flex" aria-hidden="true">|</span>
             )}
           </>
         ))}
@@ -53,10 +47,7 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
         {actionItems.map((it, idx) => (
           <>
             {idx === 0 && (
-              <span
-                class="hidden h-2.5 w-2.5 rotate-45 border border-cream/60 bg-cream/20 md:inline-flex"
-                aria-hidden="true"
-              ></span>
+              <span class="hidden text-cream/70 md:inline-flex" aria-hidden="true">|</span>
             )}
           <a
             href={it.href}
@@ -75,18 +66,8 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
     <nav class="mt-3 flex flex-wrap gap-2 md:hidden">
       {[...primaryItems, ...actionItems].map((it, idx) => (
         <>
-          {idx === 1 && (
-            <span
-              class="h-2.5 w-2.5 rotate-45 border border-cream/60 bg-cream/20"
-              aria-hidden="true"
-            ></span>
-          )}
-          {idx === primaryItems.length && (
-            <span
-              class="h-2.5 w-2.5 rotate-45 border border-cream/60 bg-cream/20"
-              aria-hidden="true"
-            ></span>
-          )}
+          {idx === 1 && <span class="text-cream/70" aria-hidden="true">|</span>}
+          {idx === primaryItems.length && <span class="text-cream/70" aria-hidden="true">|</span>}
         <a
           href={it.href}
           class:list={[
