@@ -55,9 +55,6 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
             >
               {it.label}
             </a>
-            {idx === actionItems.length - 1 && (
-              <span class="hidden text-cream/70 md:inline-flex" aria-hidden="true">|</span>
-            )}
           </>
         ))}
       </div>
