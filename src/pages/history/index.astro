@@ -58,10 +58,26 @@ const captions = [
                 {img.webp ? (
                   <picture>
                     <source srcset={img.webp} type="image/webp" />
-                    <img src={img.src} alt={captions[idx].caption} class="h-56 w-full object-cover" loading="lazy" />
+                    <img
+                      src={img.src}
+                      alt={captions[idx].caption}
+                      class:list={[
+                        'h-56 w-full object-cover',
+                        idx === 0 && 'object-[50%_20%]'
+                      ]}
+                      loading="lazy"
+                    />
                   </picture>
                 ) : (
-                  <img src={img.src} alt={captions[idx].caption} class="h-56 w-full object-cover" loading="lazy" />
+                  <img
+                    src={img.src}
+                    alt={captions[idx].caption}
+                    class:list={[
+                      'h-56 w-full object-cover',
+                      idx === 0 && 'object-[50%_20%]'
+                    ]}
+                    loading="lazy"
+                  />
                 )}
                 <figcaption class="p-5">
                   <p class="text-xs font-semibold text-ink/60">{captions[idx].year}</p>
