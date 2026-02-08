@@ -2,9 +2,9 @@
 const base = import.meta.env.BASE_URL;
 const items = [
   { href: base, label: 'Home' },
-  { href: base + 'roath/', label: 'Roath' },
-  { href: base + 'canton/', label: 'Canton' },
-  { href: base + 'royal/', label: 'Royal Arcade' },
+  { href: base + 'roath/', label: 'Roath', kind: 'store' },
+  { href: base + 'canton/', label: 'Canton', kind: 'store' },
+  { href: base + 'royal/', label: 'Royal Arcade', kind: 'store' },
 ];
 const path = Astro.url.pathname;
 const isActive = (href) => path === new URL(href, Astro.url).pathname;
@@ -17,13 +17,17 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
         <span class="logo-wordmark text-cream/80 text-[0.6rem] sm:text-xs uppercase tracking-[0.2em]">est. 1978</span>
       </a>
 
-      <nav class="hidden items-center gap-5 md:flex">
+      <nav class="hidden items-center gap-3 md:flex">
         {items.map((it) => (
           <a
             href={it.href}
             class:list={[
-              'text-sm font-semibold text-cream/80 hover:text-cream',
-              isActive(it.href) && 'underline decoration-turmeric decoration-2 underline-offset-8 text-cream'
+              it.kind === 'store'
+                ? 'pill-bf bg-cream/10 text-cream hover:bg-cream/20'
+                : 'text-sm font-semibold text-cream/80 hover:text-cream',
+              isActive(it.href) && (it.kind === 'store'
+                ? 'bg-turmeric/30 text-ink'
+                : 'underline decoration-turmeric decoration-2 underline-offset-8 text-cream')
             ]}
           >
             {it.label}
