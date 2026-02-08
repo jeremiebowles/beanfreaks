@@ -4,7 +4,10 @@ import { getCollection } from 'astro:content';
 const base = import.meta.env.BASE_URL;
 const posts = (await getCollection('posts')).sort((a,b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
-<Base title="Posts — Beanfreaks">
+<Base
+  title="Posts — Beanfreaks"
+  description="Guides, product notes, and ingredient know-how from the Beanfreaks team."
+>
   <section class="bg-paper">
     <div class="container-bf py-12 sm:py-16">
       <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Posts</h1>
