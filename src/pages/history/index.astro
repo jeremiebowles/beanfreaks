@@ -3,17 +3,30 @@ import Base from '../../layouts/base.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 const base = import.meta.env.BASE_URL;
 const images = [
-  { src: base + 'img/history/1000002653.jpg', year: '2005', caption: 'More staff, more knowledge, and a wider vegan range.' },
-  { src: base + 'img/history/1000002654.jpg', year: '2010', caption: 'A fresh look and a bigger focus on local makers.' },
-  { src: base + 'img/history/1000002663.jpg', year: '2020', caption: 'Staying open for the essentials.' },
-  { src: base + 'img/history/1000002672.jpg', year: 'Today', caption: 'Still local, still helpful, still Beanfreaks.' },
-  { src: base + 'img/history/1000002647.jpg', year: '1978', caption: 'The first shelves and a small counter on day one.' },
-  { src: base + 'img/history/1000002649.jpg', year: '1982', caption: 'Growing local supply lines and more pantry basics.' },
-  { src: base + 'img/history/1000002650.jpg', year: '1987', caption: 'New signage and a bigger focus on wholefoods.' },
-  { src: base + 'img/history/1000002651.jpg', year: '1993', caption: 'Regulars, recipes, and early supplement favourites.' },
-  { src: base + 'img/history/1000002652.jpg', year: '1999', caption: 'Community events and specialist organic ranges.' },
-  { src: base + 'img/history/1000002655.jpg', year: '2014', caption: 'Seasonal displays and a deeper supplements shelf.' },
-  { src: base + 'img/history/1000002657.jpg', year: '2018', caption: 'Celebrating 40 years with our community.' }
+  base + 'img/history/1000002653.jpg',
+  base + 'img/history/1000002654.jpg',
+  base + 'img/history/1000002663.jpg',
+  base + 'img/history/1000002672.jpg',
+  base + 'img/history/1000002647.jpg',
+  base + 'img/history/1000002649.jpg',
+  base + 'img/history/1000002650.jpg',
+  base + 'img/history/1000002651.jpg',
+  base + 'img/history/1000002652.jpg',
+  base + 'img/history/1000002655.jpg',
+  base + 'img/history/1000002657.jpg'
+];
+const captions = [
+  { year: '1978', caption: 'The first shelves and a small counter on day one.' },
+  { year: '1982', caption: 'Growing local supply lines and more pantry basics.' },
+  { year: '1987', caption: 'New signage and a bigger focus on wholefoods.' },
+  { year: '1993', caption: 'Regulars, recipes, and early supplement favourites.' },
+  { year: '1999', caption: 'Community events and specialist organic ranges.' },
+  { year: '2005', caption: 'More staff, more knowledge, and a wider vegan range.' },
+  { year: '2010', caption: 'A fresh look and a bigger focus on local makers.' },
+  { year: '2014', caption: 'Seasonal displays and a deeper supplements shelf.' },
+  { year: '2018', caption: 'Celebrating 40 years with our community.' },
+  { year: '2020', caption: 'Staying open for the essentials.' },
+  { year: 'Today', caption: 'Still local, still helpful, still Beanfreaks.' }
 ];
 ---
 <Base title="History — Beanfreaks" description="A short visual history of Beanfreaks in Cardiff.">
@@ -43,12 +56,12 @@ const images = [
 
         <div class="lg:col-span-8">
           <div class="grid gap-6 sm:grid-cols-2">
-            {images.map((img) => (
+            {images.map((src, idx) => (
               <figure class="card-bf overflow-hidden">
-                <img src={img.src} alt={img.caption} class="h-56 w-full object-cover" loading="lazy" />
+                <img src={src} alt={captions[idx].caption} class="h-56 w-full object-cover" loading="lazy" />
                 <figcaption class="p-5">
-                  <p class="text-xs font-semibold text-ink/60">{img.year}</p>
-                  <p class="mt-2 text-sm text-muted">{img.caption}</p>
+                  <p class="text-xs font-semibold text-ink/60">{captions[idx].year}</p>
+                  <p class="mt-2 text-sm text-muted">{captions[idx].caption}</p>
                 </figcaption>
               </figure>
             ))}
