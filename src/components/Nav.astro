@@ -23,10 +23,10 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
             href={it.href}
             class:list={[
               it.kind === 'store'
-                ? 'pill-bf bg-cream/10 text-cream hover:bg-cream/20'
+                ? 'pill-bf bg-turmeric/90 text-ink hover:bg-turmeric'
                 : 'text-sm font-semibold text-cream/80 hover:text-cream',
               isActive(it.href) && (it.kind === 'store'
-                ? 'bg-turmeric/30 text-ink'
+                ? 'bg-turmeric text-ink'
                 : 'underline decoration-turmeric decoration-2 underline-offset-8 text-cream')
             ]}
           >

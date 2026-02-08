@@ -8,7 +8,7 @@ License: https://unsplash.com/license
 
 - public/img/hero.jpg — https://unsplash.com/photos/wtevVfGYwnM/download?force=true&w=2200
 - public/img/feature-bulk.jpg — https://unsplash.com/photos/w5F58RCSsNA/download?force=true&w=1600
-- public/img/feature-glutenfree.jpg — https://unsplash.com/photos/AO1KIEiXPZs/download?force=true&w=1600
+- public/img/feature-glutenfree.jpg — https://unsplash.com/photos/ycPasxXvN_0/download?force=true&w=1600
 - public/img/feature-produce.jpg — https://unsplash.com/photos/KD3XqquHlcc/download?force=true&w=1600
 - public/img/product-aloe.jpg — https://unsplash.com/photos/eqcZ_oVXaGg/download?force=true&w=1200
 - public/img/product-chickpeas.jpg — https://unsplash.com/photos/rvhyL02EAWo/download?force=true&w=1200
@@ -33,3 +33,8 @@ License: https://www.pexels.com/license/
 - https://www.beanfreaks.com/img/goji-berries.jpg
 - https://www.beanfreaks.com/img/organic-fruit-vegetables.png
 - https://www.beanfreaks.com/img/peanut-butter.png
+
+## Third-party product images
+
+- https://www.revital.co.uk/cdn/shop/products/PukkaAloeVeraJuice_MaxStrength_1Ltr_1200x1200.jpg
+- https://med365.co.za/cdn/shop/products/ViridianCherryNightPowder150g_1200x1200.jpg
