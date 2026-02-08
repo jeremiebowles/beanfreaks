@@ -15,7 +15,7 @@ const path = Astro.url.pathname;
 const isActive = (href) => path === new URL(href, Astro.url).pathname;
 ---
 <header class="sticky top-0 z-50 border-b border-moss/30 bg-moss text-cream">
-  <div class="container-bf py-3">
+  <div class="container-bf py-[0.825rem]">
     <div class="flex items-center justify-between gap-4">
       <a class="flex items-baseline gap-2" href={base} aria-label="Beanfreaks home">
         <span class="logo-wordmark text-cream text-[1.8rem] sm:text-[2.25rem]">Beanfreaks</span>

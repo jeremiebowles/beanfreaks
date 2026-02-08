@@ -29,3 +29,6 @@ npm run build
 
 ## Replace placeholder images
 Drop real JPGs into `public/img/` keeping the same filenames.
+
+## Session log
+We track handoff notes in `docs/session-log.md`. Check this first when resuming work.
