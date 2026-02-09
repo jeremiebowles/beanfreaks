@@ -16,13 +16,13 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
 ---
 <header class="sticky top-0 z-50 border-b border-moss/30 bg-moss text-cream">
   <div class="container-bf py-[0.825rem]">
-    <div class="flex items-center justify-between gap-4">
+    <div class="flex flex-wrap items-center justify-between gap-4">
       <a class="flex items-baseline gap-2" href={base} aria-label="Beanfreaks home">
         <span class="logo-wordmark text-cream text-[1.8rem] sm:text-[2.25rem]">Beanfreaks</span>
         <span class="logo-wordmark text-cream/80 text-[0.6rem] sm:text-xs uppercase tracking-[0.2em] leading-none translate-y-[0.08rem]">est. 1978</span>
       </a>
 
-      <nav class="hidden items-center gap-3 sm:flex">
+      <nav class="hidden items-center gap-2 sm:flex sm:w-full sm:flex-wrap sm:justify-center md:w-auto md:flex-nowrap md:gap-3 md:justify-start">
         {primaryItems.map((it, idx) => (
           <>
             {idx === 1 && (
@@ -43,7 +43,7 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
         ))}
       </nav>
 
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 sm:w-full sm:flex-wrap sm:justify-center md:w-auto">
         {actionItems.map((it, idx) => (
           <>
             <a
