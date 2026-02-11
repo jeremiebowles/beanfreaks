@@ -77,13 +77,16 @@ const structuredData = {
           </div>
         </div>
         <div class="card-bf overflow-hidden">
-          <img
-            src="https://www.beanfreaks.com/img/canton.jpg"
-            alt={titleMap[store] + ' shop'}
-            class="h-[320px] w-full object-cover sm:h-[420px]"
-            style="filter: brightness(1.03) contrast(1.08);"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset={base + 'img/store-canton.webp'} type="image/webp" />
+            <img
+              src={base + 'img/' + imgMap[store]}
+              alt={titleMap[store] + ' shop'}
+              class="h-[320px] w-full object-cover sm:h-[420px]"
+              style="filter: brightness(1.03) contrast(1.08);"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </div>
 
