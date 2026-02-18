@@ -18,9 +18,9 @@ const isActive = (href) => path === new URL(href, Astro.url).pathname;
 <header class="sticky top-0 z-50 border-b border-moss/30 bg-moss text-cream">
   <div class="container-bf py-[0.825rem]">
     <div class="flex items-center justify-between gap-4">
-      <a class="flex items-baseline gap-2" href={base} aria-label="Beanfreaks home">
+      <a class="flex items-end gap-2" href={base} aria-label="Beanfreaks home">
         <span class="logo-wordmark text-cream text-[1.8rem] sm:text-[2.25rem]">Beanfreaks</span>
-        <span class="logo-wordmark text-cream/80 text-[0.6rem] sm:text-xs uppercase tracking-[0.2em] leading-none translate-y-[0.08rem]">est. 1978</span>
+        <span class="logo-wordmark text-cream/80 text-[0.6rem] sm:text-xs uppercase tracking-[0.2em] leading-none">est. 1978</span>
       </a>
       <details class="relative hidden [@media(min-width:640px)_and_(max-width:767px)_and_(orientation:landscape)]:block">
         <summary class="btn-accent inline-flex cursor-pointer list-none select-none">Menu</summary>
