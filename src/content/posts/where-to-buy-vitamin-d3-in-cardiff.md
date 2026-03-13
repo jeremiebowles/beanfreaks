@@ -58,7 +58,7 @@ Vegan D3 is derived from lichen, a naturally occurring source of D3 in the plant
 
 ## What we stock
 
-We carry BetterYou at all three Beanfreaks stores. Their D-Lux range includes the D+K2 combination spray and a range of doses for different needs, including a vegan-certified option. BetterYou are a Welsh company, which is a reasonable additional reason to stock them.
+We carry BetterYou at all three Beanfreaks stores. Their D-Lux range includes the D+K2 combination spray and a range of doses for different needs, including a vegan-certified option.
 
 We also carry Solgar vitamin D3 softgels, a well-established option for those who prefer a traditional capsule format.
 
