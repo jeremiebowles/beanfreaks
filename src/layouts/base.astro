@@ -25,6 +25,7 @@ const ogImage = Astro.site ? new URL('/img/hero.jpg', Astro.site).toString() : '
     <meta name="twitter:image" content={ogImage} />
 
     <base href={import.meta.env.BASE_URL} />
+    <link rel="preload" href="/fonts/tex-gyre-bonum/texgyrebonum-bold.otf" as="font" type="font/otf" crossorigin />
     <link rel="icon" href={import.meta.env.BASE_URL + "favicon.svg"} type="image/svg+xml" />
     <link rel="stylesheet" href={import.meta.env.BASE_URL + "tw.css"} />
 
