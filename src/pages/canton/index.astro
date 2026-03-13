@@ -10,6 +10,8 @@ const structuredData = {
   name: 'Beanfreaks Canton',
   url: canonical,
   telephone: '+44 2920 343226',
+  image: 'https://www.beanfreaks.com/img/canton.jpg',
+  priceRange: '£',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '124 Cowbridge Road East',
@@ -17,6 +19,11 @@ const structuredData = {
     addressRegion: 'Cardiff',
     postalCode: 'CF11 9DX',
     addressCountry: 'GB'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.481571328444545,
+    longitude: -3.1986344350346445
   },
   openingHoursSpecification: [
     {
@@ -47,7 +54,7 @@ const structuredData = {
       <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
         <div>
           <p class="pill-bf bg-ink/5 text-ink">Store</p>
-          <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">{titleMap[store]}</h1>
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">Beanfreaks {titleMap[store]}</h1>
           <p class="mt-3 text-muted">We're located opposite Boots.</p>
           <div class="mt-6 grid gap-4 sm:grid-cols-2">
             <div class="card-bf p-5">
@@ -83,7 +90,6 @@ const structuredData = {
               alt={titleMap[store] + ' shop'}
               class="h-[320px] w-full object-cover sm:h-[420px]"
               style="filter: brightness(1.03) contrast(1.08);"
-              loading="lazy"
             />
           </picture>
         </div>
