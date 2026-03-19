@@ -28,21 +28,23 @@ D3 is the form your body produces naturally from sunlight. When you supplement w
 
 D2 is cheaper to produce and was historically the standard supplement form. It is still common in fortified foods. If you are buying a specific supplement to address or prevent deficiency, D3 is the form worth looking for.
 
-## Why D3 is often paired with K2
+## Why you must take K2 with D3
 
-Vitamin D3 increases calcium absorption from food and supplements. This is largely the point: adequate vitamin D is needed for calcium to reach bones at all. The issue is that increasing calcium absorption without proper routing can lead to calcium depositing in soft tissue and arteries rather than where it should go.
+Vitamin D3 increases calcium absorption from food and supplements. This is largely the point: adequate vitamin D is needed for calcium to reach bones at all. The problem is that increasing calcium absorption without proper routing leads to calcium depositing in soft tissue and arteries rather than where it should go — a process linked to arterial stiffness and cardiovascular risk.
 
-Vitamin K2 (specifically the MK-7 form) activates proteins that direct calcium to bones and away from arteries. D3 and K2 work together: D3 gets calcium absorbed, K2 ensures it ends up in the right place.
+Vitamin K2 (specifically the MK-7 form) activates two critical proteins: osteocalcin, which binds calcium into bone, and matrix Gla-protein, which actively removes calcium from arteries and soft tissue. Without sufficient K2, the extra calcium D3 puts into circulation has nowhere to go except where you do not want it.
 
-This is why D3+K2 combination products have become the standard recommendation rather than D3 alone. If you are taking a meaningful dose of D3 regularly, pairing it with K2 makes sense.
+This is not a nice-to-have pairing. If you are taking D3 at any meaningful dose, K2 is essential. D3+K2 combination products exist precisely because taking D3 alone at higher doses without K2 is potentially counterproductive. Always look for K2 as MK-7 rather than MK-4, as MK-7 has a much longer half-life in the body and is the form with the strongest evidence.
 
 ## How much to take
 
-The NHS recommends 10 micrograms (400 IU) daily for the general population. This is a conservative baseline designed to prevent outright deficiency.
+The NHS recommends 400 IU (10 micrograms) daily for the general population. This is widely considered a bare minimum to prevent outright deficiency, not a target for optimal health.
 
-Many practitioners and researchers suggest higher doses are needed to maintain genuinely optimal levels, typically in the range of 1,000 to 4,000 IU daily. People with darker skin tones, those who spend most of their time indoors, and those who are already deficient typically benefit from higher doses. If you have reason to believe your levels are significantly low, a blood test is the reliable way to know where you stand and what dose makes sense.
+There is a well-documented problem with this figure. In 2014, statisticians identified a significant calculation error in the original Institute of Medicine data used to set the RDA. The IOM confused individual variation with group averages, meaning the dose calculated to achieve adequate levels in 97.5% of individuals was massively understated. When the data are analysed correctly, 600 IU achieves only around 27 nmol/L in 97.5% of people — well below the 50 nmol/L threshold considered sufficient. The corrected figure to reliably achieve sufficiency across a population is closer to 8,895 IU per day. This error has been known in the research community for over a decade and remains uncorrected in official guidelines.
 
-At standard supplemental doses, vitamin D3 is safe for most people. The concern about toxicity applies at very high doses taken over extended periods, not at typical daily supplements.
+In practice, most people supplementing for genuine sufficiency take between 2,000 and 5,000 IU daily. People with darker skin tones, those who spend most of their time indoors, and those who are already deficient typically benefit from the higher end of that range. A blood test (serum 25(OH)D) is the reliable way to know where you actually stand.
+
+At these doses, vitamin D3 is safe for most people. Toxicity is a concern only at very high doses — well above 10,000 IU — sustained over long periods.
 
 ## Spray versus capsule
 
