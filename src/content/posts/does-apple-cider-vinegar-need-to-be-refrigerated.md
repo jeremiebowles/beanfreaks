@@ -34,10 +34,6 @@ The mother will settle at the bottom of the bottle between uses. This is normal 
 
 Refrigeration will not harm the mother, but it slows its activity slightly and makes the vinegar thicker and harder to pour. There is no benefit to keeping it cold.
 
-## How long does it last?
-
-Properly stored, ACV lasts indefinitely. The acidity prevents spoilage. Bragg's carries a best before date, but this is more of a quality guideline than a safety indicator — a bottle stored correctly will still be perfectly good well beyond that date.
-
 ## The short version
 
 Store it in a cupboard, away from heat and light. Shake before use. Do not refrigerate unless you prefer it cold. It will last as long as you need it to.
