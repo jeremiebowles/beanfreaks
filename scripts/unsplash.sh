@@ -38,12 +38,14 @@ ENCODED_QUERY=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$QUER
 echo "Searching Unsplash for: $QUERY"
 echo ""
 
-RESPONSE=$(curl -s "https://api.unsplash.com/search/photos?query=${ENCODED_QUERY}&per_page=5&orientation=landscape&client_id=${UNSPLASH_ACCESS_KEY}")
+TMPFILE=$(mktemp)
+curl -s "https://api.unsplash.com/search/photos?query=${ENCODED_QUERY}&per_page=5&orientation=landscape&client_id=${UNSPLASH_ACCESS_KEY}" > "$TMPFILE"
 
 python3 << PYEOF
 import json, sys
 
-data = json.loads('''$RESPONSE''')
+with open("$TMPFILE") as f:
+    data = json.load(f)
 results = data.get('results', [])
 
 if not results:
@@ -62,11 +64,13 @@ read -p "Pick a number (1-5), or q to quit: " CHOICE
 
 if [ "$CHOICE" = "q" ]; then
   echo "Cancelled."
+  rm -f "$TMPFILE"
   exit 0
 fi
 
 if ! [[ "$CHOICE" =~ ^[1-5]$ ]]; then
   echo "Invalid choice."
+  rm -f "$TMPFILE"
   exit 1
 fi
 
@@ -74,17 +78,18 @@ INDEX=$((CHOICE - 1))
 
 DOWNLOAD_URL=$(python3 << PYEOF
 import json
-data = json.loads('''$RESPONSE''')
+with open("$TMPFILE") as f:
+    data = json.load(f)
 results = data.get('results', [])
 photo = results[$INDEX]
-# Trigger the download endpoint as required by Unsplash API guidelines
 print(photo['urls']['regular'])
 PYEOF
 )
 
 DOWNLOAD_ENDPOINT=$(python3 << PYEOF
 import json
-data = json.loads('''$RESPONSE''')
+with open("$TMPFILE") as f:
+    data = json.load(f)
 results = data.get('results', [])
 photo = results[$INDEX]
 print(photo['links']['download_location'])
@@ -93,12 +98,15 @@ PYEOF
 
 PHOTOGRAPHER=$(python3 << PYEOF
 import json
-data = json.loads('''$RESPONSE''')
+with open("$TMPFILE") as f:
+    data = json.load(f)
 results = data.get('results', [])
 photo = results[$INDEX]
 print(photo['user']['name'])
 PYEOF
 )
+
+rm -f "$TMPFILE"
 
 # Trigger download tracking (required by Unsplash guidelines)
 curl -s "${DOWNLOAD_ENDPOINT}&client_id=${UNSPLASH_ACCESS_KEY}" > /dev/null
