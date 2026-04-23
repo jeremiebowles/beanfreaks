@@ -6,7 +6,7 @@ pubDate: 2026-03-28
 tags: ["guides", "supplements"]
 ---
 
-![Maca powder in a wooden bowl](/img/posts/maca-powder.webp)
+![Colourful herbs and spices on a dark background](/img/posts/maca-powder.webp)
 
 Adaptogens have been a fixture in traditional herbal medicine for centuries. They have also, more recently, become one of the most over-marketed categories in the supplement industry. That makes them worth understanding properly — what the evidence actually says, what the sensible use cases are, and what the hype gets wrong.
 

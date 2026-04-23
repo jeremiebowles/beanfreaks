@@ -6,7 +6,7 @@ pubDate: 2026-04-07
 tags: ["guides", "pantry"]
 ---
 
-![Kefir grains in a glass jar](/img/posts/kefir-grains.webp)
+![Jars of preserved and fermented food on a shelf](/img/posts/kefir-grains.webp)
 
 Kefir is one of the most probiotic-dense foods you can eat. The commercially made kefir available in supermarkets contains a decent number of live cultures, but if you want the real thing — dozens of bacterial and yeast strains in significant quantities — making it at home from live kefir grains is a different order of product entirely.
 

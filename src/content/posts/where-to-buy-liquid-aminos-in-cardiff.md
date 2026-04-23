@@ -6,7 +6,7 @@ pubDate: 2026-04-02
 tags: ["guides", "vegan", "pantry"]
 ---
 
-![Bottle of liquid aminos on a kitchen counter](/img/posts/liquid-aminos.webp)
+![Bottles of oil and condiments on a pantry shelf](/img/posts/liquid-aminos.webp)
 
 Liquid aminos tend to cause confusion. They look like soy sauce, they taste a bit like soy sauce, they go in the same places as soy sauce — so what is actually different about them, and why are they on a separate shelf?
 

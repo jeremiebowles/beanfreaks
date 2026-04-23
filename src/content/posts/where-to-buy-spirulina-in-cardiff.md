@@ -6,7 +6,7 @@ pubDate: 2026-04-17
 tags: ["guides", "vegan", "supplements"]
 ---
 
-![Spirulina powder on a spoon](/img/posts/spirulina.webp)
+![Matcha green powder on a wooden spoon](/img/posts/spirulina.webp)
 
 Spirulina is one of those foods that sounds implausible until you look at the numbers. A blue-green algae that has been growing on Earth for over three billion years turns out to be one of the most nutrient-dense things you can eat — and one of the better options for anyone on a plant-based diet trying to cover nutritional bases efficiently.
 

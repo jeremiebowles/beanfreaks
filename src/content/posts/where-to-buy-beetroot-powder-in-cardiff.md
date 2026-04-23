@@ -6,7 +6,7 @@ pubDate: 2026-04-12
 tags: ["guides", "supplements"]
 ---
 
-![Beetroot powder in a small bowl](/img/posts/beetroot-powder.webp)
+![Fresh beetroot harvest](/img/posts/beetroot-powder.webp)
 
 Beetroot powder has moved from the sports nutrition shelf into everyday kitchens over the last few years, and for good reason. The evidence behind it is solid, the uses are genuinely practical, and it is one of the more versatile powders to have around.
 
