@@ -2,7 +2,7 @@
 title: "Adaptogens Explained: Maca, Ashwagandha and What We Stock"
 description: "What adaptogens are, what the evidence actually says, and a guide to maca, ashwagandha, rhodiola and lion's mane — all available at Beanfreaks Cardiff."
 image: "/img/posts/maca-powder.webp"
-pubDate: 2026-04-28
+pubDate: 2026-03-28
 tags: ["guides", "supplements"]
 ---
 

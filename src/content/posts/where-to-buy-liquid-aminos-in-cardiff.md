@@ -2,7 +2,7 @@
 title: "Where to Buy Liquid Aminos in Cardiff"
 description: "Bragg Liquid Aminos, coconut aminos, and what the difference actually is — a plain-English guide, plus where to find them at Beanfreaks Cardiff."
 image: "/img/posts/liquid-aminos.webp"
-pubDate: 2026-05-05
+pubDate: 2026-04-02
 tags: ["guides", "vegan", "pantry"]
 ---
 

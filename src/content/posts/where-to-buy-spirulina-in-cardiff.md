@@ -2,7 +2,7 @@
 title: "Where to Buy Spirulina in Cardiff"
 description: "What spirulina is, why it matters for plant-based diets, and the quality question you should ask before buying — plus where to find it at Beanfreaks Cardiff."
 image: "/img/posts/spirulina.webp"
-pubDate: 2026-05-26
+pubDate: 2026-04-17
 tags: ["guides", "vegan", "supplements"]
 ---
 

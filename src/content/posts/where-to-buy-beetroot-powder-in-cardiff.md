@@ -2,7 +2,7 @@
 title: "Where to Buy Beetroot Powder in Cardiff"
 description: "What beetroot powder is used for, how it compares to fresh beetroot and juice, and where to find it at Beanfreaks Cardiff."
 image: "/img/posts/beetroot-powder.webp"
-pubDate: 2026-05-19
+pubDate: 2026-04-12
 tags: ["guides", "supplements"]
 ---
 
