@@ -1,5 +1,5 @@
 ---
-title: "Where to Buy Kefir Grains in Cardiff"
+title: "How to Make Kefir at Home"
 description: "What kefir grains are, the difference between milk and water kefir, and how to make kefir at home — plus where to find them at Beanfreaks Cardiff."
 image: "/img/posts/kefir-grains.webp"
 pubDate: 2026-04-07

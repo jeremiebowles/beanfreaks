@@ -1,5 +1,5 @@
 ---
-title: "Where to Buy Beetroot Powder in Cardiff"
+title: "Beetroot Powder: Benefits, Uses and Why It's Worth Keeping in Your Kitchen"
 description: "What beetroot powder is used for, how it compares to fresh beetroot and juice, and where to find it at Beanfreaks Cardiff."
 image: "/img/posts/beetroot-powder.webp"
 pubDate: 2026-04-12

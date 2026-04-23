@@ -1,5 +1,5 @@
 ---
-title: "Where to Buy Liquid Aminos in Cardiff"
+title: "Liquid Aminos vs Soy Sauce: What's the Difference?"
 description: "Bragg Liquid Aminos, coconut aminos, and what the difference actually is — a plain-English guide, plus where to find them at Beanfreaks Cardiff."
 image: "/img/posts/liquid-aminos.webp"
 pubDate: 2026-04-02
