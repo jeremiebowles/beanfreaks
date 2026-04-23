@@ -38,5 +38,17 @@ const ogImage = Astro.site ? new URL('/img/hero.jpg', Astro.site).toString() : '
       <slot />
     </main>
     <Footer />
+    <script>
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLIFrameElement;
+            el.src = (el as HTMLElement).dataset.src!;
+            obs.unobserve(el);
+          }
+        });
+      }, { rootMargin: '200px' });
+      document.querySelectorAll('iframe[data-src]').forEach(el => observer.observe(el));
+    </script>
   </body>
 </html>
