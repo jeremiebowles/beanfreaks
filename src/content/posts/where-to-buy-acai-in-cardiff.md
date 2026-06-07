@@ -42,9 +42,9 @@ Organic certification where possible. Conventionally grown acai can involve pest
 
 Single-ingredient. Some acai powders include fillers, maltodextrin, or added sugars. The label should say acai and nothing else.
 
-## Find it in store
+## What we stock
 
-Acai powder is in stock at all three Beanfreaks stores in Cardiff:
+We carry Naturya Organic Acai Powder at all three Beanfreaks stores in Cardiff. Naturya is a certified organic brand focused on superfood powders — their acai is freeze-dried, single-ingredient, and sourced from the Amazon.
 
 - **Roath:** 95 Albany Road, CF24 3LP
 - **Canton:** 124 Cowbridge Road East, CF11 9DX

@@ -44,9 +44,9 @@ Organic is worth prioritising. Moringa grown in less regulated regions can carry
 
 Single-leaf moringa, not blended. Some moringa products mix in spirulina, wheatgrass, or other greens. These blends are fine but you are getting less moringa per serving and cannot easily verify the ratio. If moringa is what you want, single-ingredient is cleaner.
 
-## Find it in store
+## What we stock
 
-Moringa is in stock at all three Beanfreaks locations in Cardiff:
+We carry Aduna Moringa Powder at all three Beanfreaks stores in Cardiff. Aduna is a B Corporation-certified brand that works directly with smallholder farmers in Africa — their moringa is organically grown, dried at low temperature, and certified organic. The 275g pouch is the one we regularly stock.
 
 - **Roath:** 95 Albany Road, CF24 3LP
 - **Canton:** 124 Cowbridge Road East, CF11 9DX
