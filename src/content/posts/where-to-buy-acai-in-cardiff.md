@@ -6,7 +6,7 @@ pubDate: 2026-05-03
 tags: ["guides", "wholefood", "vegan"]
 ---
 
-![Acai powder and acai bowl](/img/posts/acai.webp)
+![Naturya organic acai powder](/img/posts/acai.webp)
 
 Acai powder is in stock at Beanfreaks in Cardiff. Here is what it is, how to use it, and what to look for when you buy it.
 

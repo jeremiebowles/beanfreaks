@@ -6,7 +6,7 @@ pubDate: 2026-04-23
 tags: ["guides", "organic", "wholefood"]
 ---
 
-![Biona organic products on shelf](/img/posts/biona.webp)
+![Biona Organic Raw Virgin Coconut Oil](/img/posts/biona.webp)
 
 If you are looking for Biona products in Cardiff, Beanfreaks stocks the range across all three stores in Roath, Canton and the Royal Arcade. Here is what Biona is, what they make, and what you are likely to find on our shelves.
 

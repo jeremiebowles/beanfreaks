@@ -6,7 +6,7 @@ pubDate: 2026-04-28
 tags: ["guides", "wholefood"]
 ---
 
-![Matcha powder and prepared matcha drink](/img/posts/matcha.webp)
+![Prepared matcha bowl with bamboo whisk and matcha powder](/img/posts/matcha.webp)
 
 Matcha is in stock at Beanfreaks across all three Cardiff stores. If you already know what you want, come in and ask. If you are trying to work out what grade to buy or how to use it, read on.
 

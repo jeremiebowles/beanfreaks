@@ -6,7 +6,7 @@ pubDate: 2026-05-08
 tags: ["guides", "wholefood", "vegan"]
 ---
 
-![Moringa powder and capsules](/img/posts/moringa.webp)
+![Aduna moringa powder](/img/posts/moringa.webp)
 
 Moringa is in stock at Beanfreaks across Cardiff. Here is an honest look at what it is, what the evidence supports, and how to use it.
 

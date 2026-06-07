@@ -1,12 +1,12 @@
 ---
 title: "Protein Powder in Cardiff: What We Stock and What to Look For"
 description: "Where to buy protein powder in Cardiff, what the different types are, and how to choose the one that's actually right for you."
-image: "/img/posts/protein-powder.webp"
+image: "/img/posts/rawsport-protein.webp"
 pubDate: 2026-05-13
 tags: ["guides", "supplements", "sport"]
 ---
 
-![Protein powder and shaker on shelf](/img/posts/protein-powder.webp)
+![Raw Sport Elite Repair plant protein with shaker](/img/posts/rawsport-protein.webp)
 
 If you are looking for protein powder in Cardiff, Beanfreaks stocks options at all three stores — Roath, Canton, and the Royal Arcade. Here is what we carry and a straightforward guide to the choices worth considering.
 
