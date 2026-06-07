@@ -68,7 +68,7 @@ const structuredData = {
             Good food, clean supplements, and genuinely helpful advice.
           </h1>
           <p class="mt-4 text-lg text-muted">
-            Organic groceries, vegan and gluten-free essentials, plus local favourites like honey and chocolate — and a supplements shelf that keeps it sensible.
+            Organic groceries, vegan and gluten-free essentials, plus local favourites like honey and chocolate &mdash; and a supplements shelf that keeps it sensible.
           </p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a class="btn-primary" href="#stores">Find your nearest shop</a>
@@ -107,12 +107,14 @@ const structuredData = {
   img={{ src: base + 'img/feature-produce.jpg', webp: base + 'img/feature-produce.webp', alt: 'Fresh produce' }}
 />
 
-<FeatureCard
-  title="Supplements"
-  desc="The useful stuff, not the hype."
-  pill={{ label: 'Trusted', class: 'pill-bf bg-ink/5 text-ink' }}
-  img={{ src: base + 'img/feature-supplements.jpg', webp: base + 'img/feature-supplements.webp', alt: 'Supplement bottle' }}
-/>
+<a href={base + 'supplements/'} class="block">
+  <FeatureCard
+    title="Supplements"
+    desc="The useful stuff, not the hype."
+    pill={{ label: 'Trusted', class: 'pill-bf bg-ink/5 text-ink' }}
+    img={{ src: base + 'img/feature-supplements.jpg', webp: base + 'img/feature-supplements.webp', alt: 'Supplement bottle' }}
+  />
+</a>
 
 <FeatureCard
   title="Vegan & veggie"
@@ -123,7 +125,7 @@ const structuredData = {
 
 <FeatureCard
   title="Gluten-free"
-  desc="Bread, pasta, snacks — without compromise."
+  desc="Bread, pasta, snacks - without compromise."
   pill={{ label: 'GF', class: 'pill-gf' }}
   img={{ src: base + 'img/feature-glutenfree.jpg', webp: base + 'img/feature-glutenfree.webp', alt: 'Sliced loaf of bread' }}
 />

@@ -1,0 +1,267 @@
+---
+import Base from '../../layouts/base.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+const base = import.meta.env.BASE_URL;
+const canonical = 'https://www.beanfreaks.com/supplements/';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Supplements at Beanfreaks Cardiff',
+  description: 'Vitamins, minerals, protein, adaptogens and herbal supplements stocked across three Cardiff health food shops.',
+  url: canonical,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Vitamins & Minerals' },
+    { '@type': 'ListItem', position: 2, name: 'Protein & Sports Nutrition' },
+    { '@type': 'ListItem', position: 3, name: 'Adaptogens & Herbal' },
+    { '@type': 'ListItem', position: 4, name: 'Probiotics & Digestive' },
+    { '@type': 'ListItem', position: 5, name: 'Omegas & Essential Fats' },
+  ]
+};
+---
+<head>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+</head>
+<Base
+  title="Supplement Shop Cardiff | Vitamins, Protein & Herbal | Beanfreaks"
+  description="Cardiff's supplement shop since 1978. Vitamins, minerals, protein, adaptogens and herbal formulas from trusted brands - expert advice in-store at Roath, Canton and the Royal Arcade."
+>
+  <!-- Hero -->
+  <section class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="pill-bf bg-ink/5 text-ink">Supplement Shop Cardiff</p>
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Supplements worth taking, from staff who actually know them.
+          </h1>
+          <p class="mt-3 text-muted">
+            We've stocked supplements in Cardiff since 1978. No hard sell, no hype &mdash;
+            just a well-edited range from brands we trust, and staff who can talk you
+            through the options.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn-primary" href="#categories">What we carry</a>
+            <a class="btn-ghost" href={base + 'contact/'}>Ask about a specific product</a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="pill-bf bg-ink/5 text-ink">Expert advice</span>
+            <span class="pill-vegan">Vegan options</span>
+            <span class="pill-organic">Certified organic</span>
+          </div>
+        </div>
+        <div class="card-bf overflow-hidden">
+          <picture>
+            <source srcset={base + 'img/feature-supplements.webp'} type="image/webp" />
+            <img
+              src={base + 'img/feature-supplements.jpg'}
+              alt="Supplement bottles on shelf"
+              class="h-[320px] w-full object-cover sm:h-[420px]"
+              style="filter: brightness(1.03) contrast(1.08);"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands -->
+  <section class="bg-paper">
+    <div class="container-bf py-12 sm:py-16">
+      <SectionHeader
+        kicker="Brands we trust"
+        title="Not every brand makes the shelf"
+        lead="We pick brands on evidence, ingredient quality and transparency &mdash; not margin. These are the ones that have earned a permanent place."
+      />
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="card-bf overflow-hidden">
+          <div class="flex h-24 items-center justify-center bg-white px-6">
+            <img src={base + 'img/brands/viridian.png'} alt="Viridian logo" class="max-h-12 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <p class="text-sm text-muted">
+              UK-made, 100% recyclable packaging, fully transparent formulas.
+              Their single-nutrient range is the most complete we stock.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-bf overflow-hidden">
+          <div class="flex h-24 items-center justify-center bg-white px-6">
+            <img src={base + 'img/brands/terranova.png'} alt="Terra Nova logo" class="max-h-14 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <p class="text-sm text-muted">
+              No fillers, binders or additives &mdash; ever. Magnifood base adds
+              food-state cofactors to every formula. Strong across the range.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-bf overflow-hidden">
+          <div class="flex h-24 items-center justify-center bg-white px-6">
+            <img src={base + 'img/brands/solgar.png'} alt="Solgar logo" class="max-h-20 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <p class="text-sm text-muted">
+              One of the most established names in professional supplements.
+              Consistent quality, wide range, and popular with our regulars.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-bf overflow-hidden">
+          <div class="flex h-24 items-center justify-center bg-white px-6">
+            <img src={base + 'img/brands/rawsport.png'} alt="Raw Sport logo" class="max-h-20 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <p class="text-sm text-muted">
+              Clean plant-based protein and sports nutrition. Free from artificial
+              sweeteners and certified vegan &mdash; a genuine alternative to mainstream brands.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
+      <SectionHeader
+        kicker="What we stock"
+        title="What's on our shelves"
+        lead="From everyday vitamins to specialist herbal formulas. If you can't find it, ask &mdash; we can often order it in."
+      />
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">Vitamins &amp; Minerals</h2>
+          <p class="mt-2 text-sm text-muted">
+            D3 + K2, B-complex, magnesium, zinc and a full range of individual
+            vitamins. We stock food-state and high-potency options alongside everyday
+            maintenance formulas.
+          </p>
+          <p class="mt-3 text-xs text-muted">Brands: Viridian &middot; Terra Nova &middot; Solgar</p>
+        </div>
+
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">Protein &amp; Sports</h2>
+          <p class="mt-2 text-sm text-muted">
+            Plant-based and whey protein powders, BCAAs and recovery blends.
+            Useful range for everyday gym-goers, not just competitive athletes.
+          </p>
+          <p class="mt-3 text-xs text-muted">Brands: Raw Sport &middot; Pulsin &middot; Viridian Sport</p>
+        </div>
+
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">Adaptogens &amp; Herbal</h2>
+          <p class="mt-2 text-sm text-muted">
+            Ashwagandha, rhodiola, lion's mane and other evidence-backed adaptogens.
+            Also a full range of traditional herbal tinctures and capsules.
+          </p>
+          <p class="mt-3 text-xs text-muted">Brands: Terra Nova &middot; Viridian &middot; Pukka</p>
+        </div>
+
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">Probiotics &amp; Digestive</h2>
+          <p class="mt-2 text-sm text-muted">
+            Live cultures, digestive enzymes and gut-support formulas. Refrigerated
+            lines available in-store at Roath and Canton.
+          </p>
+          <p class="mt-3 text-xs text-muted">Brands: Optibac &middot; Bio-Kult &middot; Viridian</p>
+        </div>
+
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">Omegas &amp; Essential Fats</h2>
+          <p class="mt-2 text-sm text-muted">
+            Algae-based omega-3 for vegans, fish oil and krill oil alternatives.
+            Cold-pressed flaxseed and hemp seed oils also in stock.
+          </p>
+          <p class="mt-3 text-xs text-muted">Brands: Viridian &middot; Bare Biology &middot; Udo's Choice</p>
+        </div>
+
+        <div class="card-bf p-6">
+          <h2 class="text-lg font-extrabold">Women's &amp; Men's Health</h2>
+          <p class="mt-2 text-sm text-muted">
+            Targeted formulas for energy, hormonal balance and specific life stages.
+            Including prenatal, menopause support and prostate health ranges.
+          </p>
+          <p class="mt-3 text-xs text-muted">Brands: Terra Nova &middot; Viridian &middot; Solgar</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Advice section -->
+  <section class="bg-paper">
+    <div class="container-bf py-12 sm:py-16">
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-start">
+        <div>
+          <SectionHeader
+            kicker="In-store advice"
+            title="Confused by supplements? Ask us."
+            lead="Most supplement advice online is written to sell you something. Ours isn't. Come in and talk it through."
+          />
+          <div class="mt-6 space-y-4">
+            <div class="card-bf p-5">
+              <h3 class="font-extrabold">We won't oversell</h3>
+              <p class="mt-1 text-sm text-muted">
+                If your diet covers it, we'll say so. We'd rather you spend your money
+                on something that'll actually make a difference.
+              </p>
+            </div>
+            <div class="card-bf p-5">
+              <h3 class="font-extrabold">We can order in</h3>
+              <p class="mt-1 text-sm text-muted">
+                Can't see what you need on the shelf? Ask. We can order most specialist
+                lines from our suppliers within a few days.
+              </p>
+            </div>
+            <div class="card-bf p-5">
+              <h3 class="font-extrabold">We know the range</h3>
+              <p class="mt-1 text-sm text-muted">
+                Our staff use the products they recommend. If you're weighing up two
+                options, we can usually give you a genuine comparison.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <SectionHeader
+            kicker="Find us"
+            title="Three Cardiff stores"
+            lead="Supplements are stocked across all three locations. The Royal Arcade has our deepest range."
+          />
+          <div class="mt-6 space-y-4">
+            <a href={base + 'royal/'} class="card-bf block p-5 hover:border-leaf/40 transition-colors">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="font-extrabold">Royal Arcade <span class="ml-2 pill-bf bg-leaf/10 text-leaf text-xs">Supplements focus</span></h3>
+                  <p class="mt-1 text-sm text-muted">8 Royal Arcade, Morgan Quarter, CF10 1AE</p>
+                  <p class="mt-1 text-sm text-muted">Mon&ndash;Sat 9.30am&ndash;5pm</p>
+                </div>
+              </div>
+            </a>
+            <a href={base + 'roath/'} class="card-bf block p-5 hover:border-leaf/40 transition-colors">
+              <h3 class="font-extrabold">Roath</h3>
+              <p class="mt-1 text-sm text-muted">95 Albany Road, CF24 3LP</p>
+              <p class="mt-1 text-sm text-muted">Mon&ndash;Sat 9am&ndash;5.30pm</p>
+            </a>
+            <a href={base + 'canton/'} class="card-bf block p-5 hover:border-leaf/40 transition-colors">
+              <h3 class="font-extrabold">Canton</h3>
+              <p class="mt-1 text-sm text-muted">124 Cowbridge Road East, CF11 9DX</p>
+              <p class="mt-1 text-sm text-muted">Mon&ndash;Sat 9am&ndash;5.30pm</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>

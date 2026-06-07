@@ -13,10 +13,10 @@ const { page } = Astro.props;
 const base = import.meta.env.BASE_URL;
 
 const isFirstPage = page.currentPage === 1;
-const title = isFirstPage ? 'Posts — Beanfreaks' : `Posts — Page ${page.currentPage} — Beanfreaks`;
+const title = isFirstPage ? 'Posts | Beanfreaks' : `Posts - Page ${page.currentPage} | Beanfreaks`;
 const description = isFirstPage
   ? 'Guides, product notes, and ingredient know-how from the Beanfreaks team.'
-  : `Older guides and product notes from Beanfreaks Cardiff — page ${page.currentPage}.`;
+  : `Older guides and product notes from Beanfreaks Cardiff - page ${page.currentPage}.`;
 ---
 <Base title={title} description={description}>
   <section class="bg-paper">
