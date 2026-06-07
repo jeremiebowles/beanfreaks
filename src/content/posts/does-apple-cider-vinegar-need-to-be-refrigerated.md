@@ -1,6 +1,6 @@
 ---
-title: "Does Apple Cider Vinegar Need to Be Refrigerated?"
-description: "The short answer is no. Here is why ACV is shelf-stable, how to store it properly, and what to do with the mother."
+title: "How to Store Apple Cider Vinegar (and What Damages It)"
+description: "ACV storage explained: why vinegar is self-preserving, what actually degrades it over time, and how to keep the mother in good condition."
 image: "/img/posts/acv-braggs.webp"
 pubDate: 2026-03-18
 tags: ["guides", "pantry"]
