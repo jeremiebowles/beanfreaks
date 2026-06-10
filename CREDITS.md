@@ -24,6 +24,15 @@ License: https://www.pexels.com/license/
 - public/img/feature-supplements.jpg — https://images.pexels.com/photos/15897780/pexels-photo-15897780.jpeg?auto=compress&cs=tinysrgb&w=1600
 - public/img/product-turmeric.jpg — https://images.pexels.com/photos/7988015/pexels-photo-7988015.jpeg?auto=compress&cs=tinysrgb&w=1200
 
+## GBP Post Images (Unsplash)
+
+License: https://unsplash.com/license
+
+- Aromatherapy Awareness Week (~12 Jun 2026) — https://unsplash.com/photos/lg9QrSa8VaQ/download?force=true&w=1200
+- National Hydration Day (23 Jun 2026) — https://unsplash.com/photos/vnaRbknSyGc/download?force=true&w=1200
+- International Essential Oils Day (~11 Jul 2026) — https://unsplash.com/photos/bOPcJXRbVMY/download?force=true&w=1200
+- National Avocado Day (31 Jul 2026) — https://unsplash.com/photos/n2T7OpiNxU4/download?force=true&w=1200
+
 ## Beanfreaks
 
 - https://www.beanfreaks.com/img/roath-shop.jpg

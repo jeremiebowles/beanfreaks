@@ -11,6 +11,7 @@
   --leaf: 47 107 79;
   --moss: 31 61 44;
   --clay: 179 106 60;
+  --clay-dark: 115 55 10;
   --turmeric: 231 167 26;
   --berry: 122 46 75;
 
@@ -66,5 +67,5 @@
   .pill-bf{ @apply inline-flex items-center rounded-[var(--radius-pill)] px-3 py-1 text-xs font-semibold ring-1 ring-ink/10; }
   .pill-vegan{ @apply pill-bf bg-leaf/10 text-leaf; }
   .pill-gf{ @apply pill-bf bg-turmeric/20 text-ink; }
-  .pill-organic{ @apply pill-bf bg-clay/15 text-clay; }
+  .pill-organic{ @apply pill-bf bg-clay/15 text-clay-dark; }
 }

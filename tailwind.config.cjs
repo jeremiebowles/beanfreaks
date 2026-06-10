@@ -11,6 +11,7 @@ module.exports = {
         leaf: "rgb(var(--leaf) / <alpha-value>)",
         moss: "rgb(var(--moss) / <alpha-value>)",
         clay: "rgb(var(--clay) / <alpha-value>)",
+        "clay-dark": "rgb(var(--clay-dark) / <alpha-value>)",
         turmeric: "rgb(var(--turmeric) / <alpha-value>)",
         berry: "rgb(var(--berry) / <alpha-value>)"
       }
