@@ -56,6 +56,7 @@ const structuredData = {
 };
 ---
 <head>
+  <link rel="preload" as="image" href={base + 'img/hero.webp'} type="image/webp" fetchpriority="high" />
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 </head>
 <Base title="Beanfreaks Cardiff | Organic & Health Food Shop" description="Cardiff's health food shop since 1978. Three stores in Roath, Canton and the Royal Arcade — organic groceries, supplements, vegan and gluten-free essentials.">
