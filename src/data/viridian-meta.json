@@ -1,0 +1,122 @@
+{
+  "magnesium-bisglycinate": {
+    "category": "Minerals",
+    "intro": "Our bestselling Viridian supplement across Roath and Canton. The bisglycinate form — magnesium bound to glycine — is better absorbed and considerably gentler on the digestive system than the cheaper oxide or sulphate forms you'll find elsewhere.",
+    "benefits": ["Highly bioavailable bisglycinate form", "Gentler on the stomach than oxide forms", "Supports sleep quality and muscle recovery", "Contributes to normal nervous system function"],
+    "related": ["high-potency-magnesium-300mg", "balanced-zinc-complex", "electrolyte-fix"]
+  },
+  "high-potency-magnesium-300mg": {
+    "category": "Minerals",
+    "intro": "Viridian's classic high-potency magnesium formula at 300mg elemental magnesium per serving. A reliable, well-absorbed citrate form available in a 30-capsule starter size and a 120-capsule value pack — both stocked across our Cardiff stores.",
+    "benefits": ["300mg elemental magnesium per serving", "Magnesium citrate for good bioavailability", "Supports over 300 enzymatic processes", "Available in 30-cap and 120-cap sizes"],
+    "related": ["magnesium-bisglycinate", "electrolyte-fix", "high-twelve-b-complex"]
+  },
+  "high-twelve-b-complex": {
+    "category": "B Vitamins",
+    "intro": "A full-spectrum B complex covering all twelve B vitamins including B12 as methylcobalamin — the active form the body can use directly. One of our most-requested supplements for energy and nervous system support, available in 30 and 90-capsule sizes.",
+    "benefits": ["Contains all 12 B vitamins", "B12 as active methylcobalamin", "Supports normal energy metabolism", "Contributes to nervous system function"],
+    "related": ["high-potency-b12", "high-five-multivitamin", "vitamin-d3"]
+  },
+  "high-five-multivitamin": {
+    "category": "Multivitamins",
+    "intro": "Viridian's flagship multivitamin and mineral formula, available in three pack sizes to suit both first-timers and long-term users. No artificial fillers, binders or coatings — just active ingredients in well-researched forms.",
+    "benefits": ["Comprehensive vitamins and minerals", "100% active ingredients, no fillers", "Food-state forms for enhanced absorption", "Available in 30, 60 and 120-cap sizes"],
+    "related": ["high-twelve-b-complex", "vitamin-d3", "balanced-zinc-complex"]
+  },
+  "vitamin-d3": {
+    "category": "Vitamins",
+    "intro": "Viridian's vegan D3 range uses cholecalciferol derived from lichen rather than lanolin, making it genuinely suitable for vegans. We stock the 400iu, 1000iu and 2000iu strengths across all three Cardiff stores — the right dose depends on your baseline and how much sun you get.",
+    "benefits": ["Vegan D3 from lichen, not lanolin", "Multiple strengths: 400iu, 1000iu, 2000iu", "Supports immune function and bone health", "Particularly important during UK winters"],
+    "related": ["vitamin-d3-k2", "vitamin-k2", "high-five-multivitamin"]
+  },
+  "extra-c": {
+    "category": "Vitamins",
+    "intro": "A step up from plain ascorbic acid — this vitamin C formula includes citrus bioflavonoids and rosehip, both of which improve absorption and add antioxidant support. Available in 550mg and 950mg strengths in our Cardiff stores.",
+    "benefits": ["Vitamin C with bioflavonoids and rosehip", "Two strengths: 550mg and 950mg", "Supports normal immune function", "Contributes to collagen formation"],
+    "related": ["high-five-multivitamin", "balanced-zinc-complex", "synbiotic-daily"]
+  },
+  "synbiotic-daily": {
+    "category": "Probiotics",
+    "intro": "A combined probiotic and prebiotic in a single capsule — the prebiotic feeds the live cultures, making it more effective than probiotics taken alone. A solid starting point if you're new to digestive health supplements, and a consistent seller at all three stores.",
+    "benefits": ["Combined probiotic and prebiotic", "Supports digestive health and balance", "No refrigeration required", "Available in three pack sizes"],
+    "related": ["balanced-iron-complex", "high-five-multivitamin", "extra-c"]
+  },
+  "balanced-zinc-complex": {
+    "category": "Minerals",
+    "intro": "Zinc citrate paired with copper and vitamin B6 — the co-factors needed to keep these minerals in balance. Long-term zinc supplementation on its own can deplete copper, so this formula is a more considered approach.",
+    "benefits": ["Zinc citrate for good absorption", "Balanced with copper and B6", "Supports immune function and skin health", "Available in 30 and 90-cap sizes"],
+    "related": ["high-five-multivitamin", "magnesium-bisglycinate", "balanced-iron-complex"]
+  },
+  "electrolyte-fix": {
+    "category": "Sports Nutrition",
+    "intro": "A liquid electrolyte concentrate with no sugar or artificial additives — popular with runners, cyclists and anyone training in South Wales. Contains magnesium, potassium, sodium and trace minerals. Mix a small amount with water before, during or after exercise.",
+    "benefits": ["No sugar or artificial additives", "Magnesium, potassium, sodium and trace minerals", "Liquid format for fast absorption", "Available in two bottle sizes"],
+    "related": ["high-potency-magnesium-300mg", "magnesium-bisglycinate", "high-five-multivitamin"]
+  },
+  "high-potency-b12": {
+    "category": "B Vitamins",
+    "intro": "Methylcobalamin B12 at 1000mcg — the active coenzyme form the body uses directly, without the conversion step required by cyanocobalamin. Particularly popular with vegan and vegetarian customers at all three of our Cardiff stores.",
+    "benefits": ["1000mcg methylcobalamin per capsule", "Active form, no conversion needed", "Supports normal energy metabolism", "Popular with vegans and vegetarians"],
+    "related": ["high-twelve-b-complex", "high-five-multivitamin", "vitamin-d3"]
+  },
+  "balanced-iron-complex": {
+    "category": "Minerals",
+    "intro": "Iron bisglycinate alongside vitamin C, B12 and folic acid — all the co-factors for healthy iron metabolism in one capsule. The bisglycinate form is considerably gentler on the gut than the ferrous sulphate used in many pharmacy iron supplements.",
+    "benefits": ["Gentle iron bisglycinate form", "Includes vitamin C for enhanced absorption", "With B12 and folic acid for red blood cells", "Available in 30 and 90-cap sizes"],
+    "related": ["high-potency-b12", "high-twelve-b-complex", "synbiotic-daily"]
+  },
+  "vitamin-k2": {
+    "category": "Vitamins",
+    "intro": "Vitamin K2 as MK-7 derived from natural natto fermentation — the most bioavailable and longest-acting form of K2. Frequently taken alongside vitamin D3 by people focused on bone density or cardiovascular health.",
+    "benefits": ["MK-7 form for superior bioavailability", "Long-acting — stays active for days", "Supports bone density and calcium metabolism", "Naturally fermented source"],
+    "related": ["vitamin-d3", "vitamin-d3-k2", "high-five-multivitamin"]
+  },
+  "vitamin-d3-k2": {
+    "category": "Vitamins",
+    "intro": "D3 and K2 combined in a single capsule for convenience. D3 increases calcium absorption; K2 directs it to the right places. A popular combination for people who would otherwise be taking two separate capsules.",
+    "benefits": ["D3 and K2 in one daily capsule", "Supports bone density and normal calcium use", "D3 and K2 work synergistically", "Suitable for year-round supplementation"],
+    "related": ["vitamin-d3", "vitamin-k2", "high-five-multivitamin"]
+  },
+  "organic-turmeric": {
+    "category": "Herbal",
+    "intro": "Certified organic turmeric root at 400mg per capsule. One of the most consistent sellers in our herbal range at Roath and Canton. Taken daily by a lot of our regulars for joint comfort and general anti-inflammatory support.",
+    "benefits": ["Certified organic turmeric root", "400mg per capsule", "Traditional anti-inflammatory herb", "Available in 30 and 90-cap sizes"],
+    "related": ["ashwagandha-extract", "organic-milk-thistle", "rainbow-trout-oil"]
+  },
+  "biotin-2500": {
+    "category": "Vitamins",
+    "intro": "High-strength biotin at 2500mcg per capsule — well above the levels found in general multivitamins. Commonly taken for hair and nail support, though the evidence is strongest for people with an actual biotin deficiency.",
+    "benefits": ["2500mcg biotin per capsule", "Supports normal hair growth and condition", "Contributes to healthy nails and skin", "Suitable for vegans"],
+    "related": ["high-five-multivitamin", "balanced-zinc-complex", "extra-c"]
+  },
+  "rainbow-trout-oil": {
+    "category": "Omegas",
+    "intro": "Omega-3 from sustainably farmed Scottish rainbow trout rather than wild-caught small ocean fish. Higher in EPA and DHA than many standard fish oils and with a lower environmental footprint. A more considered choice if sustainability matters to you.",
+    "benefits": ["Sustainably farmed Scottish rainbow trout", "High EPA and DHA omega-3 content", "Certified sustainable sourcing", "Cleaner source with lower contaminant risk"],
+    "related": ["vitamin-d3-k2", "vitamin-k2", "high-five-multivitamin"]
+  },
+  "ashwagandha-extract": {
+    "category": "Adaptogens",
+    "intro": "Certified organic ashwagandha root extract — one of the most thoroughly researched adaptogens. Popularity has grown steadily at all our stores as more people look for evidence-backed options for stress and energy support.",
+    "benefits": ["Certified organic ashwagandha root", "Standardised root extract", "Supports the body's response to stress", "Traditional Ayurvedic adaptogen"],
+    "related": ["organic-turmeric", "organic-milk-thistle", "high-twelve-b-complex"]
+  },
+  "l-lysine": {
+    "category": "Amino Acids",
+    "intro": "An essential amino acid the body cannot make itself. Most commonly taken at our stores for cold sore prevention and management, and also used for collagen support. Available in a 30-capsule and 90-capsule size.",
+    "benefits": ["Essential amino acid — must come from diet", "Supports collagen and connective tissue", "Popular for cold sore prevention", "Available in 30 and 90-cap sizes"],
+    "related": ["high-potency-nac", "extra-c", "balanced-zinc-complex"]
+  },
+  "high-potency-nac": {
+    "category": "Amino Acids",
+    "intro": "N-Acetyl Cysteine at 600mg per capsule — a precursor to glutathione, the body's primary antioxidant. Growing in popularity at our stores as its benefits for liver support, respiratory health and recovery become more widely understood.",
+    "benefits": ["600mg NAC per capsule", "Precursor to glutathione antioxidant", "Supports liver and respiratory health", "Increasingly recommended by nutritional practitioners"],
+    "related": ["l-lysine", "organic-milk-thistle", "high-potency-b12"]
+  },
+  "organic-milk-thistle": {
+    "category": "Herbal",
+    "intro": "Certified organic milk thistle seed at 400mg per capsule. A traditional European herb for liver support — commonly taken alongside medications, after periods of overindulgence, or as part of a general detox programme. Available in 30 and 90-cap sizes.",
+    "benefits": ["Certified organic milk thistle seed", "400mg per capsule", "Traditional herb for liver support", "Available in 30 and 90-cap sizes"],
+    "related": ["organic-turmeric", "ashwagandha-extract", "synbiotic-daily"]
+  }
+}

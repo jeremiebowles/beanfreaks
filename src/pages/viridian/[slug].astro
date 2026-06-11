@@ -1,0 +1,200 @@
+---
+import Base from '../../layouts/base.astro';
+import viridianData from '../../data/viridian.json';
+import metaData from '../../data/viridian-meta.json';
+
+const base = import.meta.env.BASE_URL;
+
+export function getStaticPaths() {
+  return Object.keys(viridianData).map(slug => ({
+    params: { slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const product = viridianData[slug as keyof typeof viridianData];
+const meta    = metaData[slug as keyof typeof metaData];
+
+const lowestPrice = Math.min(...product.variants.map(v => parseFloat(v.price)));
+const canonical   = `https://www.beanfreaks.com/viridian/${slug}/`;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.title,
+  description: product.description.slice(0, 300),
+  image: product.image,
+  brand: { '@type': 'Brand', name: 'Viridian' },
+  offers: product.variants.map(v => ({
+    '@type': 'Offer',
+    price: v.price,
+    priceCurrency: 'GBP',
+    availability: 'https://schema.org/InStoreOnly',
+    seller: { '@type': 'LocalBusiness', name: 'Beanfreaks', url: 'https://www.beanfreaks.com' },
+  })),
+};
+---
+<head>
+  <link rel="canonical" href={canonical} />
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+</head>
+<Base
+  title={`${product.title} Cardiff | Viridian | Beanfreaks`}
+  description={`Buy ${product.title} by Viridian in Cardiff. From £${lowestPrice.toFixed(2)}. In stock at Beanfreaks Roath, Canton and Royal Arcade.`}
+>
+
+  <!-- Hero -->
+  <section class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
+
+      <!-- Breadcrumb -->
+      <nav class="mb-6 flex flex-wrap items-center gap-1.5 text-xs text-muted">
+        <a href={base} class="hover:text-ink">Home</a>
+        <span>/</span>
+        <a href={base + 'supplements/'} class="hover:text-ink">Supplements</a>
+        <span>/</span>
+        <a href={base + 'viridian/'} class="hover:text-ink">Viridian</a>
+        <span>/</span>
+        <span class="text-ink">{product.title}</span>
+      </nav>
+
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+
+        <!-- Product image -->
+        <div class="card-bf overflow-hidden bg-white">
+          <img
+            src={product.image}
+            alt={product.title}
+            class="h-72 w-full object-contain p-8 sm:h-96"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Info -->
+        <div>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill-bf bg-ink/5 text-ink">Viridian</span>
+            <span class="pill-organic">{meta.category}</span>
+          </div>
+
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            {product.title}
+          </h1>
+
+          <p class="mt-4 text-muted">{meta.intro}</p>
+
+          <!-- Key benefits -->
+          <ul class="mt-6 space-y-2">
+            {meta.benefits.map(b => (
+              <li class="flex items-start gap-2 text-sm">
+                <span class="mt-0.5 text-leaf font-bold">✓</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Sizes & prices -->
+          <div class="mt-8">
+            <h2 class="text-sm font-semibold uppercase tracking-wide text-muted">Available sizes</h2>
+            <div class="mt-3 flex flex-wrap gap-3">
+              {product.variants.map(v => (
+                <div class="card-bf px-4 py-3 text-center">
+                  <p class="text-sm font-semibold">{v.title}</p>
+                  <p class="mt-0.5 text-lg font-extrabold text-leaf">£{parseFloat(v.price).toFixed(2)}</p>
+                </div>
+              ))}
+            </div>
+            <p class="mt-3 text-xs text-muted">Prices shown are RRP. Available in store at Roath, Canton and Royal Arcade.</p>
+          </div>
+
+          <!-- CTA -->
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="btn-primary" href={base + 'roath/'}>Find us in Roath</a>
+            <a class="btn-ghost" href={base + 'contact/'}>Ask about this product</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Full description -->
+  <section class="bg-paper">
+    <div class="container-bf py-12 sm:py-16">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="text-2xl font-extrabold tracking-tight">About {product.title}</h2>
+        <p class="mt-4 leading-relaxed text-muted">{product.description}</p>
+
+        <div class="mt-8 card-bf p-6 bg-cream/60">
+          <h3 class="font-extrabold">Why we stock Viridian</h3>
+          <p class="mt-2 text-sm text-muted">
+            Viridian is one of a handful of supplement brands we trust unconditionally. Every formula is made in the UK,
+            uses 100% active ingredients with no unnecessary fillers or binders, and is packaged in fully recyclable materials.
+            They publish full ingredient transparency and never use GMO, palm oil or animal testing. We've stocked them for years
+            and stand behind the range.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store availability -->
+  <section class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="text-2xl font-extrabold tracking-tight">Find it in Cardiff</h2>
+        <p class="mt-3 text-muted">
+          {product.title} is stocked across all three Beanfreaks stores. If a particular size is out of stock,
+          ask in store — we can usually order it within a few days.
+        </p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+          <a href={base + 'roath/'} class="card-bf block p-5 hover:border-leaf/40 transition-colors">
+            <h3 class="font-extrabold">Roath</h3>
+            <p class="mt-1 text-sm text-muted">95 Albany Road, CF24 3LP</p>
+            <p class="mt-1 text-xs text-muted">Mon–Sat 9am–5.30pm</p>
+          </a>
+          <a href={base + 'canton/'} class="card-bf block p-5 hover:border-leaf/40 transition-colors">
+            <h3 class="font-extrabold">Canton</h3>
+            <p class="mt-1 text-sm text-muted">124 Cowbridge Road East, CF11 9DX</p>
+            <p class="mt-1 text-xs text-muted">Mon–Sat 9am–5.30pm</p>
+          </a>
+          <a href={base + 'royal/'} class="card-bf block p-5 hover:border-leaf/40 transition-colors">
+            <h3 class="font-extrabold">Royal Arcade</h3>
+            <p class="mt-1 text-sm text-muted">8 Royal Arcade, CF10 1AE</p>
+            <p class="mt-1 text-xs text-muted">Mon–Sat 9.30am–5pm</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related products -->
+  <section class="bg-paper">
+    <div class="container-bf py-12 sm:py-16">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="text-2xl font-extrabold tracking-tight">Related Viridian products</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-3">
+          {meta.related.map(relSlug => {
+            const rel    = viridianData[relSlug as keyof typeof viridianData];
+            const relMeta = metaData[relSlug as keyof typeof metaData];
+            const relPrice = Math.min(...rel.variants.map(v => parseFloat(v.price)));
+            return (
+              <a href={base + 'viridian/' + relSlug + '/'} class="card-bf block overflow-hidden hover:border-leaf/40 transition-colors">
+                <img src={rel.image} alt={rel.title} class="h-32 w-full object-contain bg-white p-4" loading="lazy" />
+                <div class="p-4">
+                  <span class="pill-organic text-xs">{relMeta.category}</span>
+                  <p class="mt-2 text-sm font-extrabold leading-snug">{rel.title}</p>
+                  <p class="mt-1 text-sm font-semibold text-leaf">From £{relPrice.toFixed(2)}</p>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+        <div class="mt-8 text-center">
+          <a href={base + 'viridian/'} class="btn-ghost">View all Viridian products →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
