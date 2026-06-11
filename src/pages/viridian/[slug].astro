@@ -18,6 +18,11 @@ const meta    = metaData[slug as keyof typeof metaData];
 const lowestPrice = Math.min(...product.variants.map(v => parseFloat(v.price)));
 const canonical   = `https://www.beanfreaks.com/viridian/${slug}/`;
 
+// Shopify CDN supports width parameter for appropriately sized images
+function shopifyImg(url: string, width: number) {
+  return `${url}&width=${width}`;
+}
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -35,6 +40,8 @@ const structuredData = {
 };
 ---
 <head>
+  <link rel="preconnect" href="https://cdn.shopify.com" />
+  <link rel="preload" as="image" href={shopifyImg(product.image, 600)} fetchpriority="high" />
   <link rel="canonical" href={canonical} />
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 </head>
@@ -63,10 +70,11 @@ const structuredData = {
         <!-- Product image -->
         <div class="card-bf overflow-hidden bg-white">
           <img
-            src={product.image}
+            src={shopifyImg(product.image, 600)}
             alt={product.title}
             class="h-72 w-full object-contain p-8 sm:h-96"
             loading="eager"
+            fetchpriority="high"
           />
         </div>
 
@@ -180,7 +188,7 @@ const structuredData = {
             const relPrice = Math.min(...rel.variants.map(v => parseFloat(v.price)));
             return (
               <a href={base + 'viridian/' + relSlug + '/'} class="card-bf block overflow-hidden hover:border-leaf/40 transition-colors">
-                <img src={rel.image} alt={rel.title} class="h-32 w-full object-contain bg-white p-4" loading="lazy" />
+                <img src={shopifyImg(rel.image, 300)} alt={rel.title} class="h-32 w-full object-contain bg-white p-4" loading="lazy" />
                 <div class="p-4">
                   <span class="pill-organic text-xs">{relMeta.category}</span>
                   <p class="mt-2 text-sm font-extrabold leading-snug">{rel.title}</p>
