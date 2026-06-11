@@ -17,18 +17,14 @@ const meta    = metaData[slug as keyof typeof metaData];
 
 const lowestPrice = Math.min(...product.variants.map(v => parseFloat(v.price)));
 const canonical   = `https://www.beanfreaks.com/viridian/${slug}/`;
-
-// Shopify CDN supports width parameter for appropriately sized images
-function shopifyImg(url: string, width: number) {
-  return `${url}&width=${width}`;
-}
+const images      = product.images;
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   name: product.title,
   description: product.description.slice(0, 300),
-  image: product.image,
+  image: `https://www.beanfreaks.com${images[0]}`,
   brand: { '@type': 'Brand', name: 'Viridian' },
   offers: product.variants.map(v => ({
     '@type': 'Offer',
@@ -40,8 +36,7 @@ const structuredData = {
 };
 ---
 <head>
-  <link rel="preconnect" href="https://cdn.shopify.com" />
-  <link rel="preload" as="image" href={shopifyImg(product.image, 600)} fetchpriority="high" />
+  <link rel="preload" as="image" href={base + images[0].slice(1)} fetchpriority="high" />
   <link rel="canonical" href={canonical} />
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 </head>
@@ -67,15 +62,44 @@ const structuredData = {
 
       <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
 
-        <!-- Product image -->
+        <!-- Product image / gallery -->
         <div class="card-bf overflow-hidden bg-white">
-          <img
-            src={shopifyImg(product.image, 600)}
-            alt={product.title}
-            class="h-72 w-full object-contain p-8 sm:h-96"
-            loading="eager"
-            fetchpriority="high"
-          />
+          {images.map((_, i) => (
+            <input
+              type="radio"
+              name="gallery"
+              id={`img-${i}`}
+              class="sr-only"
+              checked={i === 0}
+            />
+          ))}
+
+          <div class="gallery-main">
+            {images.map((src, i) => (
+              <img
+                src={base + src.slice(1)}
+                alt={product.title}
+                class="gallery-img h-72 w-full object-contain p-8 sm:h-96"
+                loading={i === 0 ? 'eager' : 'lazy'}
+                fetchpriority={i === 0 ? 'high' : undefined}
+              />
+            ))}
+          </div>
+
+          {images.length > 1 && (
+            <div class="gallery-thumbs flex justify-center gap-2 px-4 pb-4">
+              {images.map((src, i) => (
+                <label for={`img-${i}`} class="gallery-thumb cursor-pointer rounded border-2 border-transparent p-0.5 transition-colors">
+                  <img
+                    src={base + src.slice(1)}
+                    alt={`${product.title} view ${i + 1}`}
+                    class="block h-14 w-14 object-contain"
+                    loading="lazy"
+                  />
+                </label>
+              ))}
+            </div>
+          )}
         </div>
 
         <!-- Info -->
@@ -183,12 +207,12 @@ const structuredData = {
         <h2 class="text-2xl font-extrabold tracking-tight">Related Viridian products</h2>
         <div class="mt-6 grid gap-4 sm:grid-cols-3">
           {meta.related.map(relSlug => {
-            const rel    = viridianData[relSlug as keyof typeof viridianData];
+            const rel     = viridianData[relSlug as keyof typeof viridianData];
             const relMeta = metaData[relSlug as keyof typeof metaData];
             const relPrice = Math.min(...rel.variants.map(v => parseFloat(v.price)));
             return (
               <a href={base + 'viridian/' + relSlug + '/'} class="card-bf block overflow-hidden hover:border-leaf/40 transition-colors">
-                <img src={shopifyImg(rel.image, 300)} alt={rel.title} class="h-32 w-full object-contain bg-white p-4" loading="lazy" />
+                <img src={base + rel.images[0].slice(1)} alt={rel.title} class="h-32 w-full object-contain bg-white p-4" loading="lazy" />
                 <div class="p-4">
                   <span class="pill-organic text-xs">{relMeta.category}</span>
                   <p class="mt-2 text-sm font-extrabold leading-snug">{rel.title}</p>
@@ -206,3 +230,18 @@ const structuredData = {
   </section>
 
 </Base>
+
+<style>
+  /* CSS-only image gallery — no JS */
+  .gallery-img { display: none; }
+
+  #img-0:checked ~ .gallery-main .gallery-img:nth-child(1) { display: block; }
+  #img-1:checked ~ .gallery-main .gallery-img:nth-child(2) { display: block; }
+  #img-2:checked ~ .gallery-main .gallery-img:nth-child(3) { display: block; }
+
+  #img-0:checked ~ .gallery-thumbs .gallery-thumb:nth-child(1),
+  #img-1:checked ~ .gallery-thumbs .gallery-thumb:nth-child(2),
+  #img-2:checked ~ .gallery-thumbs .gallery-thumb:nth-child(3) {
+    border-color: rgb(47 107 79);
+  }
+</style>

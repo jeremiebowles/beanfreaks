@@ -6,10 +6,6 @@ import metaData from '../../data/viridian-meta.json';
 
 const base = import.meta.env.BASE_URL;
 
-function shopifyImg(url: string, width: number) {
-  return `${url}&width=${width}`;
-}
-
 const products = Object.entries(viridianData).map(([slug, product]) => ({
   slug,
   ...product,
@@ -146,7 +142,7 @@ const structuredData = {
           <a href={base + 'viridian/' + p.slug + '/'} class="card-bf group block overflow-hidden hover:border-leaf/40 transition-colors">
             <div class="bg-white">
               <img
-                src={shopifyImg(p.image, 400)}
+                src={base + p.images[0].slice(1)}
                 alt={p.title}
                 class="h-44 w-full object-contain p-6 transition duration-300 group-hover:scale-[1.02]"
                 loading="lazy"
