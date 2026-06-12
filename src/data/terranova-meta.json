@@ -1,0 +1,222 @@
+{
+  "easy-iron-20mg": {
+    "category": "Minerals",
+    "intro": "Iron bisglycinate — the gentlest form of iron in supplement form. The bisglycinate chelate means it's absorbed via the amino acid pathway rather than competing with other minerals, and is far less likely to cause the constipation and gut discomfort associated with ferrous sulphate. Supported by Terra Nova's Magnifood base, which adds food-state cofactors that support absorption and utilisation. One of our most consistently requested iron supplements across all three stores.",
+    "benefits": [
+      "Bisglycinate form — gentler on the gut than ferrous sulphate",
+      "Absorbed via the amino acid pathway for better uptake",
+      "Supported by Terra Nova's Magnifood food-state base",
+      "Contributes to normal red blood cell formation"
+    ],
+    "related": ["vitamin-b12-500mcg", "b-complex-vitamin-c", "probiotic-complex"]
+  },
+  "vitamin-d3-k2": {
+    "category": "Vitamins",
+    "intro": "D3 and K2 working together — D3 increases calcium absorption from the gut; K2 (as MenaQ7, the most bioavailable form) ensures that calcium is directed to bone rather than arterial tissue. Terra Nova's Magnifood base adds food-state cofactors to the formula. Available in two strengths — 1000iu D3 with 50µg K2, and 2000iu D3 with 100µg K2 — both stocked at all three Cardiff stores.",
+    "benefits": [
+      "D3 and K2 (as MenaQ7) working synergistically",
+      "K2 directs calcium to bone, not arterial tissue",
+      "Supported by Terra Nova's Magnifood food-state base",
+      "Two strengths available: 1000iu and 2000iu"
+    ],
+    "related": ["vitamin-d3", "magnesium-100mg", "full-spectrum-multivitamin"]
+  },
+  "living-multivitamin-man": {
+    "category": "Multivitamins",
+    "intro": "A comprehensive multivitamin formulated specifically for men, with nutrients in active coenzyme forms and dosages chosen to reflect male physiology. Includes zinc for testosterone metabolism and B vitamins as methylcobalamin and methylfolate. Terra Nova's Magnifood base — spirulina, broccoli, barley grass and more — adds food-state phytonutrients to every capsule. Available in 30 and 90-capsule sizes at all three Beanfreaks stores.",
+    "benefits": [
+      "Formulated specifically for male nutritional needs",
+      "B vitamins in active coenzyme forms",
+      "Zinc supports normal testosterone metabolism",
+      "Magnifood base adds food-state phytonutrients"
+    ],
+    "related": ["full-spectrum-multivitamin", "b-complex-vitamin-c", "zinc-15mg"]
+  },
+  "magnesium-100mg": {
+    "category": "Minerals",
+    "intro": "Magnesium bisglycinate — the amino acid-bound form that absorbs via a different pathway to oxide or citrate, meaning less competition with other minerals and considerably less digestive disruption. Terra Nova's Magnifood base adds food-state cofactors that support utilisation. One of our best-selling minerals across Roath, Canton and the Royal Arcade — ask us in store if you're not sure which magnesium form is right for you.",
+    "benefits": [
+      "Bisglycinate form — absorbed as an amino acid chelate",
+      "Considerably gentler on the stomach than oxide",
+      "Supported by Terra Nova's Magnifood food-state base",
+      "Supports normal muscle and nervous system function"
+    ],
+    "related": ["easy-iron-20mg", "zinc-15mg", "b-complex-vitamin-c"]
+  },
+  "b-complex-vitamin-c": {
+    "category": "B Vitamins",
+    "intro": "A full B-complex with added vitamin C, all in their most bioavailable forms — methylcobalamin B12, methylfolate, and P5P (the active form of B6). Terra Nova's Magnifood base adds food-state phytonutrients that work synergistically with the B vitamins. A consistent seller across all three Cardiff stores, particularly with customers managing energy, mood and nervous system health.",
+    "benefits": [
+      "Complete B-complex with active coenzyme forms",
+      "Methylcobalamin B12 and methylfolate for direct use",
+      "Vitamin C included for synergistic support",
+      "Magnifood base adds food-state phytonutrients"
+    ],
+    "related": ["vitamin-b12-500mcg", "magnesium-100mg", "living-multinutrient"]
+  },
+  "full-spectrum-multivitamin": {
+    "category": "Multivitamins",
+    "intro": "Terra Nova's flagship multivitamin — not a watered-down one-a-day but a serious formula with nutrients in their active forms and meaningful doses. The Magnifood base is included in every capsule, adding spirulina, broccoli, dandelion and other food-state phytonutrients alongside the vitamins and minerals. Available in multiple sizes across all three Beanfreaks stores.",
+    "benefits": [
+      "Comprehensive vitamins and minerals in active forms",
+      "Magnifood base provides food-state phytonutrient support",
+      "No fillers, binders or additives — ever",
+      "Available in multiple pack sizes"
+    ],
+    "related": ["living-multivitamin-man", "b-complex-vitamin-c", "vitamin-d3-k2"]
+  },
+  "probiotic-complex": {
+    "category": "Probiotics",
+    "intro": "A multi-strain probiotic with FOS prebiotic and a broader range of digestive support ingredients than most basic probiotic formulas. Terra Nova's Magnifood base adds food-state digestive synergists to the mix. A solid foundation for gut health support and a consistent seller at all three Cardiff stores — ask us if you're trying to decide between this and the Digestive Enzymes with Microflora.",
+    "benefits": [
+      "Multi-strain probiotic with FOS prebiotic",
+      "Broader formula than basic single-strain products",
+      "Magnifood base adds food-state digestive synergists",
+      "Supports healthy digestive microbiome balance"
+    ],
+    "related": ["digestive-enzymes-microflora", "digestive-enzyme-complex", "easy-iron-20mg"]
+  },
+  "zinc-15mg": {
+    "category": "Minerals",
+    "intro": "Zinc 15mg as citrate — a well-absorbed form that avoids the nausea associated with zinc sulphate. The formula includes copper to maintain mineral balance (long-term zinc supplementation without copper can deplete it), alongside Terra Nova's Magnifood base. Consistently stocked at all three Beanfreaks stores in Cardiff.",
+    "benefits": [
+      "Zinc citrate for good absorption without nausea",
+      "Includes copper to maintain mineral balance",
+      "Magnifood base adds food-state phytonutrients",
+      "Supports normal immune function and skin health"
+    ],
+    "related": ["easy-iron-20mg", "magnesium-100mg", "vitamin-c-250mg"]
+  },
+  "digestive-enzymes-microflora": {
+    "category": "Digestive",
+    "intro": "A dual-action formula combining a broad-spectrum digestive enzyme complex with live microflora cultures — useful if you want both enzyme support and a probiotic effect from a single capsule. Terra Nova's Magnifood base adds food-state digestive synergists. Popular at all three stores for customers looking to consolidate their supplement routine rather than take multiple separate products.",
+    "benefits": [
+      "Digestive enzymes and live microflora in one capsule",
+      "Broad-spectrum enzyme coverage — proteins, carbs and fats",
+      "Magnifood base adds food-state digestive cofactors",
+      "Convenient alternative to separate enzyme and probiotic"
+    ],
+    "related": ["probiotic-complex", "digestive-enzyme-complex", "life-drink"]
+  },
+  "life-drink": {
+    "category": "Superfoods",
+    "intro": "Terra Nova's Life Drink is a food-state nutritional powder — spirulina, chlorella, wheatgrass, barley grass and other whole-food concentrates in a single daily serving. Not a meal replacement but a genuine nutritional top-up for people who struggle to eat a consistently varied diet. Mixes easily into water or a smoothie. One of the more distinctive products in our range and a consistent seller at the Royal Arcade.",
+    "benefits": [
+      "Whole-food concentrate powder — spirulina, chlorella and more",
+      "Food-state nutrients, not isolated vitamins",
+      "Mixes into water or smoothies",
+      "Practical daily nutritional top-up"
+    ],
+    "related": ["living-multinutrient", "full-spectrum-multivitamin", "living-multivitamin-sport"]
+  },
+  "vitamin-d3": {
+    "category": "Vitamins",
+    "intro": "Terra Nova's standalone vitamin D3 range — available in 1000iu and 2000iu strengths — using cholecalciferol supported by the Magnifood base. The right choice if you want D3 without K2, or if you're already taking K2 separately. Both strengths stocked at all three Cardiff stores year-round, with demand strongest through the autumn and winter months.",
+    "benefits": [
+      "Cholecalciferol D3 in two strengths: 1000iu and 2000iu",
+      "Supported by Terra Nova's Magnifood food-state base",
+      "Supports normal immune function and bone health",
+      "Suitable for year-round supplementation in the UK"
+    ],
+    "related": ["vitamin-d3-k2", "magnesium-100mg", "full-spectrum-multivitamin"]
+  },
+  "vitamin-c-250mg": {
+    "category": "Vitamins",
+    "intro": "Vitamin C as a multi-ascorbate complex — not plain ascorbic acid but a buffered, non-acidic form alongside bioflavonoids and the food-state cofactors in Terra Nova's Magnifood base. Gentler on the stomach than high-dose ascorbic acid and better absorbed. Available in 50 and 100-capsule sizes at all three Beanfreaks stores.",
+    "benefits": [
+      "Multi-ascorbate form — non-acidic and gentle on the stomach",
+      "Includes bioflavonoids for enhanced absorption",
+      "Magnifood base adds food-state vitamin C cofactors",
+      "Supports normal immune function and collagen formation"
+    ],
+    "related": ["zinc-15mg", "quercetin-nettle", "vitamin-b12-500mcg"]
+  },
+  "digestive-enzyme-complex": {
+    "category": "Digestive",
+    "intro": "A comprehensive digestive enzyme blend covering proteins, carbohydrates, fats and fibre, with Terra Nova's Magnifood base providing food-state digestive cofactors alongside the enzymes. Useful for people who notice bloating or heaviness after meals, or who are transitioning to a higher-fibre or plant-based diet. Stocked consistently across all three Cardiff stores.",
+    "benefits": [
+      "Broad-spectrum enzymes: proteins, carbs, fats and fibre",
+      "Magnifood base adds food-state digestive synergists",
+      "Supports comfortable digestion after meals",
+      "Useful during dietary transitions"
+    ],
+    "related": ["probiotic-complex", "digestive-enzymes-microflora", "life-drink"]
+  },
+  "vitamin-b12-500mcg": {
+    "category": "B Vitamins",
+    "intro": "Methylcobalamin B12 at 500mcg per capsule — the active coenzyme form the body can use directly, without the conversion step required by cyanocobalamin. Supported by Terra Nova's Magnifood base. Consistently popular with vegan and vegetarian customers at all three stores, and with anyone who has had a B12 deficiency flagged in blood tests.",
+    "benefits": [
+      "500mcg methylcobalamin — the active form of B12",
+      "No conversion needed — directly usable by the body",
+      "Magnifood base adds food-state synergists",
+      "Popular with vegans, vegetarians and those with low B12"
+    ],
+    "related": ["b-complex-vitamin-c", "easy-iron-20mg", "living-multinutrient"]
+  },
+  "living-multivitamin-sport": {
+    "category": "Sports Nutrition",
+    "intro": "A multivitamin formulated with active people in mind — higher B vitamins for energy metabolism, antioxidants for recovery, and minerals at doses suited to regular training. Terra Nova's Magnifood base adds food-state phytonutrients to every capsule. Available in 30 and 90-capsule sizes at all three Beanfreaks stores.",
+    "benefits": [
+      "Formulated for active people and regular training",
+      "Higher B vitamins for energy metabolism",
+      "Antioxidant support for post-exercise recovery",
+      "Magnifood base adds food-state phytonutrients"
+    ],
+    "related": ["life-drink", "b-complex-vitamin-c", "magnesium-100mg"]
+  },
+  "quercetin-nettle": {
+    "category": "Herbal",
+    "intro": "A natural antihistamine combination that has become one of our most requested products in spring and early summer. Quercetin is one of the most thoroughly researched natural compounds for histamine response; nettle adds traditional herbal support for seasonal allergies. Supported by Terra Nova's Magnifood base. In stock at all three stores — ask about availability during peak hay fever season.",
+    "benefits": [
+      "Quercetin — well-researched for histamine response",
+      "Nettle for traditional seasonal allergy support",
+      "Magnifood base adds food-state synergists",
+      "Popular through spring and early summer"
+    ],
+    "related": ["vitamin-c-250mg", "zinc-15mg", "probiotic-complex"]
+  },
+  "beauty-complex": {
+    "category": "Beauty",
+    "intro": "A targeted formula for skin, hair and nails — combining silica, biotin, zinc and other nutrients that specifically support connective tissue integrity, alongside Terra Nova's Magnifood base with food-state phytonutrients. A more comprehensive approach than single-nutrient biotin supplements. Stocked at all three Cardiff stores.",
+    "benefits": [
+      "Silica, biotin and zinc for skin, hair and nails",
+      "Targets connective tissue integrity",
+      "Magnifood base adds food-state phytonutrients",
+      "More complete than single-nutrient biotin products"
+    ],
+    "related": ["zinc-15mg", "vitamin-c-250mg", "living-multinutrient"]
+  },
+  "living-multinutrient": {
+    "category": "Multivitamins",
+    "intro": "Terra Nova's Living Multinutrient sits between a basic multivitamin and a full therapeutic formula — broader coverage than a standard one-a-day, in a two-capsule daily dose. The Magnifood base adds food-state phytonutrients from spirulina, broccoli, dandelion and more. A good choice for people wanting comprehensive nutritional cover without an overwhelming supplement routine. Available in 60 and 180-capsule sizes.",
+    "benefits": [
+      "Broader coverage than standard one-a-day multivitamins",
+      "Nutrients in active, bioavailable forms",
+      "Magnifood base adds food-state phytonutrients",
+      "Available in 60 and 180-capsule sizes"
+    ],
+    "related": ["full-spectrum-multivitamin", "b-complex-vitamin-c", "life-drink"]
+  },
+  "prenatal-multivitamin": {
+    "category": "Women's Health",
+    "intro": "A comprehensive prenatal formula built around the nutrients most critical during pregnancy — methylfolate (not folic acid), active methylcobalamin B12, iron bisglycinate and D3, all in the forms most appropriate for this life stage. Terra Nova's Magnifood base adds food-state phytonutrients from whole food concentrates. Stocked at all three stores — we'd encourage you to come in and discuss it with us rather than just picking it off the shelf.",
+    "benefits": [
+      "Methylfolate rather than folic acid for better utilisation",
+      "Iron bisglycinate — gentle and well-absorbed",
+      "Active B12 and D3 in appropriate prenatal doses",
+      "Magnifood base adds food-state whole-food nutrients"
+    ],
+    "related": ["easy-iron-20mg", "vitamin-d3", "b-complex-vitamin-c"]
+  },
+  "glucosamine-boswellia-msm": {
+    "category": "Joint Support",
+    "intro": "Three of the most evidence-backed ingredients for joint comfort in a single formula — glucosamine sulphate, boswellia serrata and MSM. Terra Nova's Magnifood base adds turmeric, ginger and other food-state anti-inflammatory cofactors alongside the main actives. A consistent seller across all three stores, particularly with customers who are active or managing age-related joint changes.",
+    "benefits": [
+      "Glucosamine sulphate, boswellia and MSM combined",
+      "Well-researched trio for joint comfort and mobility",
+      "Magnifood base adds turmeric and ginger cofactors",
+      "Supports normal cartilage and connective tissue"
+    ],
+    "related": ["magnesium-100mg", "zinc-15mg", "vitamin-c-250mg"]
+  }
+}

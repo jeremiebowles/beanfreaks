@@ -1,0 +1,194 @@
+---
+import Base from '../../layouts/base.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import terranovaData from '../../data/terranova.json';
+import metaData from '../../data/terranova-meta.json';
+
+const base = import.meta.env.BASE_URL;
+
+const products = Object.entries(terranovaData).map(([slug, product]) => ({
+  slug,
+  ...product,
+  meta: metaData[slug as keyof typeof metaData],
+}));
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Terra Nova Supplements at Beanfreaks Cardiff',
+  description: 'Terra Nova vitamins, minerals and herbal supplements stocked at Beanfreaks health food shops in Cardiff.',
+  url: 'https://www.beanfreaks.com/terranova/',
+  itemListElement: products.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.title,
+    url: `https://www.beanfreaks.com/terranova/${p.slug}/`,
+  })),
+};
+---
+<head>
+  <link rel="canonical" href="https://www.beanfreaks.com/terranova/" />
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+</head>
+<Base
+  title="Terra Nova Supplements Cardiff | Buy In Store | Beanfreaks"
+  description="Authorised Terra Nova stockist in Cardiff. Full range of Terra Nova vitamins, minerals and herbal supplements — with Magnifood food-state base in every formula. In store at Roath, Canton and the Royal Arcade."
+>
+
+  <!-- Hero -->
+  <section class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="pill-bf bg-ink/5 text-ink">Authorised stockist · Cardiff</p>
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Terra Nova supplements in Cardiff
+          </h1>
+          <p class="mt-4 text-muted">
+            Terra Nova is one of the most uncompromising supplement brands we stock. No fillers, binders or additives — ever.
+            Every formula includes their Magnifood base: a blend of food-state phytonutrients that work synergistically
+            with the active nutrients. Fresh freeze-dried botanicals, active coenzyme forms, and full ingredient transparency.
+            We've stocked them for years and recommend them without qualification.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn-primary" href="#products">Browse the range</a>
+            <a class="btn-ghost" href={base + 'supplements/'}>All supplements</a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="pill-bf bg-ink/5 text-ink">No fillers — ever</span>
+            <span class="pill-organic">Magnifood base</span>
+            <span class="pill-vegan">Vegan options</span>
+          </div>
+        </div>
+        <div class="card-bf overflow-hidden bg-white shadow-none">
+          <div class="flex h-64 items-center justify-center p-12 sm:h-80">
+            <img
+              src={base + 'img/brands/terranova.png'}
+              alt="Terra Nova Nutrition"
+              class="max-h-32 w-auto object-contain"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What makes Terra Nova different -->
+  <section class="bg-paper">
+    <div class="container-bf py-12 sm:py-16">
+      <SectionHeader
+        kicker="Why we chose them"
+        title="What makes Terra Nova different"
+        lead="A lot of supplement brands claim to use no fillers. Terra Nova means it — and the Magnifood base takes it further."
+      />
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="card-bf p-6">
+          <h3 class="font-extrabold">No fillers. Full stop.</h3>
+          <p class="mt-2 text-sm text-muted">
+            No magnesium stearate, no silicon dioxide, no microcrystalline cellulose. Every capsule contains only active
+            ingredients. This isn't a marketing claim — it's the founding principle of the brand.
+          </p>
+        </div>
+        <div class="card-bf p-6">
+          <h3 class="font-extrabold">The Magnifood base</h3>
+          <p class="mt-2 text-sm text-muted">
+            Every Terra Nova formula includes their Magnifood complex — a blend of food-state phytonutrients including
+            spirulina, broccoli, barley grass and dandelion. These work synergistically with the active nutrients rather
+            than just filling the capsule.
+          </p>
+        </div>
+        <div class="card-bf p-6">
+          <h3 class="font-extrabold">Fresh freeze-dried botanicals</h3>
+          <p class="mt-2 text-sm text-muted">
+            Where herbs are used, Terra Nova uses fresh freeze-drying rather than standard drying methods. This preserves
+            significantly more of the phytonutrient content than conventional extraction and drying.
+          </p>
+        </div>
+        <div class="card-bf p-6">
+          <h3 class="font-extrabold">Active coenzyme forms</h3>
+          <p class="mt-2 text-sm text-muted">
+            Methylcobalamin B12, methylfolate, P5P (active B6) — Terra Nova uses the forms the body can use directly,
+            rather than cheaper precursor forms that require conversion steps.
+          </p>
+        </div>
+        <div class="card-bf p-6">
+          <h3 class="font-extrabold">Full transparency</h3>
+          <p class="mt-2 text-sm text-muted">
+            Every ingredient, every source, every form — disclosed. No proprietary blends, no hidden quantities.
+            You know exactly what you're taking and why it's in the formula.
+          </p>
+        </div>
+        <div class="card-bf p-6">
+          <h3 class="font-extrabold">Expert advice in store</h3>
+          <p class="mt-2 text-sm text-muted">
+            Terra Nova's range can be nuanced — there are often two or three products that might suit the same need.
+            Come in and talk it through with us. We know the range well and won't oversell.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product grid -->
+  <section id="products" class="bg-cream">
+    <div class="container-bf py-12 sm:py-16">
+      <SectionHeader
+        kicker="Our top sellers"
+        title="Terra Nova products we stock"
+        lead="Our 20 most consistently stocked Terra Nova lines across Roath, Canton and the Royal Arcade."
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {products.map(p => (
+          <a href={base + 'terranova/' + p.slug + '/'} class="card-bf group block overflow-hidden hover:border-leaf/40 transition-colors">
+            <div class="bg-white">
+              <img
+                src={base + p.images[0].slice(1)}
+                alt={p.title}
+                class="h-44 w-full object-contain p-6 transition duration-300 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4">
+              <span class="pill-organic text-xs">{p.meta.category}</span>
+              <h2 class="mt-2 text-sm font-extrabold leading-snug">{p.title}</h2>
+              <p class="mt-1 text-xs text-muted">Available in store</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Find us -->
+  <section class="bg-paper">
+    <div class="container-bf py-12 sm:py-16">
+      <SectionHeader
+        kicker="In store"
+        title="Where to find Terra Nova in Cardiff"
+        lead="The full range is split across our three stores. The Royal Arcade has the deepest selection — Roath and Canton carry our top sellers."
+      />
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        <a href={base + 'roath/'} class="card-bf block p-6 hover:border-leaf/40 transition-colors">
+          <h3 class="font-extrabold">Roath</h3>
+          <p class="mt-1 text-sm text-muted">95 Albany Road, CF24 3LP</p>
+          <p class="mt-1 text-xs text-muted">Mon–Sat 9am–5.30pm</p>
+          <p class="mt-3 text-xs text-leaf font-semibold">Top sellers stocked →</p>
+        </a>
+        <a href={base + 'canton/'} class="card-bf block p-6 hover:border-leaf/40 transition-colors">
+          <h3 class="font-extrabold">Canton</h3>
+          <p class="mt-1 text-sm text-muted">124 Cowbridge Road East, CF11 9DX</p>
+          <p class="mt-1 text-xs text-muted">Mon–Sat 9am–5.30pm</p>
+          <p class="mt-3 text-xs text-leaf font-semibold">Top sellers stocked →</p>
+        </a>
+        <a href={base + 'royal/'} class="card-bf block p-6 hover:border-leaf/40 transition-colors">
+          <h3 class="font-extrabold">Royal Arcade</h3>
+          <p class="mt-1 text-sm text-muted">8 Royal Arcade, CF10 1AE</p>
+          <p class="mt-1 text-xs text-muted">Mon–Sat 9.30am–5pm</p>
+          <p class="mt-3 text-xs text-leaf font-semibold">Full range available →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>
