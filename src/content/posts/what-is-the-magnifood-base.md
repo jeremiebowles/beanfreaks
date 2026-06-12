@@ -1,12 +1,12 @@
 ---
 title: "What is the Magnifood Base?"
 description: "Terra Nova adds something called the Magnifood base to every formula they make. Here's what it is, what's in it, and why it matters more than most supplement marketing claims do."
-image: "/img/posts/spirulina.webp"
+image: "/img/posts/herb-collection.webp"
 pubDate: 2026-05-18
 tags: ["guides", "supplements"]
 ---
 
-![Spirulina powder — one of the key ingredients in Terra Nova's Magnifood base](/img/posts/spirulina.webp)
+![Dried botanical herbs laid out on wood — the kind of whole-plant ingredients that form Terra Nova's Magnifood base](/img/posts/herb-collection.webp)
 
 If you have spent any time looking at Terra Nova supplements, you will have noticed the phrase "Magnifood base" appearing consistently across the range. It is not a marketing slogan. It is a real formulation choice that sets Terra Nova apart from most of what sits on a supplement shelf — and it is worth understanding what it actually is.
 

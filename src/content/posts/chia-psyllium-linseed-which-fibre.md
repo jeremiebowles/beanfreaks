@@ -1,12 +1,12 @@
 ---
 title: "Chia, Psyllium or Linseed: Which Fibre is Best for You?"
 description: "Three of the most popular fibre supplements on the market, and they work quite differently. Here's what each one actually does and how to choose between them."
-image: "/img/posts/hemp-seeds.webp"
+image: "/img/posts/chia-seeds.webp"
 pubDate: 2026-06-01
 tags: ["guides", "nutrition"]
 ---
 
-![Seeds — a natural source of dietary fibre](/img/posts/hemp-seeds.webp)
+![Chia pudding layered with kiwi and blueberries — one of the easiest ways to eat chia seeds daily](/img/posts/chia-seeds.webp)
 
 Chia seeds, psyllium husk, and linseed (also sold as flaxseed) are all recommended for digestive health, and all three appear on supplement shelves and in health food shops alongside each other. They are not interchangeable. They work through different mechanisms, suit different needs, and get used by the body in different ways. This is a practical guide to telling them apart.
 
