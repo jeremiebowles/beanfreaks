@@ -30,6 +30,7 @@ const structuredData = {
 };
 ---
 <head>
+  {post.data.image && <link rel="preload" as="image" href={post.data.image} fetchpriority="high" />}
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 </head>
 <Base title={post.data.title + ' | Beanfreaks'} description={post.data.description ?? ''} ogImage={imageUrl}>
