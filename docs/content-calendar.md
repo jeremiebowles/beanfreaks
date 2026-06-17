@@ -4,6 +4,8 @@
 **Cadence:** One post per week, same content across all three
 **Updated:** June 2026
 
+⚠️ Facebook and Instagram accounts not yet set up — GBP only for now.
+
 ---
 
 ## How to use this file
@@ -20,7 +22,7 @@ Each session: paste this file (or the relevant section) into the conversation, t
 
 | Week | Date | Theme | Type | Status |
 |------|------|-------|------|--------|
-| 1 | 16 Jun | Viridian Electrolyte Fix | Product spotlight | Draft |
+| 1 | 16 Jun | Viridian Electrolyte Fix | Product spotlight | Posted ✓ |
 | 2 | 23 Jun | Vitamin D in summer | Seasonal angle | Draft |
 | 3 | 30 Jun | Magnesium forms explained | Quiet thing | Draft |
 | 4 | 7 Jul | Three stores | Store moment | Draft — photo needed |
