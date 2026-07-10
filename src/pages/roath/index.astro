@@ -45,6 +45,7 @@ const structuredData = {
 };
 ---
 <head>
+  <link rel="preload" as="image" href={base + 'img/roath.webp'} type="image/webp" fetchpriority="high" />
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
 </head>
 <Base
