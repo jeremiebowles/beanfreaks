@@ -1,5 +1,10 @@
 # Beanfreaks Content Calendar
 
+## ⚠️ Next session reminders
+- **Store photo urgently needed** — Week 4 (7 Jul) is in three days, any shelf/shopfront/product display from any store
+
+---
+
 **Platforms:** Google Business Profile (GBP) · Facebook · Instagram
 **Cadence:** One post per week, same content across all three
 **Updated:** June 2026
@@ -23,8 +28,8 @@ Each session: paste this file (or the relevant section) into the conversation, t
 | Week | Date | Theme | Type | Status |
 |------|------|-------|------|--------|
 | 1 | 16 Jun | Viridian Electrolyte Fix | Product spotlight | Posted ✓ |
-| 2 | 23 Jun | Vitamin D in summer | Seasonal angle | Draft |
-| 3 | 30 Jun | Magnesium forms explained | Quiet thing | Draft |
+| 2 | 23 Jun | Vitamin D in summer | Seasonal angle | Posted ✓ |
+| 3 | 30 Jun | Magnesium forms explained | Quiet thing | Posted ✓ |
 | 4 | 7 Jul | Three stores | Store moment | Draft — photo needed |
 | 5 | 14 Jul | Viridian Ashwagandha | Product spotlight | Draft |
 | 6 | 21 Jul | Hay fever & histamine | Seasonal angle | Draft |
@@ -72,7 +77,7 @@ Each session: paste this file (or the relevant section) into the conversation, t
 >
 > The UK sun is strong enough to trigger vitamin D production between roughly April and September — but only between 11am and 3pm, only when enough skin is exposed, and only on the days it actually appears. If you're office-based, or you're wearing SPF (which blocks synthesis), your summer levels may not be as high as you'd expect.
 >
-> We stock Viridian's vegan D3 in three strengths — 400iu, 1000iu and 2000iu — all derived from lichen rather than lanolin, making them genuinely suitable for vegans. If you're not sure which strength makes sense for you, come in and ask.
+> We stock Viridian's vegan D3 in three strengths — 400iu, 1000iu and 2000iu — all derived from lichen rather than lanolin, making them suitable for vegans. If you're not sure which strength makes sense for you, come in and ask.
 
 **Instagram:**
 > Most people stop taking vitamin D in summer. Worth reconsidering if you spend your days indoors or wear SPF.
