@@ -1,0 +1,22 @@
+# Beanfreaks
+
+> Cardiff's independent health food shop since 1978. Three stores across the city — Roath, Canton and the Royal Arcade.
+
+Beanfreaks is a family-run health food retailer in Cardiff, Wales. We stock organic groceries, vitamins and supplements, vegan and gluten-free essentials, and local Welsh produce including honey. Our staff give honest, knowledgeable advice without the hard sell.
+
+## Stores
+
+- [Roath](https://www.beanfreaks.com/roath/): 95 Albany Road, Cardiff CF24 3LP — Mon–Sat 9am–5.30pm
+- [Canton](https://www.beanfreaks.com/canton/): 124 Cowbridge Road East, Cardiff CF11 9DX — Mon–Sat 9am–5.30pm
+- [Royal Arcade](https://www.beanfreaks.com/royal/): 8 Royal Arcade, Cardiff CF10 1AE — Mon–Sat 9.30am–5pm
+
+## Supplements
+
+- [Supplements overview](https://www.beanfreaks.com/supplements/)
+- [Viridian products](https://www.beanfreaks.com/viridian/)
+- [Terranova products](https://www.beanfreaks.com/terranova/)
+
+## Content
+
+- [Blog posts](https://www.beanfreaks.com/posts/)
+- [Contact](https://www.beanfreaks.com/contact/)
